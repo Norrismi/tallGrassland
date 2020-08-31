@@ -1,12 +1,21 @@
-import React from 'react';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import dashboard from './Components/dashboard/Dashboard'
+import Header from './Components/nav/Header'
+import CheckOut from './Components/checkout/Checkout'
 
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-hello from app
-    </div>
+    <Router>
+   <Header/>
+      <Switch>
+      <Route path={'/checkout'} component={CheckOut} />
+        <Route path={'/'} component={dashboard} />
+      </Switch>
+    </Router>
   );
 }
 

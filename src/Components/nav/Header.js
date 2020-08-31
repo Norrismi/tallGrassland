@@ -1,7 +1,7 @@
-import React from "./node_modules/react";
+import React from "react";
 import "./Header.css";
-import { Link } from "./node_modules/react-router-dom";
-import { Navbar, Nav } from "./node_modules/react-bootstrap";
+import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 //import { auth } from "../../index";
 
