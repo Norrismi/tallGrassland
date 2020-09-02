@@ -1,0 +1,15 @@
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.dashboard__listings{
+    display: flex;
+    flex-direction: row;
+}
+  

@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import "./AuthForm.css";
 // import { connect } from "react-redux";
-// import { signIn } from "../Store/Actions/authActions";
 // import { Redirect } from "react-router-dom";
+// import { signUp } from "../Store/Actions/authActions";
 
-class SignIn extends Component {
+class SignUp extends Component {
   state = {
     password: "",
     email: "",
+    firstName: "",
+    lastName: "",
   };
 
   handleChange = (event) => {
@@ -18,30 +20,47 @@ class SignIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-     this.setState({ password: "", email: "" });
+    this.setState({ password: "", email: "", firstName: "", lastName: "" });
 
-     this.props.signIn(this.state);
+    // this.props.signUp(this.state);
   };
 
   render() {
-    // const { authError, auth } = this.props;
+    // let { formErrors } = this.state;
 
-    // if (auth.uid) {
-    //   return <Redirect to="/" />;
-    // }
+    // const { auth, authError } = this.props;
+
+    // if (auth.uid) return <Redirect to="/" />;
 
     return (
       <div>
-
         <div className="auth-container">
           <div className="auth-form">
             <form onSubmit={this.handleSubmit}>
-              <h5 className="auth-title">Login</h5>
-
+              <h5 className="auth-title">Sign Up</h5>
+              <div>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={this.state.firstName}
+                  onChange={this.handleChange}
+                  placeholder="First Name"
+                />
+              </div>
+              <br />
 
               <div>
-              <input
-                  id="auth-input"
+                <input
+                  type="text"
+                  name="lastName"
+                  value={this.state.lastName}
+                  onChange={this.handleChange}
+                  placeholder="Last Name"
+                />
+              </div>
+              <br />
+              <div>
+                <input
                   type="email"
                   name="email"
                   value={this.state.email}
@@ -50,15 +69,9 @@ class SignIn extends Component {
                   required
                 />
               </div>
-
               <br />
-
               <div>
-
-     
-
-<input
-                  id="auth-input"
+                <input
                   type="password"
                   name="password"
                   value={this.state.password}
@@ -66,19 +79,15 @@ class SignIn extends Component {
                   placeholder="Password"
                   required
                 />
-
-
-                <div>
-
-
-                  {/* {authError ? <p className="center">{authError}</p> : null} */}
-                </div>
               </div>
 
+              {/* {authError ?   <p>{authError}</p> : null} */}
+
               <br />
+
               <div className="auth-btn-container">
                 <button className="auth-sub" type="submit">
-                Login
+                  Sign Up
                 </button>
               </div>
             </form>
@@ -89,22 +98,19 @@ class SignIn extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     authError: state.auth.authError,
-//     auth: state.firebase.auth,
-//   };
-// };
-
 // const mapDispatchToProps = (dispatch) => {
 //   return {
-//     signIn: (credentials) => {
-//       dispatch(signIn(credentials));
-//     },
+//     signUp: (newUser) => dispatch(signUp(newUser)),
 //   };
 // };
 
-export default 
-//connect(mapStateToProps, mapDispatchToProps)
+// const mapStateToProps = (state) => {
+//   return {
+//     auth: state.firebase.auth,
+//     authError: state.auth.authError,
+//   };
+// };
 
-(SignIn);
+export default //connect(mapStateToProps, mapDispatchToProps)
+
+SignUp;

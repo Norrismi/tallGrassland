@@ -1,0 +1,10 @@
+.signed_in_links{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.signed_in_links> li{
+    display: flex;
+    flex-direction: row;
+}

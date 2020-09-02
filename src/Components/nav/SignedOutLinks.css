@@ -1,0 +1,9 @@
+.signed_out_links{
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.header__link{
+    display: flex !important;
+    flex-direction: row !important;
+}

@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { Component } from "react";
+import ListingSummary from "../listings/listingSummary/ListingSummary";
+import { connect } from "react-redux";
 
-const Dashboard = () => {
+import "./Dashboard.css";
+
+class Dashboard extends Component {
+  render() {
+    // console.log(this.props)
+
+    const { properties } = this.props;
+
     return (
-        <div>
-            hello from dashboard
+   
+        <div className="dashboard">
+          <div className="dashboard__listings">
+
+          <ListingSummary  properties={properties} />
+          </div>
+
+
         </div>
+    
     );
+  }
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    properties: state.property.properties,
+  };
+};
+
+export default connect(mapStateToProps)(Dashboard);

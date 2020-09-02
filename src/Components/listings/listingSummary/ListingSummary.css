@@ -1,0 +1,102 @@
+.ListingSummary__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ListingSummary {
+    margin: 20px;
+    width: 20rem;
+
+}
+
+.ListingSummary__info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    align-items: center;
+
+}
+
+.ListingSummary_image {
+    max-height: 225px;
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-self: center ;
+    max-height: auto;
+    padding: 0px !important;
+
+
+
+
+
+}
+
+.ListingSummary__title {
+    display: flex;
+    margin: 20px 20px 0px 20px;
+    font-size: 25px;
+    justify-content: center;
+   
+   
+}
+
+.price__container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    align-items: center;
+
+}
+
+.ListingSummary__description {
+    display: flex;
+    margin: 20px 20px 10px 20px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.ListingSummary__price__strike {
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+.ListingSummary__price {
+    font-size: 22px;
+}
+
+.ListingSummary__btn {
+    display: flex;
+    justify-content: flex-end;
+    background-color: purple !important;
+    border-style: none !important;
+    /* padding: 0 !important; */
+  
+}
+
+
+.ListingSummary__card-footer {
+    display: flex;
+    max-height: 65px;
+    justify-content: space-around;
+
+
+}
+
+.ListingSummary__acreage,
+.ListingSummary__location {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.ListingSummary__acreage-footer,
+.ListingSummary__location-footer {
+    display: flex;
+    justify-content: center;
+}
