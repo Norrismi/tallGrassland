@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./AuthForm.css";
-// import { connect } from "react-redux";
-// import { signIn } from "../Store/Actions/authActions";
-// import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { signIn } from "../../store/actions/authActions";
+import { Redirect } from "react-router-dom";
+import TopNavControl from '../nav/topNavControl/TopNavControl'
 
 class SignIn extends Component {
   state = {
@@ -18,29 +19,29 @@ class SignIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-     this.setState({ password: "", email: "" });
+    this.setState({ password: "", email: "" });
 
-     this.props.signIn(this.state);
+    this.props.signIn(this.state);
   };
 
   render() {
-    // const { authError, auth } = this.props;
+    // console.log(this.props)
+    const { authError, auth } = this.props;
 
-    // if (auth.uid) {
-    //   return <Redirect to="/" />;
-    // }
+    if (auth.uid) {
+      return <Redirect to="/" />;
+    }
 
     return (
       <div>
-
+        <TopNavControl/>
         <div className="auth-container">
           <div className="auth-form">
             <form onSubmit={this.handleSubmit}>
               <h5 className="auth-title">Login</h5>
 
-
               <div>
-              <input
+                <input
                   id="auth-input"
                   type="email"
                   name="email"
@@ -54,10 +55,7 @@ class SignIn extends Component {
               <br />
 
               <div>
-
-     
-
-<input
+                <input
                   id="auth-input"
                   type="password"
                   name="password"
@@ -67,18 +65,15 @@ class SignIn extends Component {
                   required
                 />
 
-
                 <div>
-
-
-                  {/* {authError ? <p className="center">{authError}</p> : null} */}
+                  {authError ? <p className="center">{authError}</p> : null}
                 </div>
               </div>
 
               <br />
               <div className="auth-btn-container">
                 <button className="auth-sub" type="submit">
-                Login
+                  Login
                 </button>
               </div>
             </form>
@@ -89,22 +84,19 @@ class SignIn extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     authError: state.auth.authError,
-//     auth: state.firebase.auth,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth,
+  };
+};
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     signIn: (credentials) => {
-//       dispatch(signIn(credentials));
-//     },
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (credentials) => {
+      dispatch(signIn(credentials));
+    },
+  };
+};
 
-export default 
-//connect(mapStateToProps, mapDispatchToProps)
-
-(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

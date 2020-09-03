@@ -2,8 +2,8 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import SignedInLinks from './SignedInLinks'
-import SignedOutLinks from './SignedOutLinks'
+import SignedInLinks from '../SignedInLinks/SignedInLinks'
+import SignedOutLinks from '../SignOutLinks/SignedOutLinks'
 
 //import { auth } from "../../index";
 
@@ -35,18 +35,22 @@ const Header = () => {
             <SignedInLinks/>
             <SignedOutLinks/>
 
-            <Link to="/sign-in">
+            {/* <Link to="/signin">
               <li className="header__link p-2">Sign in</li>
             </Link>
 
-            <Link to="/sign-up">
+            <Link to="/signup">
               <li className="header__link p-2">Sign up</li>
-            </Link>
+            </Link> */}
 
 
+
+            {/* Do I need checkout????? */}
+
+{/* 
             <Link to="/checkout">
               <li className="header__link p-2">Check Out</li>
-            </Link>
+            </Link> */}
 
             <Link to="/">
               <li className="header__link p-2">Home</li>

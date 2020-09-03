@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./AuthForm.css";
-// import { connect } from "react-redux";
-// import { Redirect } from "react-router-dom";
-// import { signUp } from "../Store/Actions/authActions";
+ import { connect } from "react-redux";
+ import { Redirect } from "react-router-dom";
+ import { signUp } from "../../store/actions/authActions";
+ import TopNavControl from '../nav/topNavControl/TopNavControl'
 
 class SignUp extends Component {
   state = {
@@ -22,18 +23,19 @@ class SignUp extends Component {
     event.preventDefault();
     this.setState({ password: "", email: "", firstName: "", lastName: "" });
 
-    // this.props.signUp(this.state);
+     this.props.signUp(this.state);
   };
 
   render() {
-    // let { formErrors } = this.state;
+    //let { formErrors } = this.state;
 
-    // const { auth, authError } = this.props;
+    const { auth, authError } = this.props;
 
-    // if (auth.uid) return <Redirect to="/" />;
+     if (auth.uid) return <Redirect to="/" />;
 
     return (
       <div>
+        <TopNavControl/>
         <div className="auth-container">
           <div className="auth-form">
             <form onSubmit={this.handleSubmit}>
@@ -81,7 +83,7 @@ class SignUp extends Component {
                 />
               </div>
 
-              {/* {authError ?   <p>{authError}</p> : null} */}
+              {authError ?   <p>{authError}</p> : null}
 
               <br />
 
@@ -98,19 +100,17 @@ class SignUp extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     signUp: (newUser) => dispatch(signUp(newUser)),
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser)),
+  };
+};
 
-// const mapStateToProps = (state) => {
-//   return {
-//     auth: state.firebase.auth,
-//     authError: state.auth.authError,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+    authError: state.auth.authError,
+  };
+};
 
-export default //connect(mapStateToProps, mapDispatchToProps)
-
-SignUp;
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
