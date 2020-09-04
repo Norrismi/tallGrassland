@@ -2,35 +2,45 @@
 
 import React from "react";
 import image from "../../../assets/05000619000.jpg";
-import './ListingSummary.css'
+import "./ListingSummary.css";
+import { Link } from "react-router-dom";
+
 
 const ListingSummary = ({ properties }) => {
   // console.log(properties);
+
   return (
     <div className="ListingSummary__container">
       {properties &&
         properties.map((property) => {
-
           return (
-            // come back and change key!!!
-            <div key={property.title} className="ListingSummary">  
+            <div key={property.id} className="ListingSummary">
               <div className="ListingSummary__info">
-                <img className="ListingSummary_image" src={image} alt="Card  cap" />
+                <img
+                  className="ListingSummary_image"
+                  src={image}
+                  alt="Card  cap"
+                />
                 <div className="card-body">
-                  <h5 className="ListingSummary__title">
-                  {property.title}
-                  </h5>
+                  <Link
+                    className="ListingSummary_title-link"
+                    to={"/property/" + property.id}
+                  >
+                    <h5 className="ListingSummary__title">{property.title}</h5>
+                  </Link>
                   <div className="ListingSummary__description text-muted">
-                  {property.description}
+                    {property.description}
                   </div>
 
                   <div className="price__container">
                     <span className="ListingSummary__price__strike">
-                      {/* ${(price + 10).toFixed(2)} */}
-                      {property.priceStrike}
-                   
+                      {/* ${(property.price+100 + Math.random()*100).toFixed(2)} */}
+                      {property.strikePrice}
                     </span>
-                    <strong className="ListingSummary__price">  {property.price}</strong>
+                    <strong className="ListingSummary__price">
+                      {" "}
+                      {property.price}
+                    </strong>
                   </div>
 
                   <div className="card-footer ListingSummary__card-footer">
@@ -39,24 +49,24 @@ const ListingSummary = ({ properties }) => {
                         Acres
                       </small>
                       <strong className="text-muted ListingSummary__acreage-footer ">
-                      {property.acres}
+                        {property.acreage}
                       </strong>
                     </div>
 
                     <div className="ListingSummary__location ">
                       <small className="text-muted ListingSummary__location-footer">
-                        City
+                        County
                       </small>
                       <strong className="text-muted ListingSummary__location-footer">
-                      {property.city}
+                        {property.county}
                       </strong>
                     </div>
-                    <button
+                    <Link
                       className="btn btn-primary ListingSummary__btn"
-                      // onClick={addToBasket}
+                      to={"/property/" + property.id}
                     >
                       View
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

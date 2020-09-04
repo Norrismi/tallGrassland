@@ -1,32 +1,23 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
+import React from "react";
 
-import SignedInLinks from '../SignedInLinks/SignedInLinks'
-import SignedOutLinks from '../SignOutLinks/SignedOutLinks'
-import {connect} from 'react-redux'
+import SignedInLinks from "../SignedInLinks/SignedInLinks";
+import SignedOutLinks from "../SignOutLinks/SignedOutLinks";
+import { connect } from "react-redux";
 
 const TopNavControl = (props) => {
+  console.log(props);
 
-    console.log(props)
+  const { auth } = props;
 
-    const {auth} = props
+  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 
-    const links = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>
-
-    return (
-        <div>
-            {auth.isLoaded && links}
-        </div>
-    );
-}
+  return <div>{auth.isLoaded && links}</div>;
+};
 
 const mapStateToProps = (state) => {
-    return{
-        auth: state.firebase.auth,
-
-    }
-}
-
-
+  return {
+    auth: state.firebase.auth,
+  };
+};
 
 export default connect(mapStateToProps)(TopNavControl);

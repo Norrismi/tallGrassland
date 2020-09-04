@@ -9,6 +9,19 @@
 
 }
 
+.ListingSummary_title-link {
+    text-decoration: none !important;
+    color: green;
+}
+
+.ListingSummary_title-link:hover {
+    text-decoration: none !important;
+    color: grey;
+}
+
+
+  
+
 .ListingSummary__info {
     display: flex;
     flex-direction: column;
@@ -72,9 +85,14 @@
 .ListingSummary__btn {
     display: flex;
     justify-content: flex-end;
-    background-color: purple !important;
+    background-color: black !important;
     border-style: none !important;
     /* padding: 0 !important; */
+  
+}
+
+.ListingSummary__btn:hover {
+color: grey !important;
   
 }
 
