@@ -10,6 +10,8 @@ import SignIn from './Components/auth/SignIn'
 import SignUp from './Components/auth/SignUp'
 
 function App() {
+
+
   return (
     <Router>
       <Header />
@@ -17,7 +19,7 @@ function App() {
       {/* <Route path={"/logout"} component={Logout} /> */}
       <Route path={"/signup"} component={SignUp} />
         <Route path={"/signin"} component={SignIn} />
-        <Route path={"/listing/:id"} component={ListingDetails} />
+        <Route path={"/property/:id"} component={ListingDetails} />
         {/* <Route path={"/checkout"} component={CheckOut} /> */}
         <Route exact path={"/"} component={dashboard} />
       </Switch>

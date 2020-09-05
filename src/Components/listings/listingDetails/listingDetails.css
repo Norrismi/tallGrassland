@@ -1,0 +1,40 @@
+.card{
+    width: 50rem;
+}
+
+.details__card{
+    margin: 20px;
+}
+
+.details__title{
+    font-size: 40px;
+   
+
+}
+
+.details__description{
+    font-size: 12px;
+    margin-top: 10px;
+
+}
+
+.details__price-options{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+}
+
+.details__cashTitle{
+    margin: 30px 0px 20px 0px;
+}
+
+.details__container-price{
+    display: flex;
+    flex-direction: row;
+}
+
+.details__price{
+    margin-right: 10px;
+    font-size: 30px;
+}
