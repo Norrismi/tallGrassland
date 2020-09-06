@@ -8,6 +8,7 @@ import Header from './Components/nav/Header/Header';
 import ListingDetails from "./Components/listings/listingDetails/ListingDetails";
 import SignIn from './Components/auth/SignIn'
 import SignUp from './Components/auth/SignUp'
+import "font-awesome/css/font-awesome.min.css";
 
 function App() {
 
