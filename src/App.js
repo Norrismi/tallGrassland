@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import dashboard from "./Components/dashboard/Dashboard";
 import Header from './Components/nav/Header/Header';
-//import CheckOut from "./Components/checkout/Checkout";
+import CheckOut from "./Components/checkout/Checkout";
 //import Logout from './Components/nav/SignedInLinks/SignedInLinks'
 import ListingDetails from "./Components/listings/listingDetails/ListingDetails";
 import SignIn from './Components/auth/SignIn'
@@ -21,7 +21,7 @@ function App() {
       <Route path={"/signup"} component={SignUp} />
         <Route path={"/signin"} component={SignIn} />
         <Route path={"/property/:id"} component={ListingDetails} />
-        {/* <Route path={"/checkout"} component={CheckOut} /> */}
+        <Route path={"/checkout"} component={CheckOut} />
         <Route exact path={"/"} component={dashboard} />
       </Switch>
     </Router>

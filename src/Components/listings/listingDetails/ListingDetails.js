@@ -6,6 +6,7 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
+import {addToCart} from '../../../store/actions/propertyActions'
 
 // import FaMapMarkedAlt from "react-icons/fa";
 import {
@@ -20,7 +21,16 @@ import {
 } from "react-icons/fa";
 
 const ListingDetails = (props) => {
-  const { property } = props;
+  console.log(props)
+  const { property, propertyID } = props;
+
+
+  const handleCartAdded = (propertyID, property) => {
+
+     props.addToCart(propertyID, property)
+
+
+  }
 
   // console.log(props);
 
@@ -59,9 +69,9 @@ const ListingDetails = (props) => {
                   <div className="details__down-payment mr-3">
                     $199 Down Payment
                   </div>
-                  <button className="details__reserve-button btn btn-warning">
+                  <button onClick={() => handleCartAdded(propertyID, property)} className="details__reserve-button btn btn-warning">
                     Reserve Now
-                  </button>
+                  </button >
                   <div className="details__button"></div>
                 </div>
               </div>
@@ -135,17 +145,25 @@ const ListingDetails = (props) => {
   }
 };
 
+const mapDispatchToProps = (dispatch) => {
+return {
+  addToCart: (propertyID, property) => dispatch(addToCart(propertyID, property))
+}
+}
+
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const properties = state.firestore.data.properties;
   const propertyId = properties ? properties[id] : null;
+
+  
   return {
     property: propertyId,
-    id: id,
+    propertyID: id,
   };
 };
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{ collection: "properties" }])
 )(ListingDetails);
