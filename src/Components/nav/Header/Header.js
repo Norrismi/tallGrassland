@@ -6,9 +6,12 @@ import SignedInLinks from "../SignedInLinks/SignedInLinks";
 import SignedOutLinks from "../SignOutLinks/SignedOutLinks";
 import { FaShoppingCart } from "react-icons/fa";
 
+
 //import { auth } from "../../index";
 
-const Header = () => {
+const Header = ({properties}) => {
+
+  //console.log(props.properties)
   //   const [{ basket, user }] = useStateValue();
 
   //   const logout = () => {
@@ -44,7 +47,9 @@ const Header = () => {
               <li className="header__link p-2">Sign up</li>
             </Link> */}
 
-            <Link to="/checkout">
+
+ {/* to={"/property/" + property.id} */}
+            <Link to={'/checkout'}>
               <li className="header__link p-2">
                 <FaShoppingCart />
               </li>
@@ -60,4 +65,8 @@ const Header = () => {
   );
 };
 
-export default Header;
+
+
+export default (Header);
+
+

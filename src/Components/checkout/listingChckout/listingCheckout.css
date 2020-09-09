@@ -1,0 +1,32 @@
+.list_checkout__container{
+display: flex;
+border-bottom: solid 1px lightgray;
+}
+
+.list_checkout__picture > img{
+    height: 300px;
+    width: auto;
+}
+
+
+.list_checkout__title{
+    font-size: 30px;
+}
+
+.list_checkout__description{
+    font-size: 12px;
+}
+
+.list_checkout__price-btn-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px lightgray;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.list_checkout__price{
+    font-size: 25px;
+    font-weight: 200;
+}
