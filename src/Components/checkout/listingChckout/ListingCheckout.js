@@ -9,14 +9,13 @@ import pic from "../../../assets/30506238000.jpg";
 
 const ListingCheckout = (props) => {
   const { cart } = props;
+  // console.log(props);
 
 
-  console.log(props);
+  const handleDelete = ({id}) => {
+    // console.log(id);
 
-  const handleDelete = (props) => {
-    console.log(props);
-
-    deleteListing(props);
+    props.deleteListing(id);
   };
 
   return (
@@ -49,7 +48,7 @@ const ListingCheckout = (props) => {
                     </button>
                   </div>
                   <button
-                    onClick={() => handleDelete(listing.propertyID)}
+                    onClick={(e) => handleDelete({ id: listing.propertyID })}
                     type="button"
                     className="btn btn-light mt-4"
                   >
@@ -64,22 +63,15 @@ const ListingCheckout = (props) => {
   );
 };
 
-// const mapStateToProps = (state) => {
-//   return {
-//     id: state.firestore.ordered.cart,
-//   };
-// };
 
-const mapDispatchToProps = (dispatch, props) => ({
-  handleDelete: (props) => dispatch(deleteListing(props)),
+
+const mapDispatchToProps = (dispatch) => ({
+  deleteListing: (id) => dispatch(deleteListing(id)),
 });
 
 export default compose(
-  connect(
-    //mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(null, mapDispatchToProps),
   firestoreConnect([{ collection: "cart" }])
 )(ListingCheckout);
 
-//export default connect(mapStateToProps)(ListingCheckout);
+

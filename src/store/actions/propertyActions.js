@@ -1,4 +1,6 @@
-import { useHistory as history } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+//const history = useHistory()
 
 export const addToCart = (propertyID, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -23,24 +25,27 @@ export const addToCart = (propertyID, property) => {
 
 //removeListing
 
-export const deleteListing = (propertyID, property) => {
+export const deleteListing = (id, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    console.log("actions hit!!!", propertyID);
+    console.log("action hit!!!", id);
 
     const firestore = getFirestore();
+    // const cart = getState().firebase.cart;
+
+  
 
     firestore
       .collection("cart")
-      .doc(propertyID)
+      .doc(id)
       .delete()
       .then(() => {
-        dispatch({ type: "DELETE_LISTING", propertyID });
+        dispatch({ type: "REMOVE_FROM_CART", payload: id });
       })
-      .then(() => {
-        history.push("/");
-      })
+      // .then(() => {
+      //   history.push("/");
+      // })
       .catch((err) => {
-        dispatch({ type: "DELETE_LISTING_ERROR", err });
+        dispatch({ type: "REMOVE_FROM_CART_ERROR", err });
       });
   };
 };
