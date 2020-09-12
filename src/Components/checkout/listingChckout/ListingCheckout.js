@@ -11,12 +11,11 @@ const ListingCheckout = (props) => {
   const { cart } = props;
   // console.log(props);
 
+  // const handleDelete = ({ propertyID }) => {
+  //   // console.log(id);
 
-  const handleDelete = ({id}) => {
-    // console.log(id);
-
-    props.deleteListing(id);
-  };
+  //   props.deleteListing(propertyID);
+  // };
 
   return (
     <div>
@@ -46,14 +45,14 @@ const ListingCheckout = (props) => {
                     <button type="button" className="btn btn-success">
                       Buy Now
                     </button>
+                    <div
+                      onClick={(e) => props.deleteListing( {propertyID: listing.propertyID} )}
+                      type="button"
+                      className="list_checkout__delete"
+                    >
+                      &#10005;
+                    </div>
                   </div>
-                  <button
-                    onClick={(e) => handleDelete({ id: listing.propertyID })}
-                    type="button"
-                    className="btn btn-light mt-4"
-                  >
-                    Remove
-                  </button>
                 </div>
               </div>
             </div>
@@ -63,15 +62,11 @@ const ListingCheckout = (props) => {
   );
 };
 
-
-
 const mapDispatchToProps = (dispatch) => ({
-  deleteListing: (id) => dispatch(deleteListing(id)),
+  deleteListing: (propertyID) => dispatch(deleteListing(propertyID)),
 });
 
 export default compose(
   connect(null, mapDispatchToProps),
   firestoreConnect([{ collection: "cart" }])
 )(ListingCheckout);
-
-

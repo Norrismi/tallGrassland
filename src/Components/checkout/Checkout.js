@@ -13,6 +13,7 @@ const Checkout = (props) => {
   return (
     <div>
         <ListingCheckout cart={cart} />
+    
     </div>
   );
 };
@@ -22,6 +23,7 @@ const mapStateToProps = (state) => {
   return {
     //cart: state.firestore.data.cart,
     cart: state.firestore.ordered.cart,
+  
     
     
   };
