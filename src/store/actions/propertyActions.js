@@ -11,11 +11,11 @@ export const addToCart = (propertyID, property) => {
     firestore
       .collection("cart")
       .add({
-        propertyID,
+        //propertyID,
         property,
       })
       .then(() => {
-        dispatch({ type: "ADD_TO_CART", payload: propertyID });
+        dispatch({ type: "ADD_TO_CART", payload: property });
       })
       .catch((err) => {
         dispatch({ type: "ADD_TO_CART_ERROR", err });
@@ -25,9 +25,9 @@ export const addToCart = (propertyID, property) => {
 
 //removeListing
 
-export const deleteListing = (propertyID, property) => {
+export const deleteCurrentListing = (id, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    console.log("action hit!!!", propertyID);
+    console.log("action hit!!!", id);
 
     const firestore = getFirestore();
     console.log(getState);
@@ -35,10 +35,10 @@ export const deleteListing = (propertyID, property) => {
 
     firestore
       .collection("cart")
-      .doc(propertyID)
-      .delete()
+      .doc(id)
+      .delete() 
       .then(() => {
-        dispatch({ type: "REMOVE_FROM_CART", payload: propertyID });
+        dispatch({ type: "REMOVE_FROM_CART", payload: id });
       })
       // .then(() => {
       //   history.push("/");

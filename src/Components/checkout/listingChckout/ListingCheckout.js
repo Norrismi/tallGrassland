@@ -2,20 +2,13 @@ import React from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { deleteListing } from "../../../store/actions/propertyActions";
+import { deleteCurrentListing } from "../../../store/actions/propertyActions";
 
 import "./listingCheckout.css";
 import pic from "../../../assets/30506238000.jpg";
 
-const ListingCheckout = (props) => {
-  const { cart } = props;
-  // console.log(props);
-
-  // const handleDelete = ({ propertyID }) => {
-  //   // console.log(id);
-
-  //   props.deleteListing(propertyID);
-  // };
+const ListingCheckout = ({ cart, deleteListing }) => {
+  console.log(cart);
 
   return (
     <div>
@@ -46,7 +39,7 @@ const ListingCheckout = (props) => {
                       Buy Now
                     </button>
                     <div
-                      onClick={(e) => props.deleteListing( {propertyID: listing.propertyID} )}
+                      onClick={deleteListing(listing.id)}
                       type="button"
                       className="list_checkout__delete"
                     >
@@ -62,8 +55,14 @@ const ListingCheckout = (props) => {
   );
 };
 
+//deleteListing: (propertyID) => dispatch(deleteCurrentListing(propertyID))
+
 const mapDispatchToProps = (dispatch) => ({
-  deleteListing: (propertyID) => dispatch(deleteListing(propertyID)),
+  deleteListing(id) {
+    return () => {
+      dispatch(deleteCurrentListing(id));
+    };
+  },
 });
 
 export default compose(
