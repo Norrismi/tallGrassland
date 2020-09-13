@@ -6,7 +6,8 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
-import {addToCart} from '../../../store/actions/propertyActions'
+import { addToCart } from "../../../store/actions/propertyActions";
+//import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
 import {
@@ -20,19 +21,9 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
-const ListingDetails = (props) => {
-  console.log(props)
-  const { property, propertyID } = props;
+const ListingDetails = ({ property, propertyID, addToCart, isDuplicate }) => {
+  //console.log(props);
 
-
-  const handleCartAdded = (propertyID, property) => {
-
-     props.addToCart(propertyID, property)
-
-
-  }
-
-  // console.log(props);
 
   if (property) {
     return (
@@ -69,9 +60,15 @@ const ListingDetails = (props) => {
                   <div className="details__down-payment mr-3">
                     $199 Down Payment
                   </div>
-                  <button onClick={() => handleCartAdded(propertyID, property)} className="details__reserve-button btn btn-warning">
+                  <button
+                    onClick={() => addToCart(propertyID, property)}
+                    //onClick={() => isDuplicate(propertyID)}
+
+                    
+                    className="details__reserve-button btn btn-warning"
+                  >
                     Reserve Now
-                  </button >
+                  </button>
                   <div className="details__button"></div>
                 </div>
               </div>
@@ -146,17 +143,17 @@ const ListingDetails = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-return {
-  addToCart: (propertyID, property) => dispatch(addToCart(propertyID, property))
-}
-}
+  return {
+    addToCart: (propertyID, property) => dispatch(addToCart(propertyID, property)),
+    //isDuplicate: (propertyID) => dispatch(checkDuplicate(propertyID)),
+  };
+};
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const properties = state.firestore.data.properties;
   const propertyId = properties ? properties[id] : null;
 
-  
   return {
     property: propertyId,
     propertyID: id,

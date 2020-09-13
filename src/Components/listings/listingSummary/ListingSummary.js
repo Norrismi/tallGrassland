@@ -4,6 +4,8 @@ import React from "react";
 import image from "../../../assets/05000619000.jpg";
 import "./ListingSummary.css";
 import { Link } from "react-router-dom";
+ import CurrencyFormat from "react-currency-format";
+// import FormatCurrency from '../formatCurrency'
 
 
 const ListingSummary = ({ properties }) => {
@@ -35,7 +37,15 @@ const ListingSummary = ({ properties }) => {
                   <div className="price__container">
                     <span className="ListingSummary__price__strike">
                       {/* ${(property.price+100 + Math.random()*100).toFixed(2)} */}
-                      {property.strikePrice}
+                    
+                    {/* <FormatCurrency property={property}/> */}
+
+                      <CurrencyFormat
+                      renderText={(value) => <div>${value}</div> }
+                      value={property.strikePrice.toFixed(2)}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
                     </span>
                     <strong className="ListingSummary__price">
                       {" "}

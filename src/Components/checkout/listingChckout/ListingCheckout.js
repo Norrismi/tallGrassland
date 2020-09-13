@@ -15,7 +15,7 @@ const ListingCheckout = ({ cart, deleteListing }) => {
       {cart &&
         cart.map((listing) => {
           return (
-            <div key={listing.propertyID}>
+            <div key={listing.id}>
               <div className="list_checkout__container m-4">
                 <div className="list_checkout__left-side mr-4">
                   <div className="list_checkout__picture mb-3">
@@ -39,7 +39,7 @@ const ListingCheckout = ({ cart, deleteListing }) => {
                       Buy Now
                     </button>
                     <div
-                      onClick={deleteListing(listing.id)}
+                      onClick={() => deleteListing(listing.id) }
                       type="button"
                       className="list_checkout__delete"
                     >
@@ -55,14 +55,9 @@ const ListingCheckout = ({ cart, deleteListing }) => {
   );
 };
 
-//deleteListing: (propertyID) => dispatch(deleteCurrentListing(propertyID))
-
 const mapDispatchToProps = (dispatch) => ({
-  deleteListing(id) {
-    return () => {
-      dispatch(deleteCurrentListing(id));
-    };
-  },
+  deleteListing: (id) => dispatch(deleteCurrentListing(id)),
+ 
 });
 
 export default compose(

@@ -11,11 +11,11 @@ export const addToCart = (propertyID, property) => {
     firestore
       .collection("cart")
       .add({
-        //propertyID,
         property,
+        propertyID,
       })
       .then(() => {
-        dispatch({ type: "ADD_TO_CART", payload: property });
+        dispatch({ type: "ADD_TO_CART", payload: property, propertyID });
       })
       .catch((err) => {
         dispatch({ type: "ADD_TO_CART_ERROR", err });
@@ -23,11 +23,33 @@ export const addToCart = (propertyID, property) => {
   };
 };
 
-//removeListing
+export const checkDuplicate = (id, property) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    console.log("checkDuplicate action hit!!!", id);
+
+    const firestore = getFirestore();
+    console.log(getState);
+    // const cart = getState().firebase.cart;
+
+    // firestore
+    //   .collection("cart")
+    //   .doc(id)
+    //   .delete()
+    //   .then(() => {
+    //     dispatch({ type: "REMOVE_FROM_CART", payload: id });
+    //   })
+    //   // .then(() => {
+    //   //   history.push("/");
+    //   // })
+    //   .catch((err) => {
+    //     dispatch({ type: "REMOVE_FROM_CART_ERROR", err });
+    //   });
+  };
+};
 
 export const deleteCurrentListing = (id, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    console.log("action hit!!!", id);
+    //console.log("action hit!!!", id);
 
     const firestore = getFirestore();
     console.log(getState);
@@ -36,7 +58,7 @@ export const deleteCurrentListing = (id, property) => {
     firestore
       .collection("cart")
       .doc(id)
-      .delete() 
+      .delete()
       .then(() => {
         dispatch({ type: "REMOVE_FROM_CART", payload: id });
       })
@@ -48,3 +70,5 @@ export const deleteCurrentListing = (id, property) => {
       });
   };
 };
+
+
