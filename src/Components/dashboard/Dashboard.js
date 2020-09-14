@@ -24,7 +24,7 @@ const Dashboard = ({ properties }) => {
 
 const mapStateToProps = (state, ownProps) => {
   // const id = ownProps.match.params.id;
-  console.log(state);
+  //console.log(state);
   return {
     //properties: state.property.properties,
     properties: state.firestore.ordered.properties,

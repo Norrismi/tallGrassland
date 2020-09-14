@@ -43,6 +43,7 @@ const ListingCheckout = ({ cart, deleteListing }) => {
                       type="button"
                       className="list_checkout__delete"
                     >
+             
                       &#10005;
                     </div>
                   </div>

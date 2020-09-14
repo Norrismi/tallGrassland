@@ -21,9 +21,8 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
-const ListingDetails = ({ property, propertyID, addToCart, isDuplicate }) => {
+const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
   //console.log(props);
-
 
   if (property) {
     return (
@@ -60,15 +59,25 @@ const ListingDetails = ({ property, propertyID, addToCart, isDuplicate }) => {
                   <div className="details__down-payment mr-3">
                     $199 Down Payment
                   </div>
-                  <button
-                    onClick={() => addToCart(propertyID, property)}
-                    //onClick={() => isDuplicate(propertyID)}
 
-                    
+    
+
+                  {cart.map((index) => {
+                    return index == propertyID
+                      ? console.log("cant add item")
+                      : () => addToCart(propertyID, property);
+                  })}
+
+
+                  <button
                     className="details__reserve-button btn btn-warning"
+                    onClick={() => addToCart(propertyID, property)}
                   >
                     Reserve Now
                   </button>
+
+
+
                   <div className="details__button"></div>
                 </div>
               </div>
@@ -144,7 +153,8 @@ const ListingDetails = ({ property, propertyID, addToCart, isDuplicate }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (propertyID, property) => dispatch(addToCart(propertyID, property)),
+    addToCart: (propertyID, property) =>
+      dispatch(addToCart(propertyID, property)),
     //isDuplicate: (propertyID) => dispatch(checkDuplicate(propertyID)),
   };
 };
@@ -162,5 +172,8 @@ const mapStateToProps = (state, ownProps) => {
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect([{ collection: "properties" }])
+  firestoreConnect(
+    [{ collection: "properties" }],
+    [{ collection: "properties" }]
+  )
 )(ListingDetails);
