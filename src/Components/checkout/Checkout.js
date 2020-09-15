@@ -5,13 +5,22 @@ import { firestoreConnect } from "react-redux-firebase";
 import ListingCheckout from './listingChckout/ListingCheckout'
 
 const Checkout = (props) => {
-  // console.log(props.cart);
-
+  
   const { cart } = props;
+  console.log(cart);
   
 
   return (
     <div>
+      <div className='w-50'>
+
+         {cart && cart.length? (
+        <h4 className='col  m-3'>Here are your items ready for checkout.</h4>
+      ) : (
+        <h4 className='col  m-3'>You have not selected any items. <br/>
+          Add Items to your cart before checkout.</h4>
+      )}
+      </div>
         <ListingCheckout cart={cart} />
     
     </div>

@@ -1,22 +1,36 @@
-import { addItemToCart } from "../utility/cartUtils";
+//import { addItemToCart } from "../utility/cartUtils";
+import { connect } from "react-redux";
+import { compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
 
 const initState = {
-  cartItems: [],
+  error: "",
 };
 
-const propertyReducer = (state = initState, action) => {
+const propertyReducer = (state = initState, action, { cart }) => {
   switch (action.type) {
     case "ADD_TO_CART": //ListingDetail
       console.log("property cart added", action.payload);
-      console.log("ADD_TO_CART", state);
+      console.log(state);
+
+      const index = cart.findIndex((item) => item.propertyID === action.id);
+      
+      if (index >= 0) {
+        state.error = "This property is alread in your cart";
+      }
+
       return {
         ...state,
-        cartItems: addItemToCart(state.cartItems, action.payload),
       };
 
     case "ADD_TO_CART_ERROR":
       console.log("CART_ADDED_ERROR", action.err);
-      return state;
+      let error = state.error;
+
+      return {
+        ...state,
+        error,
+      };
 
     case "REMOVE_FROM_CART": //ListingCheckout
       console.log("REMOVE_FROM_CART", action.payload);
@@ -33,4 +47,21 @@ const propertyReducer = (state = initState, action) => {
   }
 };
 
-export default propertyReducer;
+//export default propertyReducer;
+
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id;
+  const properties = state.firestore.data.properties;
+  const propertyId = properties ? properties[id] : null;
+
+  return {
+    property: propertyId,
+    propertyID: id,
+    cart: state.firestore.ordered.cart,
+  };
+};
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "properties" }], [{ collection: "cart" }])
+)(propertyReducer);

@@ -1,5 +1,9 @@
 import React from "react";
 import "./Header.css";
+
+import { connect } from "react-redux";
+import { compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import SignedInLinks from "../SignedInLinks/SignedInLinks";
@@ -9,7 +13,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 //import { auth } from "../../index";
 
-const Header = ({properties}) => {
+const Header = ({properties, cart}) => {
 
   //console.log(props.properties)
   //   const [{ basket, user }] = useStateValue();
@@ -51,6 +55,7 @@ const Header = ({properties}) => {
  {/* to={"/property/" + property.id} */}
             <Link to={'/checkout'}>
               <li className="header__link p-2">
+              <div className="header__checkout__number">{(cart?.length)}</div>
                 <FaShoppingCart />
               </li>
             </Link>
@@ -67,6 +72,19 @@ const Header = ({properties}) => {
 
 
 
-export default (Header);
+const mapStateToProps = (state) => {
+  // console.log(state);
+  return {
+    cart: state.firestore.ordered.cart,
+  
+    
+    
+  };
+};
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "cart" }])
+)(Header);
 
 

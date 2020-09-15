@@ -2,6 +2,16 @@
     width: 42rem;
 }
 
+.details{
+    display: flex;
+   
+}
+
+.details__left-side{
+    display: flex;
+    width: 700px;
+}
+
 
 .details__title{
     font-size: 35px;
@@ -104,3 +114,5 @@
 .details__info-label{
     font-size: 13px;
 }
+
+

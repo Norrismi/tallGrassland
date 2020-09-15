@@ -17,7 +17,7 @@ export const addToCart = (propertyID, property) => {
         propertyID,
       })
       .then(() => {
-        dispatch({ type: "ADD_TO_CART", payload: property, propertyID });
+        dispatch({ type: "ADD_TO_CART", payload: propertyID });
       })
       .catch((err) => {
         dispatch({ type: "ADD_TO_CART_ERROR", err });

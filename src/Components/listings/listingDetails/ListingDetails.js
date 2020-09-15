@@ -7,6 +7,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
+import ContactForm from "../../contactForm/ContactForm";
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
@@ -22,11 +23,35 @@ import {
 } from "react-icons/fa";
 
 const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
-  //console.log(props);
+  console.log(cart);
+
+
+ 
+
+// const handleClick= () => {
+
+//   if(cart){
+//     cart.map((index, handleClick) => {
+//       if (index === cart.propertyID){
+//         return  console.log("cant add item")
+//       } else {
+  
+//       }
+        
+//         handleClick=()=> addToCart(propertyID, property);
+//       })
+//   }
+// }
+
+
+      
 
   if (property) {
     return (
       <div className="details">
+
+     
+      <div className="details__left-side">
         <div className="card details__card m-4">
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
@@ -60,23 +85,12 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
                     $199 Down Payment
                   </div>
 
-    
-
-                  {cart.map((index) => {
-                    return index == propertyID
-                      ? console.log("cant add item")
-                      : () => addToCart(propertyID, property);
-                  })}
-
-
                   <button
                     className="details__reserve-button btn btn-warning"
                     onClick={() => addToCart(propertyID, property)}
                   >
                     Reserve Now
                   </button>
-
-
 
                   <div className="details__button"></div>
                 </div>
@@ -145,6 +159,13 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
           </ul>
         </div>
       </div>
+      <div className="details__right-side m-4">
+       
+          <ContactForm className="details__contact-form"/>
+
+        
+      </div>
+      </div>
     );
   } else {
     return <div className="ListingDetails__loading">Loading...</div>;
@@ -167,13 +188,11 @@ const mapStateToProps = (state, ownProps) => {
   return {
     property: propertyId,
     propertyID: id,
+    cart: state.firestore.ordered.cart,
   };
 };
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect(
-    [{ collection: "properties" }],
-    [{ collection: "properties" }]
-  )
+  firestoreConnect([{ collection: "properties" }], [{ collection: "cart" }])
 )(ListingDetails);
