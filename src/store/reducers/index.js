@@ -1,5 +1,6 @@
 import authReducer from "./authReducer";
 import propertyReducer from "./propertyReducer";
+import submissionReducer from './submissionReducer'
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
@@ -9,6 +10,7 @@ const rootReducer = combineReducers({
     property: propertyReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
+    submission: submissionReducer
 })
 
 

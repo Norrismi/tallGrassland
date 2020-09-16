@@ -7,7 +7,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
-import ContactForm from "../../contactForm/ContactForm";
+import ContactFormTwo from "../../contactForm/contactFormOne/contactFormTwo/ContactFormTwo";
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
@@ -161,7 +161,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
       </div>
       <div className="details__right-side m-4">
        
-          <ContactForm className="details__contact-form"/>
+          <ContactFormTwo className="details__contact-form"/>
 
         
       </div>
