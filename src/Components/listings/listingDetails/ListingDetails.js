@@ -7,7 +7,8 @@ import { firestoreConnect } from "react-redux-firebase";
 import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
-import ContactFormTwo from "../../contactForm/contactFormOne/contactFormTwo/ContactFormTwo";
+import ContactFormTwo from '../../contactForm/contactFormTwo/FormTwo'
+import Carousel from '../carousel'
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
@@ -23,7 +24,7 @@ import {
 } from "react-icons/fa";
 
 const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
-  console.log(cart);
+  //console.log(cart);
 
 
  
@@ -49,7 +50,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
   if (property) {
     return (
       <div className="details">
-
+        <Carousel property={property}/>
      
       <div className="details__left-side">
         <div className="card details__card m-4">

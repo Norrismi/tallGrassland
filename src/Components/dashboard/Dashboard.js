@@ -1,7 +1,7 @@
 import React from "react";
 import ListingSummary from "../listings/listingSummary/ListingSummary";
 import { connect } from "react-redux";
-//import ContactFormTwo from '../contactForm/contactFormTwo/ContactFormTwo'
+import FormOne from '../contactForm/contactFormOne/FormOne'
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 
@@ -15,7 +15,7 @@ const Dashboard = ({ properties }) => {
 
   return (
     <div className="dashboard">
-   
+      <FormOne/>
       <div className="dashboard__listings">
         <ListingSummary properties={properties} />
       </div>

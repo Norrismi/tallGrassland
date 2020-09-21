@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./contactForm.css";
-import { userCommentTwo } from "../../../../store/actions/submissionAction";
+import "./FormTwo.css";
+import { userCommentTwo } from "../../../store/actions/submissionActions";
 import { connect } from "react-redux";
 
 class ContactFormTwo extends Component {
   state = {
     wantToOwn: "",
-    select: "",
+    howFindUs: "",
     name: "",
     email: "",
     comment: "",
@@ -23,7 +23,7 @@ class ContactFormTwo extends Component {
 
     this.setState({
       wantToOwn: "",
-      select: "",
+      howFindUs: "",
       name: "",
       email: "",
       comment: "",
@@ -113,8 +113,8 @@ class ContactFormTwo extends Component {
           <select
             className="form-control"
             id="howDidYouFindUs"
-            name="select"
-            value={this.state.select}
+            name="howFindUs"
+            value={this.state.howFindUs}
             onChange={this.handleChange}
           >
             <option style={{ display: "none" }}> How did you find us?</option>
@@ -179,11 +179,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-const mapStateToProps = (state) => {
-  return {
-    // auth: state.firebase.auth,
-    // authError: state.auth.authError,
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactFormTwo);
+export default connect(null, mapDispatchToProps)(ContactFormTwo);
