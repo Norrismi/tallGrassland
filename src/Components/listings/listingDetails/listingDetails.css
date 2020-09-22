@@ -1,67 +1,64 @@
-.card{
+.card {
     width: 42rem;
 }
 
-.details{
+.details__body {
     display: flex;
-   
+
 }
 
-.details__left-side{
+.details__left-side {
     display: flex;
-    width: 700px;
+    flex: 1;
+    justify-content: center;
 }
 
-
-.details__title{
+.details__title {
     font-size: 35px;
     line-height: 40px;
-
 }
 
-.details__title-note{
+.details__title-note {
     font-size: 12px;
 }
 
-.details__price-options{
+.details__price-options {
     font-size: 25px;
     font-weight: 400;
 }
 
-.details__cash-title{
-    /* margin: 30px 0px 10px 0px; */
+.details__cash-title {
     font-size: 20px;
 }
 
-.details__container-price{
+.details__container-price {
     display: flex;
     flex-direction: row;
     font-size: 20px;
     justify-content: space-between;
 }
 
-.details__container-left{
+.details__container-left {
     display: flex;
     flex-direction: row;
     font-size: 20px;
     align-items: center;
-    
 }
 
-.details__price{
-   color: green;
-   font-size: 27px !important;
+.details__price {
+    color: green;
+    font-size: 27px !important;
 }
 
-.details__strike-price{
+.details__strike-price {
     text-decoration: line-through;
     font-weight: 300;
-    font-size: 18px 
+    font-size: 18px
 }
 
 
 
-.details__container-right{
+.details__container-right {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -70,49 +67,46 @@
 }
 
 
-.details__down-payment{
+.details__down-payment {
     font-size: 20px;
-    font-size: 18px 
-    
+    font-size: 18px
 }
 
-.details__reserve-button{
+.details__reserve-button {
     color: white !important;
 }
 
-.details__description{
+.details__description {
     font-size: 25px;
     font-weight: 400;
 }
 
-.details__info-title{
+.details__info-title {
     font-size: 25px;
     font-weight: 400;
 }
 
-.details__info-container{
+.details__info-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
- 
- 
-}
 
-.fa-icon{
- width: auto;
- height: 35px;
- margin-bottom: 10px;
- color: lightgray;
 
 }
 
-.detials__font-color{
+.fa-icon {
+    width: auto;
+    height: 35px;
+    margin-bottom: 10px;
+    color: lightgray;
+
+}
+
+.detials__font-color {
     color: green;
 }
 
-.details__info-label{
+.details__info-label {
     font-size: 13px;
 }
-
-
