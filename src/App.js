@@ -9,6 +9,7 @@ import ListingDetails from "./Components/listings/listingDetails/ListingDetails"
 import SignIn from './Components/auth/SignIn'
 import SignUp from './Components/auth/SignUp'
 import "font-awesome/css/font-awesome.min.css";
+import Footer from './Components/nav/Footer/Footer'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path={"/checkout"} component={CheckOut} />
         <Route exact path={"/"} component={dashboard} />
       </Switch>
+      <Footer/>
     </Router>
   );
 }
