@@ -9,6 +9,7 @@ import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
 import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
 import Carousel from "../carousel/carousel";
+import { Redirect } from "react-router-dom";
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
@@ -40,6 +41,11 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
   //       })
   //   }
   // }
+ 
+  if (cart && cart.length) {
+    return <Redirect to="/checkout" />;
+  }
+
 
   if (property) {
     return (

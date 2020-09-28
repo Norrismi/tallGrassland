@@ -136,7 +136,7 @@ class FormOne extends Component {
               className="form-control"
               placeholder="Your Name"
               aria-describedby="nameInput"
-              required
+           
             />
           </div>
           <div className="form-group col">
@@ -148,7 +148,7 @@ class FormOne extends Component {
               className="form-control"
               aria-describedby="emailInput"
               placeholder="Enter email"
-              required
+            
             />
             {/* <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
@@ -165,10 +165,17 @@ class FormOne extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    error: state
+  }
+
+}
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     userCommentOne: (comment) => dispatch(userCommentOne(comment)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(FormOne);
+export default connect(mapStateToProps, mapDispatchToProps)(FormOne);

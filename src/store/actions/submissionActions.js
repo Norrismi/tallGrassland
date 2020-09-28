@@ -11,12 +11,12 @@ export const userCommentOne = (Form_One) => {
       })
       .then(() => {
         dispatch({
-          type: "SUBMISSION_One_SUCCESS",
+          type: "SUBMISSION_ONE_SUCCESS",
           //payload: { email, name, comment },
         });
       })
       .catch((err) => {
-        dispatch({ type: "SUBMISSION_One_ERROR", err });
+        dispatch({ type: "SUBMISSION_ONE_ERROR", payload: err });
       });
   };
 };
@@ -41,7 +41,7 @@ export const userCommentTwo = (Form_Two) => {
         });
       })
       .catch((err) => {
-        dispatch({ type: "SUBMISSION_TWO_ERROR", err });
+        dispatch({ type: "SUBMISSION_TWO_ERROR", payload: err });
       });
   };
 };

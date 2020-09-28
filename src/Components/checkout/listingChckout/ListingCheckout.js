@@ -18,9 +18,9 @@ const ListingCheckout = ({ cart, deleteListing }) => {
             <div key={listing.id}>
               <div className="list_checkout__container m-4">
                 <div className="list_checkout__left-side mr-4">
-                  <div className="list_checkout__picture mb-3">
+                  {/* <div className="list_checkout__picture mb-3">
                     <img src={pic} alt="" />
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="list_checkout__right-side">
@@ -30,14 +30,14 @@ const ListingCheckout = ({ cart, deleteListing }) => {
                   <div className="list_checkout__description text-muted">
                     {listing.property.description}
                   </div>
-                  <div className="list_checkout__price-btn-container mt-4">
-                    <div className="list_checkout__price ">
+                  <div className="list_checkout__price-btn-container mt-3 ">
+                    <div className="list_checkout__price mr-3">
                       ${listing.property.price}
                     </div>
 
-                    <button type="button" className="btn btn-success">
+                    {/* <button type="button" className="btn btn-success">
                       Buy Now
-                    </button>
+                    </button> */}
                     <div
                       onClick={() => deleteListing(listing.id) }
                       type="button"
