@@ -50,9 +50,9 @@ const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
   if (property) {
     return (
       <>
-        <div className="details__carousel mb-5">
+        {/* <div className="details__carousel mb-5">
           <Carousel property={property} />
-        </div>
+        </div> */}
      
         <div className="details__body">
           <div className="details__left-side">

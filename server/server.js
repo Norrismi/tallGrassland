@@ -1,6 +1,7 @@
+require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
-const stripe = require("stripe")(" ");
+const stripe = require("stripe")('');
 
 const uuid = require("uuid/v4");
 
@@ -60,4 +61,23 @@ app.post("/checkout", async (req, res) => {
   res.json({ error, status });
 });
 
-app.listen(5000);
+//app.listen(5000);
+
+const http = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+// Creating the node server
+const SERVER = http.createServer();
+
+// Firing up the server on selected port
+SERVER.listen(PORT);
+
+SERVER.on("listening", () => {
+    console.log("[Server]::LISTEN:%s", PORT);
+});
+
+// Callback function for checking connecting or error
+SERVER.on("error", error => {
+    throw new Error(`[Server]::ERROR:${error.message}`);
+});

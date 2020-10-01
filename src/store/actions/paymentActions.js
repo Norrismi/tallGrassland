@@ -1,4 +1,4 @@
-import Scriptly from "scriptly";
+
 
 export const paymentSubmission = (purchase) => {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
@@ -21,29 +21,29 @@ export const paymentSubmission = (purchase) => {
     }
 }
 
-export const createStripeToken =(card) => {
-    return new Promise((res, rej) => {
-        Stripe.setPublishableKey('STRIPE_KEY_HERE');
-        Stripe.card.createToken(card,(status, response) => {
-            if(response.error) rej(response.error);
-            else res(response.id)
-        })
-    })
-}
+// export const createStripeToken =(card) => {
+//     return new Promise((res, rej) => {
+//         Stripe.setPublishableKey('STRIPE_KEY_HERE');
+//         Stripe.card.createToken(card,(status, response) => {
+//             if(response.error) rej(response.error);
+//             else res(response.id)
+//         })
+//     })
+// }
 
-export const performCheckout = (product, address, token) =>{
-    console.log(`Using token(${token}) to purchase ${product.name} for $${product.price}`);
-    //Post to a web server at this point
-}
+// export const performCheckout = (product, address, token) =>{
+//     console.log(`Using token(${token}) to purchase ${product.name} for $${product.price}`);
+//     //Post to a web server at this point
+// }
 
-export const completeCheckout = (product, address, payment) => {
+// export const completeCheckout = (product, address, payment) => {
 
-    let payload = Scriptly.loadJavascript('https://js.stripe.com/v2/')
-            .then(() => (createStripeToken(payment)))
-            .then((token) => (performCheckout(product, address, token)))
+//     let payload = Scriptly.loadJavascript('https://js.stripe.com/v2/')
+//             .then(() => (createStripeToken(payment)))
+//             .then((token) => (performCheckout(product, address, token)))
 
-    return {
-        type: 'COMPLETE_CHECKOUT',
-        payload
-    }
-}
+//     return {
+//         type: 'COMPLETE_CHECKOUT',
+//         payload
+//     }
+// }

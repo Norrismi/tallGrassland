@@ -4,8 +4,8 @@ import "./Footer.css";
 //import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
-  let today = new Date();
-  let currentYear = today.getFullYear();
+  //let today = new Date();
+  //let currentYear = today.getFullYear();
 
   return (
     <div>

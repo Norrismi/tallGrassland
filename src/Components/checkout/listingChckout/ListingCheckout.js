@@ -5,7 +5,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { deleteCurrentListing } from "../../../store/actions/propertyActions";
 
 import "./listingCheckout.css";
-import pic from "../../../assets/30506238000.jpg";
+//import pic from "../../../assets/30506238000.jpg";
 
 const ListingCheckout = ({ cart, deleteListing }) => {
   console.log(cart);

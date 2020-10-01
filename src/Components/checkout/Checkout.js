@@ -7,7 +7,7 @@ import CheckoutForm from "./checkoutForm/checkoutForm";
 
 const Checkout = (props) => {
   const { cart } = props;
-  console.log(cart);
+  //console.log(cart);
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Checkout = (props) => {
               Here are your items ready for checkout.
             </h4>
             <ListingCheckout cart={cart} />
-            <CheckoutForm />
+            <CheckoutForm cart={cart}/>
           </div>
         ) : (
           <h4 className="col  m-3">
