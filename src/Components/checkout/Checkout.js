@@ -11,7 +11,7 @@ const Checkout = (props) => {
 
   return (
     <div>
-      <div className="checkoutPage__container w-50 d-flex">
+      <div className="checkoutPage__container w-50 d-flex col">
         {cart && cart.length ? (
           <div className=" d-flex row justify-content-center">
             <h4 className=" m-3">

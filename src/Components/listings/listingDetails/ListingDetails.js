@@ -8,7 +8,7 @@ import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
 import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
-import Carousel from "../carousel/carousel";
+//import Carousel from "../carousel/carousel";
 import { Redirect } from "react-router-dom";
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
@@ -25,22 +25,6 @@ import {
 } from "react-icons/fa";
 
 const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
-  //console.log(cart);
-
-  // const handleClick= () => {
-
-  //   if(cart){
-  //     cart.map((index, handleClick) => {
-  //       if (index === cart.propertyID){
-  //         return  console.log("cant add item")
-  //       } else {
-
-  //       }
-
-  //         handleClick=()=> addToCart(propertyID, property);
-  //       })
-  //   }
-  // }
  
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;

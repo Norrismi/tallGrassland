@@ -17,6 +17,7 @@ import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import firebaseConfig from "./config/firebase";
 import firebase from "firebase/app";
 
+
 const store = createStore(
   rootReducer,
   compose(
@@ -50,6 +51,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

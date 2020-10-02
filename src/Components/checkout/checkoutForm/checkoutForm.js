@@ -1,231 +1,93 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import ReactDom from "react-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+
 import { paymentSubmission } from "../../../store/actions/paymentActions";
 import { connect } from "react-redux";
 import "./checkoutForm.css";
-import StripeCheckout from "react-stripe-checkout";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import axios from '../../../utils';
 
-class checkoutForm extends Component {
-  state = {
-    name: "",
-    email: "",
-    address: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip: "",
-    cardNumber: "",
-    exp: "",
-    cvc: "",
-  };
+const CheckoutForm = ({ cart }) => {
+  //console.log(cart[0].property.price)
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
+  const stripe = useStripe();
+  const elements = useElements();
+  const [error, setError] = useState(null);
+  const [disabled, setDisabled] = useState(true);
+  const [processing, setProcessing] = useState("");
+  const [succeeded, setSucceeded] = useState(false);
+  const [clientSecret, setClientSecret] = useState(true)
 
-    this.setState({ [name]: value });
-  };
+  const { price, title } = cart[0].property;
+  const product = { title, price };
+  const stripePrice = Number(price) * 100;
 
-  handleSubmit = (event) => {
+
+  useEffect(() => {
+    const getClientSecret = async () => {
+        const response = await axios({
+            method: 'post',
+            url: `/checkout/create?total=${stripePrice}`
+        })
+        setClientSecret(response.data.clientSecret)
+    }
+    getClientSecret()
+  }, [cart])
+
+
+  console.log('The Secret >>>>>', clientSecret)
+
+
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setProcessing(true)
 
-    this.setState({
-      name: "",
-      email: "",
-      address: "",
-      address2: "",
-      city: "",
-      state: "",
-      zip: "",
-      cardNumber: "",
-      exp: "",
-      cvc: "",
-    });
-    this.props.paymentSubmission(this.state);
+
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+        payment_method:{
+            card: elements.getElement(CardElement),
+        }
+    }).then(({paymentIntent}) => {
+        setSucceeded(true)
+        setError(null)
+        setProcessing(false)
+
+        // history.replace('/orders') >>>>>> Navigation to new page
+    })
+
+    // const { error, paymentMethod } = await stripe.createPaymentMethod({
+    //   type: "card",
+    //   card: elements.getElement(CardElement),
+    // });
+    // if (!error) {
+    //   console.log(paymentMethod);
+    // } else {
+    //   console.error(error);
+    // }
   };
 
-  render(cart) {
-    //console.log(this.props.cart[0].property.price);
+  const handleChange = (error) => {
+    setDisabled(error.empty);
+    setError(error.error ? error.error.message : "");
+  };
 
-    const { price, title } = this.props.cart[0].property;
-    const product = { title, price };
-    const stripePrice = Number(price).toFixed(2) * 100;
+  // const notifyError = () => toast("Error!");
+  // const notifySuccess = () => toast("Success, payment sent!");
 
-    // const notifyError = () => toast("Error!");
-    // const notifySuccess = () => toast("Success, payment sent!");
-
-    const handleToken = async (token, addresses) => {
-      //console.log({ token, addresses });
-      const response = await axios.post("http://localhost:8000/checkout", {
-        token,
-        product,
-      });
-
-      const { status } = response.data;
-      if (status === "success") {
-        return () => toast("Success, payment sent!");
-      } else {
-        return () => toast("Error!");
-      }
-    };
-
-    return (
-      <div>
-        <StripeCheckout
-          stripeKey="pk_test_JGPju7lamDwFKbqHzTgS7VJF004NgvW8xK"
-          token={handleToken}
-          billingAddress
-          shippingAddress
-          amount={stripePrice}
-          name={title}
-        />
-      </div>
-
-      //   <form className="checkoutForm p-4" onSubmit={this.handleSubmit}>
-      //     <div className="form-group">
-      //       <label>Name</label>
-      //       <input
-      //         name="name"
-      //         value={this.state.name}
-      //         onChange={this.handleChange}
-      //         className="form-control"
-      //         placeholder="Your Name"
-      //         aria-describedby="nameInput"
-      //         required
-      //       />
-      //     </div>
-      //     <div className="form-group">
-      //       <label>Email address</label>
-      //       <input
-      //         type="email"
-      //         name="email"
-      //         value={this.state.email}
-      //         onChange={this.handleChange}
-      //         className="form-control"
-      //         aria-describedby="emailInput"
-      //         placeholder="Enter email"
-      //         required
-      //       />
-      //       <small id="emailHelp" className="form-text text-muted">
-      //         We'll never share your email with anyone else.
-      //       </small>
-      //     </div>
-
-      //     <div class="form-group">
-      //       <label for="inputAddress">Address</label>
-      //       <input
-      //         type="text"
-      //         name="address"
-      //         value={this.state.address}
-      //         onChange={this.handleChange}
-      //         class="form-control"
-      //         id="inputAddress"
-      //         placeholder="1234 Main St"
-      //       />
-      //     </div>
-      //     <div class="form-group">
-      //       <label>Address 2</label>
-      //       <input
-      //         type="text"
-      //         name="address2"
-      //         value={this.state.address2}
-      //         onChange={this.handleChange}
-      //         class="form-control"
-      //         id="inputAddress2"
-      //         placeholder="Apartment, studio, or floor"
-      //       />
-      //     </div>
-      //     <div class="form-row">
-      //       <div class="form-group col-md-6">
-      //         <label>City</label>
-      //         <input
-      //           type="text"
-      //           name="city"
-      //           value={this.state.city}
-      //           onChange={this.handleChange}
-      //           class="form-control"
-      //           id="inputCity"
-      //         />
-      //       </div>
-      //       <div class="form-group col-md-4">
-      //         <label>State</label>
-      //         <input
-      //           type="text"
-      //           name="state"
-      //           value={this.state.state}
-      //           onChange={this.handleChange}
-      //           class="form-control"
-      //           id="state"
-      //         />
-      //       </div>
-      //       <div class="form-group col-md-2">
-      //         <label>Zip</label>
-      //         <input
-      //           type="text"
-      //           name="zip"
-      //           value={this.state.zip}
-      //           onChange={this.handleChange}
-      //           class="form-control"
-      //           id="inputZip"
-      //         />
-      //       </div>
-      //     </div>
-
-      //     <div className=" mb-3">
-      //       <label>Credit card number</label>
-      //       <input
-      //         type="text"
-      //         name="cardNumber"
-      //         value={this.state.cardNumber}
-      //         onChange={this.handleChange}
-      //         className="form-control"
-      //         id="cc-number"
-      //         placeholder=""
-      //         required
-      //       />
-      //       <div className="invalid-feedback">Credit card number is required</div>
-      //     </div>
-      //     <div className="row">
-      //       <div className="col mb-3">
-      //         <label>Expiration</label>
-      //         <input
-      //           type="text"
-      //           name="exp"
-      //           value={this.state.exp}
-      //           onChange={this.handleChange}
-      //           className="form-control"
-      //           id="cc-exp"
-      //           placeholder=""
-      //           required
-      //         />
-      //         <div className="invalid-feedback">Expiration date required</div>
-      //       </div>
-      //       <div className="col mb-3">
-      //         <label>CVC</label>
-      //         <input
-      //           type="text"
-      //           name="cvc"
-      //           value={this.state.cvc}
-      //           onChange={this.handleChange}
-      //           className="form-control"
-      //           id="cc-cvc"
-      //           placeholder=""
-      //           required
-      //         />
-      //         <div className="invalid-feedback">Security code required</div>
-      //       </div>
-      //     </div>
-
-      //     <button type="submit" className="btn btn-primary">
-      //       Submit
-      //     </button>
-      //   </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit} style={{ width: "400px" }}>
+      <CardElement onChange={handleChange} />
+      <button type="submit" disabled={processing || disabled || succeeded}>
+        <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+      </button>
+      {error && <div>{error}</div>}
+    </form>
+  );
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -249,4 +111,4 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{ collection: "cart" }])
-)(checkoutForm);
+)(CheckoutForm);
