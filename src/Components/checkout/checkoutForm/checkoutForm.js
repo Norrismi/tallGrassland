@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import "./checkoutForm.css";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import axios from '../../../utils';
+import axios from "../../../utils";
 
 const CheckoutForm = ({ cart }) => {
   //console.log(cart[0].property.price)
@@ -19,45 +19,47 @@ const CheckoutForm = ({ cart }) => {
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
   const [succeeded, setSucceeded] = useState(false);
-  const [clientSecret, setClientSecret] = useState(true)
+  const [clientSecret, setClientSecret] = useState(true);
 
   const { price, title } = cart[0].property;
   const product = { title, price };
-  const stripePrice = Number(price) * 100;
+  const stripePrice =   Math.round(Number(price)*100);
+
+  console.log(stripePrice)
 
 
   useEffect(() => {
     const getClientSecret = async () => {
-        const response = await axios({
-            method: 'post',
-            url: `/checkout/create?total=${stripePrice}`
-        })
-        setClientSecret(response.data.clientSecret)
-    }
-    getClientSecret()
-  }, [cart])
+      const response = await axios({
+        method: "post",
+        url: `/checkout/create?total=${stripePrice}`,
+      });
+      setClientSecret(response.data.clientSecret);
+    };
+    getClientSecret();
+  }, [cart]);
 
-
-  console.log('The Secret >>>>>', clientSecret)
+  console.log("The Secret >>>>>", clientSecret);
 
 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setProcessing(true)
+    setProcessing(true);
 
-
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-        payment_method:{
-            card: elements.getElement(CardElement),
-        }
-    }).then(({paymentIntent}) => {
-        setSucceeded(true)
-        setError(null)
-        setProcessing(false)
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      })
+      .then(({ paymentIntent }) => {
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
 
         // history.replace('/orders') >>>>>> Navigation to new page
-    })
+      });
 
     // const { error, paymentMethod } = await stripe.createPaymentMethod({
     //   type: "card",
@@ -81,9 +83,11 @@ const CheckoutForm = ({ cart }) => {
   return (
     <form onSubmit={handleSubmit} style={{ width: "400px" }}>
       <CardElement onChange={handleChange} />
-      <button type="submit" disabled={processing || disabled || succeeded}>
+
+      <button disabled={processing || disabled || succeeded}>
         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
       </button>
+
       {error && <div>{error}</div>}
     </form>
   );
