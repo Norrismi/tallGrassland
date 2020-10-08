@@ -8,6 +8,7 @@ import CheckOut from "./Components/checkout/Checkout";
 import ListingDetails from "./Components/listings/listingDetails/ListingDetails";
 import SignIn from "./Components/auth/SignIn";
 import SignUp from "./Components/auth/SignUp";
+import Success from './Components/checkout/checkoutMessage/success/success'
 import "font-awesome/css/font-awesome.min.css";
 import Footer from "./Components/nav/Footer/Footer";
 import { Elements } from "@stripe/react-stripe-js";
@@ -23,6 +24,7 @@ function App() {
         {/* <Route path={"/logout"} component={Logout} /> */}
         <Route path={"/signup"} component={SignUp} />
         <Route path={"/signin"} component={SignIn} />
+        <Route path={"/success"} component={Success} />
         <Route path={"/property/:id"} component={ListingDetails} />
         <Route exact path={"/"} component={dashboard} />
         <Elements stripe={stripePromise}>

@@ -1,25 +1,27 @@
 
 
-export const paymentSubmission = (purchase) => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
-        const firestore = getFirestore()
+// export const paymentSubmission =   (purchase) => {
+//     return async (dispatch, getState, {getFirebase, getFirestore})  => {
+//         const firestore = getFirestore()
 
-        firestore
-            .collection('purchase')
-            .add({
-              purchase
-            })
-            .then(() => {
-                dispatch({
-                  type: "PAYMENT_SUBMISSION_SUCCESS",
-                  //payload: { email, name, comment },
-                });
-              })
-              .catch((err) => {
-                dispatch({ type: "PAYMENT_SUBMISSION_ERROR", payload: err });
-              });
-    }
-}
+
+
+//         firestore
+//             .collection('purchase')
+//             .add({
+//               purchase
+//             })
+//             .then(() => {
+//                 dispatch({
+//                   type: "PAYMENT_SUBMISSION_SUCCESS",
+//                   //payload: { email, name, comment },
+//                 });
+//               })
+//               .catch((err) => {
+//                 dispatch({ type: "PAYMENT_SUBMISSION_ERROR", payload: err });
+//               });
+//     }
+// }
 
 // export const createStripeToken =(card) => {
 //     return new Promise((res, rej) => {

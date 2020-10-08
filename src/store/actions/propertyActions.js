@@ -38,7 +38,7 @@ export const addToCart = (propertyID, property) => {
 //     dispatch({ type: "ADD_TO_CART_ERROR", err });
 //   });
 
-export const deleteCurrentListing = (id, property) => {
+export const removeCurrentListing = (id, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     //console.log("action hit!!!", id);
 

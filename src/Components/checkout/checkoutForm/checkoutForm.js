@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
-import ReactDom from "react-dom";
+import { Link, useHistory } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-import { paymentSubmission } from "../../../store/actions/paymentActions";
+import {removeCurrentListing} from '../../../store/actions/propertyActions'
 import { connect } from "react-redux";
 import "./checkoutForm.css";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import axios from "../../../utils";
 
-const CheckoutForm = ({ cart }) => {
-  //console.log(cart[0].property.price)
-
+const CheckoutForm = ({ cart, removeListing }) => {
+  
   const stripe = useStripe();
   const elements = useElements();
+  const history = useHistory();
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
   const [succeeded, setSucceeded] = useState(false);
   const [clientSecret, setClientSecret] = useState(true);
-
+  
   const { price, title } = cart[0].property;
   const product = { title, price };
-  const stripePrice =   Math.round(Number(price)*100);
+  const stripePrice = Math.round(Number(price) * 100);
+  //console.log(cart[0].id)
+  const id = cart[0].id
 
-  console.log(stripePrice)
 
 
   useEffect(() => {
@@ -39,7 +40,8 @@ const CheckoutForm = ({ cart }) => {
     getClientSecret();
   }, [cart]);
 
-  console.log("The Secret >>>>>", clientSecret);
+  //console.log("The Secret >>>>>", clientSecret);
+
 
 
 
@@ -54,31 +56,24 @@ const CheckoutForm = ({ cart }) => {
         },
       })
       .then(({ paymentIntent }) => {
+
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
-
-        // history.replace('/orders') >>>>>> Navigation to new page
+        removeListing(id)
+        history.replace('/success')
       });
-
-    // const { error, paymentMethod } = await stripe.createPaymentMethod({
-    //   type: "card",
-    //   card: elements.getElement(CardElement),
-    // });
-    // if (!error) {
-    //   console.log(paymentMethod);
-    // } else {
-    //   console.error(error);
-    // }
   };
+
+
+
+
 
   const handleChange = (error) => {
     setDisabled(error.empty);
     setError(error.error ? error.error.message : "");
   };
-
-  // const notifyError = () => toast("Error!");
-  // const notifySuccess = () => toast("Success, payment sent!");
 
   return (
     <form onSubmit={handleSubmit} style={{ width: "400px" }}>
@@ -93,26 +88,21 @@ const CheckoutForm = ({ cart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    paymentSubmission: (paymentDetails) =>
-      dispatch(paymentSubmission(paymentDetails)),
-    // completeCheckout: (paymentComplete) =>
-    //   dispatch(completeCheckout(paymentComplete)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  removeListing: (id) => dispatch(removeCurrentListing(id)),
+ 
+});
+// const mapStateToProps = (state) => {
+//   // console.log(state);
+//   return {
+//     //cart: state.firestore.ordered.cart,
+//     //property: state.firestore.ordered.cart.property,
+//   };
+// };
 
-const mapStateToProps = (state) => {
-  // console.log(state);
-  return {
-    //cart: state.firestore.ordered.cart,
-    property: state.firestore.ordered.cart.property,
-  };
-};
 
-//export default connect(null, mapDispatchToProps)(checkoutForm);
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(null, mapDispatchToProps),
   firestoreConnect([{ collection: "cart" }])
 )(CheckoutForm);

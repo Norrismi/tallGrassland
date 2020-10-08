@@ -2,12 +2,12 @@ import React from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { deleteCurrentListing } from "../../../store/actions/propertyActions";
+import { removeCurrentListing } from "../../../store/actions/propertyActions";
 
 import "./listingCheckout.css";
 //import pic from "../../../assets/30506238000.jpg";
 
-const ListingCheckout = ({ cart, deleteListing }) => {
+const ListingCheckout = ({ cart, removeListing }) => {
   console.log(cart);
 
   return (
@@ -39,7 +39,7 @@ const ListingCheckout = ({ cart, deleteListing }) => {
                       Buy Now
                     </button> */}
                     <div
-                      onClick={() => deleteListing(listing.id) }
+                      onClick={() => removeListing(listing.id) }
                       type="button"
                       className="list_checkout__delete"
                     >
@@ -57,7 +57,7 @@ const ListingCheckout = ({ cart, deleteListing }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  deleteListing: (id) => dispatch(deleteCurrentListing(id)),
+  removeListing: (id) => dispatch(removeCurrentListing(id)),
  
 });
 
