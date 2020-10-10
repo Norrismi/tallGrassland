@@ -31,8 +31,29 @@
 
 }
 
+.ListingSummary__pending-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.ListingSummary__pending{
+    position: relative;
+    height: 50px;
+    width: 90px;
+    background-color: orange;
+    border-radius: 5px;
+    z-index: 1 ;
+    padding: 15px;
+    color: white;
+    
+ 
+}
+
 .ListingSummary_image {
     max-height: 225px;
+    z-index: 1;
 }
 
 

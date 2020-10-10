@@ -25,6 +25,8 @@ import {
 } from "react-icons/fa";
 
 const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
+
+  //console.log(property, propertyID)
  
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;

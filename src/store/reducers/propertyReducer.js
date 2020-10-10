@@ -5,6 +5,7 @@ import { firestoreConnect } from "react-redux-firebase";
 
 const initState = {
   error: "",
+  pending: false,
 };
 
 const propertyReducer = (state = initState, action, { cart }) => {
@@ -14,7 +15,7 @@ const propertyReducer = (state = initState, action, { cart }) => {
       console.log(state);
 
       const index = cart.findIndex((item) => item.propertyID === action.id);
-      
+
       if (index >= 0) {
         state.error = "This property is alread in your cart";
       }
@@ -42,8 +43,25 @@ const propertyReducer = (state = initState, action, { cart }) => {
       console.log("REMOVE_FROM_CART_ERROR", action.err);
       return state;
 
+    case "MARK_PENDING_LISTING":
+      console.log("MARK_PENDING_LISTING", action.payload);
+
+      return {
+        ...state,
+        error,
+      };
+    case "MARK_PENDING_LISTING_ERROR":
+      console.log("MARK_PENDING_LISTING_ERROR", action.err);
+
+      return {
+        ...state,
+        error,
+      };
+
     default:
-      return state;
+      return {
+        ...state,
+      };
   }
 };
 

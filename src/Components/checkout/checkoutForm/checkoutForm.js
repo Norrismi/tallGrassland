@@ -4,13 +4,14 @@ import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import {removeCurrentListing} from '../../../store/actions/propertyActions'
+import {pendingListing} from '../../../store/actions/propertyActions'
 import { connect } from "react-redux";
 import "./checkoutForm.css";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import axios from "../../../utils";
 
-const CheckoutForm = ({ cart, removeListing }) => {
+const CheckoutForm = ({ cart, removeListing, markPending }) => {
   
   const stripe = useStripe();
   const elements = useElements();
@@ -26,6 +27,9 @@ const CheckoutForm = ({ cart, removeListing }) => {
   const stripePrice = Math.round(Number(price) * 100);
   //console.log(cart[0].id)
   const id = cart[0].id
+  const propertyID = cart[0].propertyID
+
+
 
 
 
@@ -62,6 +66,7 @@ const CheckoutForm = ({ cart, removeListing }) => {
         setError(null);
         setProcessing(false);
         removeListing(id)
+        markPending(propertyID)
         history.replace('/success')
       });
   };
@@ -90,6 +95,7 @@ const CheckoutForm = ({ cart, removeListing }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   removeListing: (id) => dispatch(removeCurrentListing(id)),
+  markPending: (propertyID) => dispatch(pendingListing(propertyID))
  
 });
 // const mapStateToProps = (state) => {

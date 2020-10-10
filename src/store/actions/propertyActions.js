@@ -1,5 +1,3 @@
-
-
 //const history = useHistory()
 
 export const addToCart = (propertyID, property) => {
@@ -43,7 +41,8 @@ export const removeCurrentListing = (id, property) => {
     //console.log("action hit!!!", id);
 
     const firestore = getFirestore();
-    console.log(getState);
+
+    //console.log(getState);
     // const cart = getState().firebase.cart;
 
     firestore
@@ -58,6 +57,35 @@ export const removeCurrentListing = (id, property) => {
       // })
       .catch((err) => {
         dispatch({ type: "REMOVE_FROM_CART_ERROR", err });
+      });
+  };
+};
+
+export const pendingListing = (propertyID, property) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    //console.log("action hit!!!", id);
+
+    const firestore = getFirestore();
+    //const propertyRef = firestore.collection("properties"); //.doc(propertyID);
+    //console.log(getState);
+    // const cart = getState().firebase.cart;
+    firestore
+      .collection("properties")
+      .doc(propertyID)
+      .set(
+        {
+          pending: true,
+        },
+        { merge: true }
+      )
+      .then(() => {
+        dispatch({ type: "MARK_PENDING_LISTING", payload: true });
+      })
+      // .then(() => {
+      //   history.push("/");
+      // })
+      .catch((err) => {
+        dispatch({ type: "MARK_PENDING_LISTING_ERROR", err });
       });
   };
 };

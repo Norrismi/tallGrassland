@@ -1,15 +1,13 @@
-//provides all property details so it can be mapped
-
 import React from "react";
 import image from "../../../assets/05000619000.jpg";
 import "./ListingSummary.css";
 import { Link } from "react-router-dom";
- import CurrencyFormat from "react-currency-format";
+import CurrencyFormat from "react-currency-format";
+
 // import FormatCurrency from '../formatCurrency'
 
-
 const ListingSummary = ({ properties }) => {
-  // console.log(properties);
+  console.log(properties);
 
   return (
     <div className="ListingSummary__container">
@@ -18,11 +16,19 @@ const ListingSummary = ({ properties }) => {
           return (
             <div key={property.id} className="ListingSummary">
               <div className="ListingSummary__info">
-                <img
-                  className="ListingSummary_image"
-                  src={image}
-                  alt="Card  cap"
-                />
+                <div className="ListingSummary__pending-container">
+                  <img
+                    className="ListingSummary_image"
+                    src={image}
+                    alt="Card  cap"
+                  />
+
+                  {property.pending && property.pending ? (
+                    <div className="ListingSummary__pending" alt="pending">
+                      Pending
+                    </div>
+                  ) : null}
+                </div>
                 <div className="card-body">
                   <Link
                     className="ListingSummary_title-link"
@@ -37,19 +43,19 @@ const ListingSummary = ({ properties }) => {
                   <div className="price__container">
                     <span className="ListingSummary__price__strike">
                       {/* ${(property.price+100 + Math.random()*100).toFixed(2)} */}
-                    
-                    {/* <FormatCurrency property={property}/> */}
+
+                      {/* <FormatCurrency property={property}/> */}
 
                       <CurrencyFormat
-                      renderText={(value) => <div>${value}</div> }
-                      value={property.strikePrice.toFixed(2)}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                    />
+                        renderText={(value) => <div>${value}</div>}
+                        value={property.strikePrice.toFixed(2)}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                      />
                     </span>
                     <strong className="ListingSummary__price">
                       {" "}
-                      {property.price}
+                      ${property.price}
                     </strong>
                   </div>
 
@@ -87,4 +93,7 @@ const ListingSummary = ({ properties }) => {
   );
 };
 
+
+
 export default ListingSummary;
+
