@@ -21,10 +21,12 @@ display: flex;
     display: flex;
     /* justify-content: space-evenly; */
     align-items: center;
-    /* border: solid 1px lightgray; */
+    /* border: var(--theme-border); */
     /* padding: 30px; */
     border-radius: 10px;
     justify-content: center;
+   
+    
 }
 
 .list_checkout__price{

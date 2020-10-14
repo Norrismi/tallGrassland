@@ -46,7 +46,7 @@
 }
 
 .details__price {
-    color: green;
+    color: var(--theme-font-color);
     font-size: 27px !important;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .detials__font-color {
-    color: green;
+    color: var(--theme-font-color);
 }
 
 .details__info-label {

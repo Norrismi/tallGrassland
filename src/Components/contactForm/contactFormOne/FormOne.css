@@ -1,17 +1,13 @@
 .contact__one {
-
     height: auto;
-    /* width: 900px ; */
-    border: 1px solid lightgray;
-    border-radius: 5px;
+    border: var(--theme-border);
+    border-radius: var(--theme-card-border-radius);
 }
 
 
 .contact__one-container{
     display: flex;
     align-items: center;
-   
-    
 }
 
 .contact__one-button-container{

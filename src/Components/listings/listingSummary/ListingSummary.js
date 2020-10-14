@@ -17,26 +17,16 @@ const ListingSummary = ({ properties }) => {
             <div key={property.id} className="ListingSummary">
               <div className="ListingSummary__info">
                 <div className="ListingSummary__pending-container">
-
-
-          
-
-                                 <img
-                                    className="ListingSummary_image"
-                                    src={image}
-                                    alt="Card  cap"
-                                  >
-
-                                  </img>
-                {property.pending && property.pending ? (
-                  <div className="ListingSummary__pending " alt="pending">
-    
-                    Pending
-                  </div>
-                ) : null}
-                
-         
-
+                  <img
+                    className="ListingSummary_image"
+                    src={image}
+                    alt="Card  cap"
+                  ></img>
+                  {property.pending && property.pending ? (
+                    <div className="ListingSummary__pending " alt="pending">
+                      Pending
+                    </div>
+                  ) : null}
                 </div>
                 <div className="card-body">
                   <Link
@@ -102,7 +92,4 @@ const ListingSummary = ({ properties }) => {
   );
 };
 
-
-
 export default ListingSummary;
-

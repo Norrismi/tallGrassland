@@ -1,6 +1,6 @@
 .contact{
-    border: 1px solid lightgray;
-    border-radius: 5px !important;
+    border: var(--theme-border);
+    border-radius: var(--theme-card-border-radius);
 }
 
 

@@ -1,3 +1,10 @@
 *{
   margin: 0px;
 }
+
+:root{
+  --theme-color: #333;
+  --theme-font-color: green;
+  --theme-border:  solid 1px lightgray;
+  --theme-card-border-radius:  5px;
+}

@@ -11,17 +11,17 @@ const Checkout = (props) => {
 
   return (
     <div>
-      <div className="checkoutPage__container w-50 d-flex col">
+      <div className="checkoutPage__container d-flex col align-self-center ">
         {cart && cart.length ? (
-          <div className=" d-flex row justify-content-center">
-            <h4 className=" m-3">
+          <div className=" col align-self-center">
+            <h4 className="col align-self-center m-3">
               Here are your items ready for checkout.
             </h4>
             <ListingCheckout cart={cart} />
             <CheckoutForm cart={cart}/>
           </div>
         ) : (
-          <h4 className="col  m-3">
+          <h4 className="col align-self-center  m-3">
             You have not selected any items. <br />
             Add Items to your cart before checkout.
           </h4>

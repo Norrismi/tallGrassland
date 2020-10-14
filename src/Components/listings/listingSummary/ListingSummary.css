@@ -25,20 +25,16 @@
 .ListingSummary__info {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgray;
-    border-radius: 5px;
+    border: var(--theme-border);
+    border-radius: var(--theme-card-border-radius);
     align-items: center;
 
 }
 
 .ListingSummary__pending-container {
-    display: relative;
-
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
-
-
 
 }
 
@@ -58,7 +54,6 @@
     grid-row: 1;
     max-width: 318px;
     border-radius: 4px 4px 0px 0px;
-
 }
 
 
@@ -69,10 +64,6 @@
     max-height: auto;
     padding: 0px !important;
 
-
-
-
-
 }
 
 .ListingSummary__title {
@@ -80,8 +71,6 @@
     margin: 20px 20px 0px 20px;
     font-size: 25px;
     justify-content: center;
-
-
 }
 
 .price__container {

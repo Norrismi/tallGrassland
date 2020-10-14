@@ -9,8 +9,8 @@
     flex-direction: column;
     height: 540px;
     width: 900px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
+    border: var(--theme-border);
+    border-radius: var(--theme-card-border-radius);
     margin: 40px;
 }
 
