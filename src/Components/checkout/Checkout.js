@@ -4,26 +4,31 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import ListingCheckout from "./listingChckout/ListingCheckout";
 import CheckoutForm from "./checkoutForm/checkoutForm";
+import "./checkout.css";
 
 const Checkout = (props) => {
   const { cart } = props;
   //console.log(cart);
 
   return (
-    <div>
-      <div className="checkoutPage__container d-flex col align-self-center ">
+    <div className="d-flex justify-content-center min-vh-100">
+      <div className="checkoutPage">
         {cart && cart.length ? (
-          <div className=" col align-self-center">
-            <h4 className="col align-self-center m-3">
-              Here are your items ready for checkout.
-            </h4>
-            <ListingCheckout cart={cart} />
-            <CheckoutForm cart={cart}/>
+          <div className="checkoutPage__container">
+            <h3 className="checkoutPage__title">
+              <div id="title" className="mt-5">
+                This is your selected property ready for checkout.
+              </div>
+            </h3>
+            <div className="mb-4">
+              <ListingCheckout cart={cart} />
+              <CheckoutForm cart={cart} />
+            </div>
           </div>
         ) : (
-          <h4 className="col align-self-center  m-3">
-            You have not selected any items. <br />
-            Add Items to your cart before checkout.
+          <h4 className="checkoutPage__title-no-items">
+            <div id="title">You have not selected any items.</div>
+            <div id="title">Add Items to your cart before checkout.</div>
           </h4>
         )}
       </div>
@@ -38,8 +43,6 @@ const mapStateToProps = (state) => {
     cart: state.firestore.ordered.cart,
   };
 };
-
-
 
 export default compose(
   connect(mapStateToProps),

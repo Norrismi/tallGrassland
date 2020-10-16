@@ -4,6 +4,10 @@
     border-radius: var(--theme-card-border-radius);
 }
 
+.contact__one-title{
+    color: var(--theme-font-color)
+}
+
 
 .contact__one-container{
     display: flex;

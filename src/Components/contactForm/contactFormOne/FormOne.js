@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./FormOne.css";
 import { userCommentOne } from "../../../store/actions/submissionActions";
 import { connect } from "react-redux";
+import {states} from '../../../utils'
+import {socialMedia} from '../../../utils'
 
 class FormOne extends Component {
   state = {
@@ -30,69 +32,11 @@ class FormOne extends Component {
   };
 
   render() {
-    let states = [
-      "Alabama",
-      "Alaska",
-      "American Samoa",
-      "Arizona",
-      "Arkansas",
-      "California",
-      "Colorado",
-      "Connecticut",
-      "Delaware",
-      "District of Columbia",
-      "Florida",
-      "Georgia",
-      "Guam",
-      "Hawaii",
-      "Idaho",
-      "Illinois",
-      "Indiana",
-      "Iowa",
-      "Kansas",
-      "Kentucky",
-      "Louisiana",
-      "Maine",
-      "Maryland",
-      "Massachusetts",
-      "Michigan",
-      "Minnesota",
-      "Minor Outlying Islands",
-      "Mississippi",
-      "Missouri",
-      "Montana",
-      "Nebraska",
-      "Nevada",
-      "New Hampshire",
-      "New Jersey",
-      "New Mexico",
-      "New York",
-      "North Carolina",
-      "North Dakota",
-      "Northern Mariana Islands",
-      "Ohio",
-      "Oklahoma",
-      "Oregon",
-      "Pennsylvania",
-      "Puerto Rico",
-      "Rhode Island",
-      "South Carolina",
-      "South Dakota",
-      "Tennessee",
-      "Texas",
-      "U.S. Virgin Islands",
-      "Utah",
-      "Vermont",
-      "Virginia",
-      "Washington",
-      "West Virginia",
-      "Wisconsin",
-      "Wyoming",
-    ];
+  
 
     return (
       <form className="contact__one p-4" onSubmit={this.handleSubmit}>
-        <h4 className="text-center mb-4">
+        <h4 className="contact__one-title text-center mb-4">
           Let us help you find your perfect property!
         </h4>
 
@@ -121,11 +65,7 @@ class FormOne extends Component {
               onChange={this.handleChange}
             >
               <option style={{ display: "none" }}> How did you find us?</option>
-              <option>Criagslist</option>
-              <option>Facebook</option>
-              <option>Google</option>
-              <option>Landwatch</option>
-              <option>Zillow</option>
+              {socialMedia && socialMedia.map((item) => <option key={item}>{item}</option> )}
             </select>
           </div>
           <div className="form-group col">

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./FormTwo.css";
 import { userCommentTwo } from "../../../store/actions/submissionActions";
 import { connect } from "react-redux";
+import {states} from '../../../utils'
+import {socialMedia} from '../../../utils'
 
 class ContactFormTwo extends Component {
   state = {
@@ -32,69 +34,11 @@ class ContactFormTwo extends Component {
   };
 
   render() {
-    let states = [
-      "Alabama",
-      "Alaska",
-      "American Samoa",
-      "Arizona",
-      "Arkansas",
-      "California",
-      "Colorado",
-      "Connecticut",
-      "Delaware",
-      "District of Columbia",
-      "Florida",
-      "Georgia",
-      "Guam",
-      "Hawaii",
-      "Idaho",
-      "Illinois",
-      "Indiana",
-      "Iowa",
-      "Kansas",
-      "Kentucky",
-      "Louisiana",
-      "Maine",
-      "Maryland",
-      "Massachusetts",
-      "Michigan",
-      "Minnesota",
-      "Minor Outlying Islands",
-      "Mississippi",
-      "Missouri",
-      "Montana",
-      "Nebraska",
-      "Nevada",
-      "New Hampshire",
-      "New Jersey",
-      "New Mexico",
-      "New York",
-      "North Carolina",
-      "North Dakota",
-      "Northern Mariana Islands",
-      "Ohio",
-      "Oklahoma",
-      "Oregon",
-      "Pennsylvania",
-      "Puerto Rico",
-      "Rhode Island",
-      "South Carolina",
-      "South Dakota",
-      "Tennessee",
-      "Texas",
-      "U.S. Virgin Islands",
-      "Utah",
-      "Vermont",
-      "Virginia",
-      "Washington",
-      "West Virginia",
-      "Wisconsin",
-      "Wyoming",
-    ];
+    
 
     return (
       <form className="contact p-4" onSubmit={this.handleSubmit}>
-        <h3 className="text-center m-4">Stay Updated</h3>
+        <h3 className="contact__title text-center m-4">Stay Updated</h3>
         <div className="form-group">
           <select
             className="form-control"
@@ -118,11 +62,8 @@ class ContactFormTwo extends Component {
             onChange={this.handleChange}
           >
             <option style={{ display: "none" }}> How did you find us?</option>
-            <option>Criagslist</option>
-            <option>Facebook</option>
-            <option>Google</option>
-            <option>Landwatch</option>
-            <option>Zillow</option>
+            {socialMedia && socialMedia.map((item) => <option key={item}>{item}</option> )}
+
           </select>
         </div>
         <div className="form-group">

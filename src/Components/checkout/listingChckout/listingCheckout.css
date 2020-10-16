@@ -1,20 +1,21 @@
 .list_checkout__container{
 display: flex;
-/* border-bottom: solid 1px lightgray; */
+flex-direction: column;
 }
 
-.list_checkout__picture > img{
-    height: 300px;
-    width: auto;
-}
+
 
 
 .list_checkout__title{
-    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    
 }
 
 .list_checkout__description{
-    font-size: 12px;
+    font-size: 14px;
+    color: red;
 }
 
 .list_checkout__price-btn-container{

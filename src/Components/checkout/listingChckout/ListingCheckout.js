@@ -16,28 +16,27 @@ const ListingCheckout = ({ cart, removeListing }) => {
         cart.map((listing) => {
           return (
             <div key={listing.id}>
-              <div className="list_checkout__container m-4">
-                <div className="list_checkout__left-side mr-4">
-                  {/* <div className="list_checkout__picture mb-3">
-                    <img src={pic} alt="" />
-                  </div> */}
-                </div>
 
-                <div className="list_checkout__right-side">
+
+              <div className="list_checkout__container m-4">
+          
+
+               
                   <div className="list_checkout__title">
                     {listing.property.title}
                   </div>
-                  <div className="list_checkout__description text-muted">
+
+        
+                  <div className="list_checkout__description text-muted m-2">
                     {listing.property.description}
                   </div>
-                  <div className="list_checkout__price-btn-container mt-3 ">
+
+                  <div className="list_checkout__price-btn-container m-4 ">
                     <div className="list_checkout__price mr-3">
                       ${listing.property.price}
                     </div>
 
-                    {/* <button type="button" className="btn btn-success">
-                      Buy Now
-                    </button> */}
+
                     <div
                       onClick={() => removeListing(listing.id) }
                       type="button"
@@ -47,7 +46,7 @@ const ListingCheckout = ({ cart, removeListing }) => {
                       &#10005;
                     </div>
                   </div>
-                </div>
+            
               </div>
             </div>
           );

@@ -1,0 +1,33 @@
+.checkoutPage {
+    border: var(--theme-border);
+    border-radius: var(--theme-card-border-radius);
+    height: 500px;
+    width: 800px;
+    margin: 20px;
+}
+
+.checkoutPage__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+.checkoutPage__title-no-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20%;
+}
+
+#title {
+    color: var(--theme-font-color);
+}
+
+
+.checkoutPage__container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
