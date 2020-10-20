@@ -22,11 +22,16 @@ const ListingSummary = ({ properties }) => {
                     src={image}
                     alt="Card  cap"
                   ></img>
-                  {property.pending && property.pending ? (
+                    {/* {console.log(property)}
+                  {property.pic1 && <img src={property.pic} alt="pic"></img>} */}
+
+                  {property.pending && (
                     <div className="ListingSummary__pending " alt="pending">
                       Pending
                     </div>
-                  ) : null}
+                  )}
+
+
                 </div>
                 <div className="card-body">
                   <Link
