@@ -7,6 +7,7 @@ import CheckOut from "./Components/checkout/Checkout";
 //import Logout from './Components/nav/SignedInLinks/SignedInLinks'
 import ListingDetails from "./Components/listings/listingDetails/ListingDetails";
 import PhotoUpload from './Components/listings/photoUpload/PhotoUpload'
+// import imageGrid from './Components/listings/photoUpload/imageGrid/imageGrid'
 import SignIn from "./Components/auth/SignIn";
 import SignUp from "./Components/auth/SignUp";
 import Success from './Components/checkout/checkoutMessage/success/success'
@@ -26,6 +27,7 @@ function App() {
         <Route path={"/signup"} component={SignUp} />
         <Route path={"/signin"} component={SignIn} />
         <Route path={"/upload"} component={PhotoUpload} />
+        {/* <Route path={"/images"} component={imageGrid} /> */}
         <Route path={"/success"} component={Success} />
         <Route path={"/property/:id"} component={ListingDetails} />
         <Route exact path={"/"} component={dashboard} />

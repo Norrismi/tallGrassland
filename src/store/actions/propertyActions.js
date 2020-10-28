@@ -66,9 +66,7 @@ export const pendingListing = (propertyID, property) => {
     //console.log("action hit!!!", id);
 
     const firestore = getFirestore();
-    //const propertyRef = firestore.collection("properties"); //.doc(propertyID);
-    //console.log(getState);
-    // const cart = getState().firebase.cart;
+
     firestore
       .collection("properties")
       .doc(propertyID)
@@ -81,9 +79,7 @@ export const pendingListing = (propertyID, property) => {
       .then(() => {
         dispatch({ type: "MARK_PENDING_LISTING", payload: true });
       })
-      // .then(() => {
-      //   history.push("/");
-      // })
+   
       .catch((err) => {
         dispatch({ type: "MARK_PENDING_LISTING_ERROR", err });
       });

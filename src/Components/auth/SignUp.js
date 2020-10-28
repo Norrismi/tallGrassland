@@ -36,10 +36,10 @@ class SignUp extends Component {
     return (
       <div>
         <TopNavControl/>
-        <div className="auth-container">
-          <div className="auth-form">
-            <form onSubmit={this.handleSubmit}>
-              <h5 className="auth-title">Sign Up</h5>
+        <div className="auth__container">
+          <div className="auth__card">
+            <form className="auth__card-fileds" onSubmit={this.handleSubmit}>
+              <h5 className="auth__title">Sign-up</h5>
               <div>
                 <input
                   type="text"
@@ -83,13 +83,13 @@ class SignUp extends Component {
                 />
               </div>
 
-              {authError ?   <p>{authError}</p> : null}
+              {authError ?   <p className="auth__error mt-3">{authError}</p> : null}
 
               <br />
 
-              <div className="auth-btn-container">
-                <button className="auth-sub" type="submit">
-                  Sign Up
+              <div className="auth__btn-container">
+                <button className="auth__btn" type="submit">
+                  Sign-up
                 </button>
               </div>
             </form>

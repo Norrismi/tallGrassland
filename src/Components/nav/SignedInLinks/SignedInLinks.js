@@ -34,7 +34,7 @@ const SignedInLinks = (props) => {
           //  return <Redirect to='/signin'/>
           }}
         >
-          Log out
+          Logout
         </li>
       </Link>
     </div>

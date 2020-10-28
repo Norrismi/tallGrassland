@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {projectStorage, projectFirestore} from '../../../config/firebase'
 import ProgressBar from '../ProgressBar/ProgressBar'
+import ImageGrid from "./imageGrid/imageGrid";
 
 // import projectStorage from '../../../config/firebase'
 // import projectFirestore from '../../../config/firebase'
@@ -38,6 +39,7 @@ const PhotoUpload = () => {
         {file && <div>{file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
       </div>
+     
     </form>
   );
 };

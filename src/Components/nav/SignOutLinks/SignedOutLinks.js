@@ -5,10 +5,10 @@ const SignedOutLinks = () => {
   return (
     <div>
       <Link to="/signup" className="header__link p-2">
-        Sign up
+        Sign-up
       </Link>
       <Link to="/signin" className="header__link p-2">
-       Sign in
+       Login
       </Link>
     </div>
   );

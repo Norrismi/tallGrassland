@@ -11,7 +11,7 @@ const useStorage = (file) => {
     useEffect(() => {
         //refs
         const storageRef = projectStorage.ref(file.name)
-        const collectionRef = projectFirestore.collection('images')
+        const collectionRef = projectFirestore.collection('properties')
 
 
         storageRef.put(file).on('state_changed', (snap) => {

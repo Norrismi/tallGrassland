@@ -25,8 +25,9 @@ class SignIn extends Component {
   };
 
   render() {
-    // console.log(this.props)
+     console.log(this.props)
     const { authError, auth } = this.props;
+  
 
     if (auth.uid) {
       return <Redirect to="/" />;
@@ -35,10 +36,10 @@ class SignIn extends Component {
     return (
       <div>
         <TopNavControl/>
-        <div className="auth-container">
-          <div className="auth-form">
+        <div className="auth__container">
+          <div className="auth__card">
             <form onSubmit={this.handleSubmit}>
-              <h5 className="auth-title">Login</h5>
+              <h5 className="auth__title">Login</h5>
 
               <div>
                 <input

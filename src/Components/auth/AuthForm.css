@@ -1,16 +1,16 @@
-
-.auth-title {
-    padding-bottom: 10px;
-}
-
-.auth-container {
+.auth__container {
     display: flex;
     justify-content: center;
     padding-top: 40px;
     height: 100vh;
 }
 
-.auth-form {
+.auth__title {
+    padding-bottom: 10px;
+}
+
+
+.auth__card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,24 +18,42 @@
     width: 500px;
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
-    
+
 }
 
-div > input {
+.auth__card-fileds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div>input {
     width: 300px;
     height: 35px;
     border: var(--theme-border);
 }
 
-.auth-btn-container{
+.auth__btn-container {
     display: flex;
     justify-content: flex-end;
+    width: 300px;
 }
 
-.auth-sub {
+.auth__btn {
+    justify-content: flex-end;
     border-radius: 5px;
     padding: 5px;
+
     /* background-color: white;
       color: black; */
 
+}
+
+.auth__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    word-wrap: normal
 }
