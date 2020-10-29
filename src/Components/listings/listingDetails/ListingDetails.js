@@ -26,7 +26,6 @@ import {
 
 const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
 
-  //console.log(property, propertyID)
  
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
@@ -176,7 +175,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (propertyID, property) =>
       dispatch(addToCart(propertyID, property)),
-    //isDuplicate: (propertyID) => dispatch(checkDuplicate(propertyID)),
+
   };
 };
 

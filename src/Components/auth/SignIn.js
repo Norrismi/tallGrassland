@@ -3,7 +3,7 @@ import "./AuthForm.css";
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authActions";
 import { Redirect } from "react-router-dom";
-import TopNavControl from '../nav/topNavControl/TopNavControl'
+import TopNavControl from "../nav/topNavControl/TopNavControl";
 
 class SignIn extends Component {
   state = {
@@ -25,9 +25,8 @@ class SignIn extends Component {
   };
 
   render() {
-     console.log(this.props)
     const { authError, auth } = this.props;
-  
+    // console.log(users);
 
     if (auth.uid) {
       return <Redirect to="/" />;
@@ -35,7 +34,7 @@ class SignIn extends Component {
 
     return (
       <div>
-        <TopNavControl/>
+        <TopNavControl />
         <div className="auth__container">
           <div className="auth__card">
             <form onSubmit={this.handleSubmit}>

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const SignedOutLinks = () => {
   return (
     <div>
-      <Link to="/signup" className="header__link p-2">
-        Sign-up
+      <Link to="/sign_up" className="header__link p-2">
+        Sign Up
       </Link>
-      <Link to="/signin" className="header__link p-2">
-       Login
+      <Link to="/sign_in" className="header__link p-2">
+       Sign In
       </Link>
     </div>
   );
