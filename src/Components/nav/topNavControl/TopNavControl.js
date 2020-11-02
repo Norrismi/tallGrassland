@@ -5,15 +5,18 @@ import SignedOutLinks from "../SignOutLinks/SignedOutLinks";
 import { connect } from "react-redux";
 
 
-const TopNavControl = ({auth}) => {
+const TopNavControl = (props, {auth}) => {
+  // console.log(props)
 
 
-  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+  // const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 
   return(
 
 
-    <div>{auth.isLoaded && links}</div>
+    <div>
+      {/* {auth.isLoaded && links} */}
+    </div>
 
 
   );

@@ -13,7 +13,12 @@ import { FaShoppingCart } from "react-icons/fa";
 
 //import { auth } from "../../index";
 
-const Header = ({properties, cart}) => {
+const Header = (props, {properties, cart}) => {
+ 
+  const {auth} = props
+  //console.log(auth)
+
+  const links = auth.uid ? <SignedInLinks cart={cart} /> : <SignedOutLinks />;
 
   //console.log(props.properties)
   //   const [{ basket, user }] = useStateValue();
@@ -40,8 +45,12 @@ const Header = ({properties, cart}) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto "></Nav>
           <Nav className="header__nav__container">
-            <SignedInLinks />
-            <SignedOutLinks />
+            {links}
+
+
+
+            {/* <SignedInLinks />
+            <SignedOutLinks /> */}
 
             {/* <Link to="/signin">
               <li className="header__link p-2">Sign in</li>
@@ -53,12 +62,18 @@ const Header = ({properties, cart}) => {
 
 
  {/* to={"/property/" + property.id} */}
-            <Link to={'/checkout'}>
+
+
+
+            {/* <Link to={'/checkout'}>
               <li className="header__link p-2">
               <div className="header__checkout__number">{(cart?.length)}</div>
                 <FaShoppingCart />
               </li>
-            </Link>
+            </Link> */}
+
+
+
 
             <Link to="/">
               <li className="header__link p-2">Home</li>
@@ -76,6 +91,7 @@ const mapStateToProps = (state) => {
   // console.log(state);
   return {
     cart: state.firestore.ordered.cart,
+    auth: state.firebase.auth,
   
     
     

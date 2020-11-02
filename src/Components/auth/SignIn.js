@@ -37,7 +37,7 @@ class SignIn extends Component {
         <TopNavControl />
         <div className="auth__container">
           <div className="auth__card">
-            <form onSubmit={this.handleSubmit}>
+            <form className='auth__card-fields' onSubmit={this.handleSubmit}>
               <h5 className="auth__title">Login</h5>
 
               <div>
@@ -64,15 +64,15 @@ class SignIn extends Component {
                   placeholder="Password"
                   required
                 />
-
-                <div>
-                  {authError ? <p className="center">{authError}</p> : null}
-                </div>
               </div>
 
+           
+                  {authError ? <p className="auth__error mt-3">{authError}</p> : null}
+              
+
               <br />
-              <div className="auth-btn-container">
-                <button className="auth-sub" type="submit">
+              <div className="auth__btn-container">
+                <button className="auth__btn" type="submit">
                   Login
                 </button>
               </div>

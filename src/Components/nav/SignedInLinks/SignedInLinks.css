@@ -1,10 +1,35 @@
-/* .signed_in_links{
+.signed_in_links{
     display: flex;
     flex-direction: row;
 }
 
 
-.signed_in_links> li{
+.signed_in_links> li > a{
+  color: white;
+}
+
+
+
+
+
+
+
+.header__link {
+    text-decoration: none !important;
+    color: white;
+  
+  
+  }
+  
+  .header__link:hover {
+    text-decoration: none;
+    color: orange;
+  }
+.header__checkout__number {
     display: flex;
-    flex-direction: row;
-} */
+    justify-content: center;
+    color: white;
+    text-decoration: none !important;
+    margin-bottom: 0;
+    padding: 0;
+}

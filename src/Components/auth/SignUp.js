@@ -38,7 +38,7 @@ class SignUp extends Component {
         <TopNavControl/>
         <div className="auth__container">
           <div className="auth__card">
-            <form className="auth__card-fileds" onSubmit={this.handleSubmit}>
+            <form className="auth__card-fields" onSubmit={this.handleSubmit}>
               <h5 className="auth__title">Sign Up</h5>
               <div>
                 <input
