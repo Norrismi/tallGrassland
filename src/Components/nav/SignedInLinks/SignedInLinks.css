@@ -5,20 +5,12 @@
 
 
 .signed_in_links> li > a{
-  color: white;
+  text-decoration: none;
 }
 
 
-
-
-
-
-
 .header__link {
-    text-decoration: none !important;
     color: white;
-  
-  
   }
   
   .header__link:hover {
@@ -28,8 +20,6 @@
 .header__checkout__number {
     display: flex;
     justify-content: center;
-    color: white;
-    text-decoration: none !important;
-    margin-bottom: 0;
-    padding: 0;
+  
+  
 }

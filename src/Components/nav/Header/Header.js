@@ -61,23 +61,15 @@ const Header = (props, {properties, cart}) => {
             </Link> */}
 
 
- {/* to={"/property/" + property.id} */}
-
-
-
-            {/* <Link to={'/checkout'}>
-              <li className="header__link p-2">
-              <div className="header__checkout__number">{(cart?.length)}</div>
-                <FaShoppingCart />
-              </li>
-            </Link> */}
 
 
 
 
-            <Link to="/">
-              <li className="header__link p-2">Home</li>
-            </Link>
+
+
+
+
+         
           </Nav>
         </Navbar.Collapse>
       </Navbar>
