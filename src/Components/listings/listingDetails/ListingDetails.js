@@ -24,11 +24,15 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
-const ListingDetails = ({ property, propertyID, addToCart, cart }) => {
+const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
  
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
+  }
+
+  if(!auth.uid){
+    return <Redirect to='/sign_in'/>
   }
 
 
@@ -188,6 +192,7 @@ const mapStateToProps = (state, ownProps) => {
     property: propertyId,
     propertyID: id,
     cart: state.firestore.ordered.cart,
+    auth: state.firebase.auth
   };
 };
 

@@ -3,7 +3,8 @@ import "./AuthForm.css";
  import { connect } from "react-redux";
  import { Redirect } from "react-router-dom";
  import { signUp } from "../../store/actions/authActions";
- import TopNavControl from '../nav/topNavControl/TopNavControl'
+
+
 
 class SignUp extends Component {
   state = {
@@ -35,7 +36,7 @@ class SignUp extends Component {
 
     return (
       <div>
-        <TopNavControl/>
+  
         <div className="auth__container">
           <div className="auth__card">
             <form className="auth__card-fields" onSubmit={this.handleSubmit}>

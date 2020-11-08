@@ -6,7 +6,7 @@ import Header from "./Components/nav/Header/Header";
 import CheckOut from "./Components/checkout/Checkout";
 //import Sign_out from './Components/nav/SignedInLinks/SignedInLinks'
 import ListingDetails from "./Components/listings/listingDetails/ListingDetails";
-import PhotoUpload from './Components/listings/photoUpload/PhotoUpload'
+// import PhotoUpload from './Components/listings/photoUpload/PhotoUpload'
 // import imageGrid from './Components/listings/photoUpload/imageGrid/imageGrid'
 import SignIn from "./Components/auth/SignIn";
 import SignUp from "./Components/auth/SignUp";
@@ -26,7 +26,7 @@ function App() {
         {/* <Route path={"/sign_out"} component={Sign_out} /> */}
         <Route path={"/sign_up"} component={SignUp} />
         <Route path={"/sign_in"} component={SignIn} />
-        <Route path={"/upload"} component={PhotoUpload} />
+        {/* <Route path={"/upload"} component={PhotoUpload} /> */}
         {/* <Route path={"/images"} component={imageGrid} /> */}
         <Route path={"/success"} component={Success} />
         <Route path={"/property/:id"} component={ListingDetails} />

@@ -8,14 +8,18 @@ import { signOut } from "../../../store/actions/authActions";
 import { FaShoppingCart } from "react-icons/fa";
 
 
-const SignedInLinks = (props) => {
+const SignedInLinks = (props, {users}) => {
 
   const {cart} = props
+
+  console.log(props)
 
   return (
 
     <div className="signed_in_links d-flex flex-row ">
-      <Link className=" p-3 header__link" to='/'> Hello, MN</Link>
+      <li className=" p-3 text-white" to='/'> Hello, 
+      {/* {users.initials} */}
+      </li>
   
 
         <Link className="header__link p-2 mr-5" to={'/checkout'}>
@@ -54,5 +58,5 @@ const mapDispatchToProps = (dispatch) => {
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect([{ collection: "users" }])
+  firestoreConnect([{ collection: "users" }], [{ collection: "cart" }])
 )(SignedInLinks);
