@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 div>input {
@@ -49,11 +50,14 @@ div>input {
 
 }
 
-.auth__error {
+.auth__error-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 400px;
+}
+
+
+.auth__error {
     justify-content: center;
-    align-items: center;
     color: red;
-    word-wrap: normal
 }

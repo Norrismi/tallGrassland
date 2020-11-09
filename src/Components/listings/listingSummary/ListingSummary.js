@@ -17,20 +17,20 @@ const ListingSummary = ({ properties }) => {
             <div key={property.id} className="ListingSummary">
               <div className="ListingSummary__info">
                 <div className="ListingSummary__pending-container">
-                {/* {property.pic && <img 
+                {property.pic && <img 
                     className="ListingSummary_image"
-                    src={image}  ///////////////
+                    src={property.pic}  ///////////////
                     alt="Card  cap"
                 >
                 
-                </img>} */}
+                </img>}
 
 
-                  <img
+                  {/* <img
                     className="ListingSummary_image"
                     src={image}
                     alt="Card  cap"
-                  ></img>
+                  ></img> */}
 
 
                     {/* {console.log(property)}

@@ -17,7 +17,6 @@ export const signUp = (newUser) => {
           .set({
             firstName: newUser.firstName,
             lastName: newUser.lastName,
-            initials: firstName + lastName,
             email: newUser.email
           });
       })

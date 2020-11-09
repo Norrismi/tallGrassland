@@ -24,9 +24,9 @@ const useStorage = (file) => {
         }, async() => {
                 const url = await storageRef.getDownloadURL()
            
-
-                //saving to firestore
-                collectionRef.add({url})
+                //saving to firestore ....add in firebase docID
+                collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({pic: url}, {merge: true})
+                
 
                 //using Fire Storage
                 setUrl(url)

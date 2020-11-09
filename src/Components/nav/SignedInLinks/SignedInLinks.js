@@ -8,28 +8,26 @@ import { signOut } from "../../../store/actions/authActions";
 import { FaShoppingCart } from "react-icons/fa";
 
 
-const SignedInLinks = (props, {users}) => {
+const SignedInLinks = (props) => {
 
-  const {cart} = props
+  const { cart, email } = props
 
-  console.log(props)
 
   return (
 
     <div className="signed_in_links d-flex flex-row ">
-      <li className=" p-3 text-white" to='/'> Hello, 
-      {/* {users.initials} */}
+      <li className=" p-3 text-white" to='/'> Hello,  {email && email}
       </li>
-  
 
-        <Link className="header__link p-2 mr-5" to={'/checkout'}>
-              <div className="header__checkout__number">{(cart?.length)}</div>
-                <FaShoppingCart />
-        </Link>
-      
 
-        <Link className="header__link p-3" to='/sign_out' onClick={props.signOut}> Log Out</Link>
-        <Link className="header__link p-3" to="/">Home</Link>
+      <Link className="header__link p-2 mr-5" to={'/checkout'}>
+        <div className="header__checkout__number">{(cart?.length)}</div>
+        <FaShoppingCart />
+      </Link>
+
+
+      <Link className="header__link p-3" to='/sign_out' onClick={props.signOut}> Log Out</Link>
+      <Link className="header__link p-3" to="/">Home</Link>
     </div>
 
   );
@@ -39,10 +37,10 @@ const mapStateToProps = (state) => {
 
 
   return {
-  
-    users: state.firestore.ordered.users,
+
+
     cart: state.firestore.ordered.cart,
-    
+
   };
 };
 
@@ -58,5 +56,7 @@ const mapDispatchToProps = (dispatch) => {
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect([{ collection: "users" }], [{ collection: "cart" }])
+  firestoreConnect(
+
+    [{ collection: "cart" }])
 )(SignedInLinks);

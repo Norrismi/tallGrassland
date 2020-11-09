@@ -29,7 +29,7 @@ class SignIn extends Component {
     // console.log(users);
 
     if (auth.uid) return <Redirect to="/" />;
-    
+
 
     return (
       <div>
@@ -64,15 +64,22 @@ class SignIn extends Component {
                 />
               </div>
 
-           
-                  {authError ? <p className="auth__error mt-3">{authError}</p> : null}
-              
+              <div className="auth__error-container ">
+
+                {authError &&
+                  <p className="auth__error mt-3">{authError}</p>
+                }
+              </div>
 
               <br />
               <div className="auth__btn-container">
                 <button className="auth__btn" type="submit">
                   Login
                 </button>
+              </div>
+
+              <div className="mt-3">
+                *You must sign in before reserving property.
               </div>
             </form>
           </div>

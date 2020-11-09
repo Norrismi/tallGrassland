@@ -9,12 +9,15 @@ import SignedOutLinks from "../SignOutLinks/SignedOutLinks";
 
 
 
-const Header = (props, {properties, cart}) => {
- 
-  const {auth} = props
-  //console.log(auth)
+const Header = (props, { properties, cart, profile }) => {
 
-  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+  const { auth } = props
+  const { email } = props.profile
+
+  //console.log(props.profile)
+
+
+  const links = auth.uid ? <SignedInLinks email={email} /> : <SignedOutLinks />;
 
   return (
     <nav className="App sticky-top">
@@ -32,7 +35,7 @@ const Header = (props, {properties, cart}) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto "></Nav>
           <Nav className="header__nav__container">
-            {auth.isLoaded && links}         
+            {auth.isLoaded && links}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -43,10 +46,13 @@ const Header = (props, {properties, cart}) => {
 
 const mapStateToProps = (state) => {
 
+  //  console.log(state)
+
   return {
     cart: state.firestore.ordered.cart,
     auth: state.firebase.auth,
-  
+    profile: state.firebase.profile
+
   };
 };
 
