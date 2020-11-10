@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../../assets/05000619000.jpg";
 import "./ListingSummary.css";
 import { Link } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
@@ -7,7 +6,7 @@ import CurrencyFormat from "react-currency-format";
 // import FormatCurrency from '../formatCurrency'
 
 const ListingSummary = ({ properties }) => {
-  console.log(properties);
+  //console.log(properties);
 
   return (
     <div className="ListingSummary__container">

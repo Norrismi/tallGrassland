@@ -8,6 +8,7 @@ import "./listingDetails.css";
 import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
 import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
+import Gallery from '../gallery/Gallery'
 //import Carousel from "../carousel/carousel";
 import { Redirect } from "react-router-dom";
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
@@ -42,6 +43,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
         {/* <div className="details__carousel mb-5">
           <Carousel property={property} />
         </div> */}
+        <Gallery/>
      
         <div className="details__body">
           <div className="details__left-side">

@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import {projectStorage, projectFirestore} from '../../config/firebase'
+import { useState, useEffect } from 'react';
+import { projectStorage, projectFirestore } from '../../config/firebase'
 
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);
@@ -15,26 +15,27 @@ const useStorage = (file) => {
 
 
         storageRef.put(file).on('state_changed', (snap) => {
-            let percentage = (snap.bytesTransferred/ snap.totalBytes) *100;
+            let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
             setProgress(percentage);
         }, (err) => {
             setError(err);
 
-        
-        }, async() => {
-                const url = await storageRef.getDownloadURL()
-           
-                //saving to firestore ....add in firebase docID
-                collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({pic: url}, {merge: true})
-                
 
-                //using Fire Storage
-                setUrl(url)
+        }, async () => {
+            const url = await storageRef.getDownloadURL()
+
+            //saving to firestore ....add in firebase docID
+            //collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({pic: url}, {merge: true})
+
+            collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({ gallery: { pic4: url } }, { merge: true })
+
+
+            //using Fire Storage
+            setUrl(url)
         })
     }, [file])
 
-    return { progress, url, error}
+    return { progress, url, error }
 }
 
 export default useStorage;
-  
