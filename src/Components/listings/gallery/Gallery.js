@@ -6,33 +6,38 @@ import { firestoreConnect } from "react-redux-firebase";
 
 
 const Gallery = ({ property }) => {
-    // console.log(property.id)
+    //  console.log(property.price)
 
 
 
     return (
         <div>
-            Hello from Gallery
-            <div>
+    
+            {property && property.map((property) => {
+                return (
+                    <div>
+                        {property.title} 
+                    </div>
+                )
 
-            </div>
-            {property && property.map((item) =>
-                <div>
-                    {item.title}
-                    <ul>
-                        {item.map((sub) =>
-                            <li>
-                                {sub}
-                            </li>
-                        )}
-                    </ul>
+            })}
+      
+
+{/* 
+            {Object.values(gallery).map((gallery)=>{
+                return (
+
+                <div key={gallery.url}>
+                    {gallery.url}
                 </div>
+                )
+            })} */}
 
-                // <div>
-                //     {property && <img src={property.gallery} alt="Card  cap"/>}
-                // </div>
 
-            )}
+
+
+
+
         </div>
     );
 
@@ -40,7 +45,7 @@ const Gallery = ({ property }) => {
 
 // export default Gallery;
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 
 
     return {
