@@ -27,6 +27,7 @@ import {
 
 const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
+
  
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
@@ -43,7 +44,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
         {/* <div className="details__carousel mb-5">
           <Carousel property={property} />
         </div> */}
-        <Gallery/>
+        <Gallery propertyID={propertyID}/>
      
         <div className="details__body">
           <div className="details__left-side">
@@ -186,6 +187,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+
+
   const id = ownProps.match.params.id;
   const properties = state.firestore.data.properties;
   const propertyId = properties ? properties[id] : null;
