@@ -1,6 +1,6 @@
 // This is the component that will be visited after the user clicks "see more"
 
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -9,8 +9,8 @@ import CurrencyFormat from "react-currency-format";
 import { addToCart } from "../../../store/actions/propertyActions";
 import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
 import Gallery from '../gallery/Gallery'
-//import Carousel from "../carousel/carousel";
 import { Redirect } from "react-router-dom";
+import Modal from '../modal/Modal'
 //import { checkDuplicate } from "../../../store/actions/propertyActions";
 
 // import FaMapMarkedAlt from "react-icons/fa";
@@ -25,27 +25,30 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
+
 const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
+  const [selectedImg, setSelectedImg] = useState(null)
 
- 
+
+
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
   }
 
-  if(!auth.uid){
-    return <Redirect to='/sign_in'/>
+  if (!auth.uid) {
+    return <Redirect to='/sign_in' />
   }
 
 
   if (property) {
     return (
       <>
-        {/* <div className="details__carousel mb-5">
-          <Carousel property={property} />
-        </div> */}
-        <Gallery propertyID={propertyID}/>
-     
+    
+
+        <Gallery propertyID={propertyID} setSelectedImg={setSelectedImg} />
+        {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
+
         <div className="details__body">
           <div className="details__left-side">
             <div className="card details__card m-4">

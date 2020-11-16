@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import ProgressBar from '../ProgressBar/ProgressBar'
-import ImageGrid from "./imageGrid/imageGrid";
-
-// import projectStorage from '../../../config/firebase'
-// import projectFirestore from '../../../config/firebase'
 import "./photoUplaod.css";
 
 const PhotoUpload = () => {

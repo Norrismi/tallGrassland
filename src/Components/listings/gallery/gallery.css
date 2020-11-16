@@ -1,0 +1,25 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+
+.gallery__img-container {
+    overflow: hidden;
+    height: 0;
+    padding: 50% 0;
+    position: relative;
+   
+
+}
+
+.gallery__img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 125%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
