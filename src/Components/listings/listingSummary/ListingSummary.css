@@ -10,16 +10,15 @@
 }
 
 .ListingSummary_title-link {
-    text-decoration: none !important;
     color: green;
 }
 
-.ListingSummary_title-link:hover {
-    text-decoration: none !important;
+
+
+a.ListingSummary_title-link:hover{
+    text-decoration: none;
     color: grey;
 }
-
-
 
 
 .ListingSummary__info {
@@ -48,12 +47,15 @@
     grid-row: 1;
 }
 
+
+
 .ListingSummary_image {
-    max-height: 225px;
     grid-column: 1 / -1;
     grid-row: 1;
     max-width: 318px;
     border-radius: 4px 4px 0px 0px;
+    width: 408px;
+    height: 190px;
 }
 
 
@@ -62,8 +64,10 @@
     flex-direction: column;
     align-self: center;
     max-height: auto;
-    padding: 0px !important;
+}
 
+div.card-body{
+    padding: 0px;
 }
 
 .ListingSummary__title {
@@ -100,14 +104,15 @@
 .ListingSummary__btn {
     display: flex;
     justify-content: flex-end;
-    background-color: black !important;
-    border-style: none !important;
-    /* padding: 0 !important; */
-
 }
 
-.ListingSummary__btn:hover {
-    color: grey !important;
+a.btn.btn-primary.ListingSummary__btn{
+    background-color: black;
+    border-style: none;
+}
+
+a.btn.btn-primary.ListingSummary__btn:hover {
+    color: grey;
 
 }
 
@@ -116,8 +121,6 @@
     display: flex;
     max-height: 65px;
     justify-content: space-around;
-
-
 }
 
 .ListingSummary__acreage,

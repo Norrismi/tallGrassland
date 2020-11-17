@@ -14,13 +14,22 @@ const Gallery = ({ propertyID, setSelectedImg }) => {
     const { docs } = useFirestore(propertyID)
 
 
+
+    
+    
+    
     return (
-
-
+        
+        
         <div className='gallery'>
             {docs && docs.map(doc => (
-                <div key={doc.id} className='gallery__img-container'
-                onClick={() => setSelectedImg(doc.url)}
+
+                <div key={doc.url} className='gallery__img-container'
+                onClick={() =>  setSelectedImg(doc.url)
+                    //console.log(e.target)
+                    
+                
+                }
                 >
 
                     <img src={doc.url} className='gallery__img' alt='gallery of propery pictures' 

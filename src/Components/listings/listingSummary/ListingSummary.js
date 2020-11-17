@@ -15,25 +15,20 @@ const ListingSummary = ({ properties }) => {
           return (
             <div key={property.id} className="ListingSummary">
               <div className="ListingSummary__info">
+
+
                 <div className="ListingSummary__pending-container">
-                {property.pic && <img 
-                    className="ListingSummary_image"
-                    src={property.pic}  ///////////////
-                    alt="Card  cap"
-                >
-                
-                </img>}
+                  <div className="ListingSummary_image">
 
+                    {property.pic && <img
+                      className="ListingSummary_image"
+                      src={property.pic}
+                      alt="Card  cap"
+                    >
 
-                  {/* <img
-                    className="ListingSummary_image"
-                    src={image}
-                    alt="Card  cap"
-                  ></img> */}
+                    </img>}
+                  </div>
 
-
-                    {/* {console.log(property)}
-                  {property.url && <img src={property.pic} alt="pic"></img>} */}
 
                   {property.pending && (
                     <div className="ListingSummary__pending " alt="pending">
@@ -43,6 +38,8 @@ const ListingSummary = ({ properties }) => {
 
 
                 </div>
+
+
                 <div className="card-body">
                   <Link
                     className="ListingSummary_title-link"
@@ -63,7 +60,7 @@ const ListingSummary = ({ properties }) => {
                       <CurrencyFormat
                         renderText={(value) => <div>${value}</div>}
                         value={property.strikePrice
-                        
+
                         }
                         displayType={"text"}
                         thousandSeparator={true}

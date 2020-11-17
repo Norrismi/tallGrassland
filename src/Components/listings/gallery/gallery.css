@@ -1,25 +1,22 @@
 .gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding: 20px;
+display: flex;
+justify-content: center;
+
 }
 
 
 .gallery__img-container {
-    overflow: hidden;
-    height: 0;
-    padding: 50% 0;
-    position: relative;
-   
-
+    display: flex;
+    padding: 25px;
+ 
 }
 
 .gallery__img {
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 125%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    /* cursor: pointer; */
+  
 }
+

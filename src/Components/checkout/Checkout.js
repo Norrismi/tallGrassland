@@ -6,9 +6,8 @@ import ListingCheckout from "./listingChckout/ListingCheckout";
 import CheckoutForm from "./checkoutForm/checkoutForm";
 import "./checkout.css";
 
-const Checkout = (props) => {
-  const { cart } = props;
-  //console.log(cart);
+const Checkout = ({cart}) => {
+
 
   return (
     <div className="d-flex justify-content-center min-vh-100">

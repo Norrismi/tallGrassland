@@ -27,6 +27,7 @@ import {
 
 
 const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
+ 
 
   const [selectedImg, setSelectedImg] = useState(null)
 
@@ -46,7 +47,8 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
       <>
     
 
-        <Gallery propertyID={propertyID} setSelectedImg={setSelectedImg} />
+        <Gallery  setSelectedImg={setSelectedImg} propertyID={propertyID}  />
+
         {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
 
         <div className="details__body">

@@ -1,37 +1,27 @@
-.list_checkout__container{
-display: flex;
-flex-direction: column;
+.list_checkout__container {
+    display: flex;
+    flex-direction: column;
 }
 
 
-
-
-.list_checkout__title{
+.list_checkout__title {
     display: flex;
     justify-content: center;
     font-size: 25px;
-    
 }
 
-.list_checkout__description{
+.list_checkout__description {
     font-size: 14px;
     color: red;
 }
 
-.list_checkout__price-btn-container{
+.list_checkout__price-btn-container {
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
-    /* border: var(--theme-border); */
-    /* padding: 30px; */
     border-radius: 10px;
     justify-content: center;
-   
-    
 }
 
-.list_checkout__price{
+.list_checkout__price {
     font-size: 30px;
-    /* font-weight: 500; */
-   
 }

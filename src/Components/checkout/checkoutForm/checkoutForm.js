@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import axios from "../../../utils";
+import './checkoutForm.css'
 
 const CheckoutForm = ({ cart, removeListing, markPending }) => {
   
@@ -78,10 +79,10 @@ const CheckoutForm = ({ cart, removeListing, markPending }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: "400px" }}>
+    <form onSubmit={handleSubmit} style={{ width: "400px" }}  >
       <CardElement onChange={handleChange} />
 
-      <button disabled={processing || disabled || succeeded}>
+      <button className='chcekoutForm__btn' disabled={processing || disabled || succeeded}>
         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
       </button>
 

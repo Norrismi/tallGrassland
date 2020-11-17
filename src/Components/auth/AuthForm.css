@@ -44,10 +44,6 @@ div>input {
     justify-content: flex-end;
     border-radius: 5px;
     padding: 5px;
-
-    /* background-color: white;
-      color: black; */
-
 }
 
 .auth__error-container {
