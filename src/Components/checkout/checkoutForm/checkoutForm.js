@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 // import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-import {removeCurrentListing} from '../../../store/actions/propertyActions'
-import {pendingListing} from '../../../store/actions/propertyActions'
+import { removeCurrentListing } from '../../../store/actions/propertyActions'
+import { pendingListing } from '../../../store/actions/propertyActions'
 import { connect } from "react-redux";
 // import "./checkoutForm.css";
 import { compose } from "redux";
@@ -13,7 +13,7 @@ import axios from "../../../utils";
 import './checkoutForm.css'
 
 const CheckoutForm = ({ cart, removeListing, markPending }) => {
-  
+
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
@@ -22,7 +22,7 @@ const CheckoutForm = ({ cart, removeListing, markPending }) => {
   const [processing, setProcessing] = useState("");
   const [succeeded, setSucceeded] = useState(false);
   const [clientSecret, setClientSecret] = useState(true);
-  
+
   const { price } = cart[0].property;
   // const product = { title, price };
   const stripePrice = Math.round(Number(price) * 100);
@@ -82,9 +82,13 @@ const CheckoutForm = ({ cart, removeListing, markPending }) => {
     <form onSubmit={handleSubmit} style={{ width: "400px" }}  >
       <CardElement onChange={handleChange} />
 
-      <button className='chcekoutForm__btn' disabled={processing || disabled || succeeded}>
+      <button className='checkoutForm__btn' disabled={processing || disabled || succeeded}>
         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
       </button>
+      <p className='checkoutForm__note'>For test payment use card number 0404 0404 0404 0404 and cvc 4444</p>
+      
+ 
+
 
       {error && <div>{error}</div>}
     </form>
@@ -94,7 +98,7 @@ const CheckoutForm = ({ cart, removeListing, markPending }) => {
 const mapDispatchToProps = (dispatch) => ({
   removeListing: (id) => dispatch(removeCurrentListing(id)),
   markPending: (propertyID) => dispatch(pendingListing(propertyID))
- 
+
 });
 
 

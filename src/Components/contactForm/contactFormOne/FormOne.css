@@ -2,6 +2,8 @@
     height: auto;
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
+    background-color: var(--theme-card-background-color);
+    margin-bottom: 10px;
 }
 
 .contact__one-title{
@@ -18,5 +20,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.contact__one-button-container > button{
+    background-color: var(--theme-standard-btn-background-color);
+    border: none;
+    padding: 7px;
 }
 

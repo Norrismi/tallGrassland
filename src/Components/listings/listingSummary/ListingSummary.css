@@ -1,6 +1,8 @@
 .ListingSummary__container {
     display: flex;
     flex-wrap: wrap;
+    /* background-color: #ace4aa; */
+    background-color:var(--theme-background-color);
 }
 
 .ListingSummary {
@@ -10,7 +12,8 @@
 }
 
 .ListingSummary_title-link {
-    color: green;
+    color: var(--theme-font-color);
+    background-color: white;
 }
 
 
@@ -34,15 +37,18 @@ a.ListingSummary_title-link:hover{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
+   
 
 }
 
 .ListingSummary__pending {
-    height: 50px;
-    width: 90px;
-    background-color: orange;
+    /* height: 50px;
+    width: 90px; */
+    height: 40px;
+    width: 75px;
+    background-color: var(--theme-special-btn-background-color);
     border-radius: 5px 2px 5px 5px;
-    padding: 14px;
+    padding: 8px;
     color: white;
     grid-row: 1;
 }
@@ -68,6 +74,7 @@ a.ListingSummary_title-link:hover{
 
 div.card-body{
     padding: 0px;
+    background-color: white;
 }
 
 .ListingSummary__title {
@@ -87,6 +94,7 @@ div.card-body{
 
 .ListingSummary__description {
     display: flex;
+   
     margin: 20px 20px 10px 20px;
     line-height: 16px;
     font-size: 12px;
@@ -107,8 +115,9 @@ div.card-body{
 }
 
 a.btn.btn-primary.ListingSummary__btn{
-    background-color: black;
+    background-color: var(--theme-standard-btn-background-color);
     border-style: none;
+    padding: 7px;
 }
 
 a.btn.btn-primary.ListingSummary__btn:hover {

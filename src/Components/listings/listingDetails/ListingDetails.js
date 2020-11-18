@@ -91,7 +91,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       </div>
 
                       <button
-                        className="details__reserve-button btn btn-warning"
+                        className="details__reserve-button"
                         onClick={() => addToCart(propertyID, property)}
                       >
                         Reserve Now

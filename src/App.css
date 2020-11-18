@@ -1,10 +1,34 @@
 *{
   margin: 0px;
+  
 }
 
 :root{
-  --theme-color: #333;
-  --theme-font-color: green;
+  --theme-color: #022b3a;
+  --theme-font-color: #058c42;
   --theme-border:  solid 1px lightgray;
   --theme-card-border-radius:  5px;
+  --theme-background-color: #dff3e3;
+  --theme-card-background-color: white;
+  --theme-standard-btn-background-color: #6d8a96;
+  --theme-special-btn-background-color: #e26d5c;
 }
+
+
+
+/* button
+background-color: var(--theme-standard-btn-background-color);
+border: none;
+padding: 7px; */
+
+
+
+/* Reserve Button ---- #e8998d
+
+Dark Font ---- #022b3a
+
+Muted Grey --- #6d8a96
+
+background ---- #dff3e3
+
+Green font #058c42 */

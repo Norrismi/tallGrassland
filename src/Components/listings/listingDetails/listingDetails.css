@@ -4,6 +4,7 @@
 
 .details__body {
     display: flex;
+    background-color: var(--theme-background-color);
 
 }
 
@@ -11,6 +12,7 @@
     display: flex;
     flex: 1;
     justify-content: center;
+    background-color: var(--theme-background-color);
 }
 
 .details__title {
@@ -64,6 +66,7 @@
     justify-content: flex-end;
     font-size: 20px;
     align-items: center;
+   
 }
 
 
@@ -74,6 +77,10 @@
 
 .details__reserve-button {
     color: white !important;
+    background-color: var(--theme-special-btn-background-color);
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
 }
 
 .details__description {
@@ -109,4 +116,8 @@
 
 .details__info-label {
     font-size: 13px;
+}
+
+.details__right-side{
+    background-color: var(--theme-background-color);
 }

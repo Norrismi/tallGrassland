@@ -90,12 +90,15 @@ const ListingSummary = ({ properties }) => {
                         {property.county}
                       </strong>
                     </div>
+                
+
                     <Link
                       className="btn btn-primary ListingSummary__btn"
                       to={"/property/" + property.id}
                     >
                       View
                     </Link>
+                   
                   </div>
                 </div>
               </div>

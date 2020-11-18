@@ -1,4 +1,4 @@
-.chcekoutForm__btn{
+.checkoutForm__btn{
 
     color: white;
     background-color: green;
@@ -7,4 +7,14 @@
     padding: 5px;
 
     /* button theme ///////////////////// */
+}
+
+.checkoutForm__note{
+    display: flex;
+    flex-direction: column;
+   
+    padding: 10px;
+    font-style: italic;
+    font-size: 14px;
+    
 }

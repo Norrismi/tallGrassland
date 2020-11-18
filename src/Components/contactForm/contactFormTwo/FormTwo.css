@@ -1,8 +1,15 @@
 .contact{
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
+    background-color: var(--theme-card-background-color);
 }
 
 .contact__title{
     color: var(--theme-font-color)
+}
+
+.contact > button{
+    background-color: var(--theme-standard-btn-background-color);
+    border: none;
+    padding: 7px;
 }
