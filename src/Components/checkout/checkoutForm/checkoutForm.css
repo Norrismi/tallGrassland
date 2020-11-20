@@ -1,12 +1,16 @@
 .checkoutForm__btn{
-
     color: white;
-    background-color: green;
-    margin-top: 10px;
+    background-color: var(--theme-standard-btn-background-color);
+    margin-top: 15px;
     border-radius: 5px;
-    padding: 5px;
-
-    /* button theme ///////////////////// */
+    padding: 7px;
+    border: none;
+}
+.checkoutForm__btn:hover{
+    color: var(--theme-hover-color);
+    background-color: var(--theme-standard-btn-background-color);
+    cursor: pointer;
+ 
 }
 
 .checkoutForm__note{

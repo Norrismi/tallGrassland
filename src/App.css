@@ -4,7 +4,7 @@
 }
 
 :root{
-  --theme-color: #022b3a;
+  --theme-hover-color: #022b3a;
   --theme-font-color: #058c42;
   --theme-border:  solid 1px lightgray;
   --theme-card-border-radius:  5px;

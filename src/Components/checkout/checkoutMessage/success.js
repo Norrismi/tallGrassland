@@ -1,12 +1,6 @@
-
-
-//// File Moved see if still works !!!!!!!
-
-
-
 import React from "react";
 import "./success.css";
-import greenCheck from "../../../../assets/greenCheck.png";
+import greenCheck from "../../../assets/greenCheck.png";
 
 const success = () => {
   return (

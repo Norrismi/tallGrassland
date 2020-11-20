@@ -10,7 +10,8 @@ import PhotoUpload from './Components/listings/photoUpload/PhotoUpload'
 // import imageGrid from './Components/listings/photoUpload/imageGrid/imageGrid'
 import SignIn from "./Components/auth/SignIn";
 import SignUp from "./Components/auth/SignUp";
-import Success from './Components/checkout/checkoutMessage/success/success'
+import SignOut from './Components/auth/SignOut'
+import Success from './Components/checkout/checkoutMessage/success'
 import "font-awesome/css/font-awesome.min.css";
 import Footer from "./Components/nav/Footer/Footer";
 import { Elements } from "@stripe/react-stripe-js";
@@ -26,6 +27,7 @@ function App() {
         {/* <Route path={"/sign_out"} component={Sign_out} /> */}
         <Route path={"/sign_up"} component={SignUp} />
         <Route path={"/sign_in"} component={SignIn} />
+        <Route path={"/sign_out"} component={SignOut} />
         <Route path={"/upload"} component={PhotoUpload} />
         {/* <Route path={"/images"} component={imageGrid} /> */}
         <Route path={"/success"} component={Success} />

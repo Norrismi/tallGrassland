@@ -96,8 +96,8 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       >
                         Reserve Now
                       </button>
-
-                      <div className="details__button"></div>
+{/* 
+                      <div className="details__button"></div> */}
                     </div>
                   </div>
                 </li>

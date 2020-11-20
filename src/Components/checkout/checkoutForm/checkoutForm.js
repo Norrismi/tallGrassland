@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-// import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-
 import { removeCurrentListing } from '../../../store/actions/propertyActions'
 import { pendingListing } from '../../../store/actions/propertyActions'
 import { connect } from "react-redux";
-// import "./checkoutForm.css";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import axios from "../../../utils";
 import './checkoutForm.css'
+// import { loadStripe } from "@stripe/stripe-js";
 
 const CheckoutForm = ({ cart, removeListing, markPending }) => {
 

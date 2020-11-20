@@ -3,7 +3,8 @@
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
     background-color: var(--theme-card-background-color);
-    margin-bottom: 10px;
+    margin-top: 25px;
+    max-height: 200px;
 }
 
 .contact__one-title{
@@ -28,3 +29,8 @@
     padding: 7px;
 }
 
+.contact__one-button-container > button:hover{
+    background-color: var(--theme-standard-btn-background-color);
+    color: var(--theme-hover-color)
+   
+}

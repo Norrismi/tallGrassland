@@ -13,3 +13,9 @@
     border: none;
     padding: 7px;
 }
+
+.contact > button:hover{
+    background-color: var(--theme-standard-btn-background-color);
+    color: var(--theme-hover-color)
+   
+}

@@ -1,8 +1,9 @@
 .ListingSummary__container {
     display: flex;
     flex-wrap: wrap;
-    /* background-color: #ace4aa; */
+    justify-content: center;
     background-color:var(--theme-background-color);
+    padding: 40px;
 }
 
 .ListingSummary {
@@ -20,7 +21,7 @@
 
 a.ListingSummary_title-link:hover{
     text-decoration: none;
-    color: grey;
+    color: var(--theme-hover-color);
 }
 
 
@@ -42,8 +43,6 @@ a.ListingSummary_title-link:hover{
 }
 
 .ListingSummary__pending {
-    /* height: 50px;
-    width: 90px; */
     height: 40px;
     width: 75px;
     background-color: var(--theme-special-btn-background-color);
@@ -121,8 +120,7 @@ a.btn.btn-primary.ListingSummary__btn{
 }
 
 a.btn.btn-primary.ListingSummary__btn:hover {
-    color: grey;
-
+    color: var(--theme-color);
 }
 
 

@@ -21,8 +21,8 @@ const SignedInLinks = (props) => {
 
 
       <Link className="header__link p-2 mr-5" to={'/checkout'}>
-        <div className="header__checkout__number">{(cart?.length)}</div>
-        <FaShoppingCart />
+        <div className="header__checkout-number">{(cart?.length)}</div>
+        <FaShoppingCart className="header__checkout-cart"/>
       </Link>
 
 

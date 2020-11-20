@@ -17,9 +17,13 @@
     text-decoration: none;
     color: orange;
   }
-.header__checkout__number {
+.header__checkout-number {
     display: flex;
     justify-content: center;
   
   
+}
+
+.header__checkout-cart{
+  cursor: pointer;
 }

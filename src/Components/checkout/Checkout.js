@@ -6,16 +6,16 @@ import ListingCheckout from "./listingChckout/ListingCheckout";
 import CheckoutForm from "./checkoutForm/checkoutForm";
 import "./checkout.css";
 
-const Checkout = ({cart}) => {
+const Checkout = ({ cart }) => {
 
 
   return (
-    <div className="d-flex justify-content-center min-vh-100">
+    <div className="checkout d-flex justify-content-center min-vh-100">
       <div className="checkoutPage">
         {cart && cart.length ? (
           <div className="checkoutPage__container">
-            <h3 className="checkoutPage__title">
-              <div id="title" className="mt-5">
+            <h3 className="checkoutPage__title-container">
+              <div id="title" className="checkoutPage__title mt-5 m-4">
                 This is your selected property ready for checkout.
               </div>
             </h3>
