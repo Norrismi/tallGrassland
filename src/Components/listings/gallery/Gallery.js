@@ -9,7 +9,11 @@ import './gallery.css'
 
 const Gallery = ({ propertyID, setSelectedImg }) => {
 
+// This component maps over images and returns specific property urls
+
+                                //Example of propertyID: 2MNgJ7bJk1b0rg0oy8BJ
     const { docs } = useFirestore(propertyID)
+    console.log(docs)
 
     return (
 
@@ -17,21 +21,13 @@ const Gallery = ({ propertyID, setSelectedImg }) => {
             {docs && docs.map(doc => (
 
                 <div key={doc.url} className='gallery__img-container'
-                    onClick={() => setSelectedImg(doc.url)
-                        //console.log(e.target)
+                    onClick={() => setSelectedImg(doc.url)}>
 
-                    }
-                >
-                    <img src={doc.url} className='gallery__img' alt='gallery of propery pictures'
-
-                    />
-
+                    <img src={doc.url} className='gallery__img' alt='gallery of propery pictures'/>
                 </div>
             ))}
         </div>
-
     );
-
 }
 
 // export default Gallery;

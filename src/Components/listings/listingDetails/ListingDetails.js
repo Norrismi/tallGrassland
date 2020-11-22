@@ -27,7 +27,9 @@ import {
 
 
 const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
- 
+
+  console.log(propertyID)
+
 
   const [selectedImg, setSelectedImg] = useState(null)
 
@@ -45,9 +47,9 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
   if (property) {
     return (
       <>
-    
 
-        <Gallery  setSelectedImg={setSelectedImg} propertyID={propertyID}  />
+
+        <Gallery setSelectedImg={setSelectedImg} propertyID={propertyID} />
 
         {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
 
@@ -96,7 +98,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       >
                         Reserve Now
                       </button>
-{/* 
+                      {/* 
                       <div className="details__button"></div> */}
                     </div>
                   </div>

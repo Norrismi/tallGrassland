@@ -78,6 +78,13 @@ class SignIn extends Component {
                 </button>
               </div>
 
+                Test email and PW
+                <br />
+                Email: land@gmail.com
+                <br />
+                PW: land123
+
+
               <div className="mt-3">
                 *You must sign in before reserving property.
               </div>
