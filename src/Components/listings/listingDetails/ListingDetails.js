@@ -1,5 +1,3 @@
-// This is the component that will be visited after the user clicks "see more"
-
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
@@ -11,11 +9,7 @@ import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
 import Gallery from '../gallery/Gallery'
 import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
-//import { checkDuplicate } from "../../../store/actions/propertyActions";
-
-// import FaMapMarkedAlt from "react-icons/fa";
 import {
-  // FaTh,
   FaVectorSquare,
   FaRegMap,
   FaRoad,
@@ -35,6 +29,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
 
 
+
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
   }
@@ -48,10 +43,10 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
     return (
       <>
 
-
         <Gallery setSelectedImg={setSelectedImg} propertyID={propertyID} />
 
         {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
+
 
         <div className="details__body">
           <div className="details__left-side">
@@ -98,8 +93,6 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       >
                         Reserve Now
                       </button>
-                      {/* 
-                      <div className="details__button"></div> */}
                     </div>
                   </div>
                 </li>

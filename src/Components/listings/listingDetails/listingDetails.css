@@ -1,19 +1,20 @@
-.card {
-    width: 42rem;
-}
-
 .details__body {
     display: flex;
     background-color: var(--theme-background-color);
-
+   
 }
 
 .details__left-side {
     display: flex;
     flex: 1;
     justify-content: center;
-    background-color: var(--theme-background-color);
+ 
 }
+
+.card {
+    width: 42rem; 
+}
+
 
 .details__title {
     font-size: 35px;
@@ -49,7 +50,7 @@
 
 .details__price {
     color: var(--theme-font-color);
-    font-size: 27px !important;
+    font-size: 27px;
 }
 
 .details__strike-price {
@@ -62,11 +63,12 @@
 
 .details__container-right {
     display: flex;
+    flex: 1;
     flex-direction: row;
     justify-content: flex-end;
     font-size: 20px;
     align-items: center;
-   
+
 }
 
 
@@ -76,16 +78,17 @@
 }
 
 .details__reserve-button {
-    color: white !important;
+    color: white;
     background-color: var(--theme-special-btn-background-color);
     border: none;
     border-radius: 5px;
     padding: 7px;
 }
 
- .details__reserve-button:hover{
+.details__reserve-button:hover {
     background-color: orangered;
-   
+    color: var(--theme-hover-color);
+
 }
 
 .details__description {
@@ -123,6 +126,3 @@
     font-size: 13px;
 }
 
-.details__right-side{
-    background-color: var(--theme-background-color);
-}
