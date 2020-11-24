@@ -26,11 +26,11 @@ const useStorage = (file) => {
 
 
             //saving to firestore ....add in firebase docID
-            collectionRef.add({url})
+             collectionRef.add({url})
 
             //collectionRef.doc().set({url}, {merge: true})
 
-            //collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({ gallery: { pic3: url } }, { merge: true })
+            //collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({ gallery: [url] }, { merge: true })
 
 
             //using Fire Storage
