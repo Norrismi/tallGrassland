@@ -10,6 +10,7 @@ const SignedOutLinks = () => {
       <Link to="/sign_in" className="header__link p-3">
         Sign In
       </Link>
+      <Link to="/faq" className="header__link p-3">FAQ</Link>
       <Link to="/" className="header__link p-3">Home</Link>
     </div>
   );

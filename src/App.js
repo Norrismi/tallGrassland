@@ -10,6 +10,7 @@ import SignIn from "./Components/auth/SignIn";
 import SignUp from "./Components/auth/SignUp";
 import SignOut from './Components/auth/SignOut'
 import Success from './Components/checkout/checkoutMessage/success'
+import FAQ from './Components/faq/FAQ'
 import "font-awesome/css/font-awesome.min.css";
 import Footer from "./Components/nav/Footer/Footer";
 import { Elements } from "@stripe/react-stripe-js";
@@ -23,7 +24,8 @@ function App() {
     <Router>
       <Header />
       <Switch>
-      
+
+        <Route path={"/faq"} component={FAQ} />
         <Route path={"/sign_up"} component={SignUp} />
         <Route path={"/sign_in"} component={SignIn} />
         <Route path={"/sign_out"} component={SignOut} />

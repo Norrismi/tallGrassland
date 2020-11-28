@@ -1,0 +1,46 @@
+.faq {
+    height: 100vh;
+    background-color: var(--theme-background-color);
+}
+
+.faq__title {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+
+}
+
+.faq__title-description{
+    display: flex;
+    justify-content: center;
+}
+
+.faq__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.faq__left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding: 40px;
+
+}
+
+
+.faq__right {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    flex: 1
+}
+
+.faq__left > h4, 
+.faq__right > h4{
+    margin-top: 40px;
+}

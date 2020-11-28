@@ -30,9 +30,9 @@ console.log(auth)
         }
     };
 
-    if(email != "admin@gmail.com"){
-          return <Redirect to='/'/>
-    }
+    // if(email != "admin@gmail.com"){
+    //       return <Redirect to='/'/>
+    // }
 
 
 

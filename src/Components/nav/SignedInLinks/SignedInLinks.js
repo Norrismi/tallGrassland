@@ -27,6 +27,7 @@ const SignedInLinks = (props) => {
 
 
       <Link className="header__link p-3" to='/sign_out' onClick={props.signOut}> Log Out</Link>
+      <Link to="/faq" className="header__link p-3">FAQ</Link>
       <Link className="header__link p-3" to="/">Home</Link>
     </div>
 
