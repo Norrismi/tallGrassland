@@ -43,7 +43,7 @@ class FormOne extends Component {
         <div className="contact__one-container form-row ">
           <div className="form-group col-4">
             <select
-              className="form-control"
+              className=" form-control form-control-location"
               id="whereDoYouWantToOwnLand"
               name="wantToOwn"
               value={this.state.wantToOwn}

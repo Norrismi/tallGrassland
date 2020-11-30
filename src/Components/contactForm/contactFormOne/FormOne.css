@@ -4,33 +4,86 @@
     border-radius: var(--theme-card-border-radius);
     background-color: var(--theme-card-background-color);
     margin-top: 25px;
-    max-height: 200px;
+    /* max-height: 200px; */
 }
 
-.contact__one-title{
+.contact__one-title {
     color: var(--theme-font-color)
 }
 
 
-.contact__one-container{
+.contact__one-container {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
-.contact__one-button-container{
+.contact__one-button-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.contact__one-button-container > button{
+.contact__one-button-container>button {
     background-color: var(--theme-standard-btn-background-color);
     border: none;
     padding: 7px;
 }
 
-.contact__one-button-container > button:hover{
+.contact__one-button-container>button:hover {
     background-color: var(--theme-standard-btn-background-color);
     color: var(--theme-hover-color)
-   
+}
+
+@media (max-width: 992px) {
+
+
+    .contact__one {
+        margin: 40px;
+    }
+
+    .contact__one-container {
+        flex-direction: column;
+    }
+
+    .form-group>select {
+        width: 284px;
+
+    }
+}
+
+/* ipad */
+@media (max-width: 768px) {
+
+
+    .contact__one {
+        margin: 40px;
+    }
+
+    .contact__one-container {
+        flex-direction: column;
+    }
+
+    .form-group>select {
+        width: 444px;
+
+    }
+}
+
+
+/* cell */
+@media (max-width: 480px) {
+
+
+    .contact__one {
+        margin: 40px;
+    }
+
+    .contact__one-container {
+        flex-direction: column;
+    }
+
+    .form-group>select {
+        width: 284px;
+
+    }
 }

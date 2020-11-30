@@ -10,7 +10,7 @@
 
 }
 
-.faq__title-description{
+.faq__title-description {
     display: flex;
     justify-content: center;
 }
@@ -40,7 +40,29 @@
     flex: 1
 }
 
-.faq__left > h4, 
-.faq__right > h4{
+.faq__left>h4,
+.faq__right>h4 {
     margin-top: 40px;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .faq {
+        height: 100%;
+    }
+
+    .faq__row {
+        flex-direction: column;
+    }
+
+    .faq__right {
+        padding-top: 0;
+    }
+
+
+    .faq__left {
+        padding-bottom: 0;
+    }
 }
