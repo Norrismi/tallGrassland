@@ -51,12 +51,22 @@
     }
 }
 
+/* ipad pro */
+@media (max-width: 1025px) {
+    
+    .contact__one {
+        height: 200px;
+    
+    }
+
+}
+
 /* ipad */
 @media (max-width: 768px) {
 
 
     .contact__one {
-        margin: 40px;
+        height: 350px;
     }
 
     .contact__one-container {
@@ -75,7 +85,7 @@
 
 
     .contact__one {
-        margin: 40px;
+        height: 380px;
     }
 
     .contact__one-container {

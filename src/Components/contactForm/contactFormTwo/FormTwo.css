@@ -40,11 +40,22 @@
 }
 
 
+/* cell plus */
+@media (max-width: 414px) {
+
+    .contact{
+        width: 332px;
+        margin: 0 40px 50px 40px;
+    }
+}
+
+
 /* cell */
-@media (max-width: 480px) {
+@media (max-width: 375px) {
 
-
-
-
+    .contact{
+        width: 332px;
+        margin: 0 20px 50px 20px;
+    }
 
 }
