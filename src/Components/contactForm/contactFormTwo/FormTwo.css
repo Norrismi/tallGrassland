@@ -19,3 +19,32 @@
     color: var(--theme-hover-color)
    
 }
+
+/* ipad pro */
+@media (max-width: 1025px) {
+
+    .contact{
+        width: 400px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
+
+/* ipad */
+@media (max-width: 768px) {
+    .contact{
+        width: 400px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* cell */
+@media (max-width: 480px) {
+
+
+
+
+
+}

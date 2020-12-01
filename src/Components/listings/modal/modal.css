@@ -1,20 +1,40 @@
-.modal__backdrop{
+.modal__backdrop {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 1;
 }
 
-.modal__backdrop img{
+.modal__backdrop img {
     display: block;
     max-width: 60%;
     max-height: 80%;
     margin: 100px auto;
-    box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
     border: 3px solid white;
- 
+
 }
 
+/* ipad */
+@media (max-width: 768px) {
+
+
+}
+
+
+/* cell */
+@media (max-width: 480px) {
+
+
+    .modal__backdrop img {
+        margin: 400px 0 0 10px;
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+
+
+}

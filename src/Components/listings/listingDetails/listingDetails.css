@@ -126,3 +126,64 @@
     font-size: 13px;
 }
 
+@media (max-width: 992px) {
+
+
+    .contact__one {
+        margin: 40px;
+    }
+
+    .contact__one-container {
+        flex-direction: column;
+    }
+
+    .form-group>select {
+        width: 284px;
+
+    }
+}
+
+
+/* ipad pro */
+@media (max-width: 1025px) {
+    .details__body {
+        display: flex;
+       flex-direction: column;
+    }
+    
+    .card, 
+.details__card{
+ margin: 0px;
+ padding-top: 0px;
+
+
+ 
+}
+
+}
+/* ipad */
+@media (max-width: 768px) {
+
+    .details__body {
+        display: flex;
+       flex-direction: column;
+    }
+
+}
+
+
+/* cell */
+@media (max-width: 480px) {
+
+
+
+
+
+.card, 
+.details__card{
+ width: auto;
+
+ 
+}
+
+}
