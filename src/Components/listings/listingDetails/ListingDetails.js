@@ -69,7 +69,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
                   <div className="details__container-price mb-2">
                     <div className="details__container-left">
-                      <div className="details__price mr-3">
+                      <div className="details__price">
                         ${property.price}
                       </div>
 
@@ -83,10 +83,10 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       </div>
                     </div>
                     <div className="details__container-right">
-                      <div className="details__down-payment mr-3">
+                      <div className="details__down-payment">
                         $199 Down Payment
                       </div>
-
+                 
                       <button
                         className="details__reserve-button"
                         onClick={() => addToCart(propertyID, property)}
@@ -117,8 +117,12 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                   <div className=" details__info-title  ">
                     Property Information
                   </div>
+
+
+
                   <div className="details__info-container   ">
-                    <div className=" details__info-acres d-flex flex-column m-3 align-items-center">
+
+                    <div className=" details__info-county">
                       <FaRegMap className="fa-icon" />
                       <div className="detials__font-color ">
                         {property.county}
@@ -126,7 +130,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <strong className="details__info-label">County</strong>
                     </div>
 
-                    <div className="details__info-acres  d-flex flex-column m-3 align-items-center">
+                    <div className="details__info-acres">
                       <FaVectorSquare className="fa-icon" />
                       <div className="detials__font-color ">
                         {property.acreage}
@@ -134,30 +138,30 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <strong className="details__info-label">Acres</strong>
                     </div>
 
-                    <div className="details__info-access d-flex flex-column m-3 align-items-center ">
+                    <div className="details__info-access">
                       <FaRoad className="fa-icon" />
                       <div className=" detials__font-color">Dirt Road</div>
                       <strong className="details__info-label">Access</strong>
                     </div>
 
-                    <div className="details__info-power d-flex flex-column m-3 align-items-center ">
+                    <div className="details__info-power">
                       <FaBolt className="fa-icon" />
                       <div className=" detials__font-color">Solar</div>
                       <strong className="details__info-label">Power</strong>
                     </div>
-                    <div className="details__info-zoning  d-flex flex-column m-3 align-items-center">
+                    <div className="details__info-zoning">
                       <FaIndustry className="fa-icon" />
                       <div className="detials__font-color ">Residential</div>
                       <strong className="details__info-label">Zoning</strong>
                     </div>
-                    <div className="details__info-cords d-flex flex-column m-3 align-items-center ">
+                    <div className="details__info-cord">
                       <FaMapMarkedAlt className="fa-icon" />
                       <div className="detials__font-color ">24, 81</div>
                       <strong className="details__info-label">
                         Coordinates
                       </strong>
                     </div>
-                    <div className="details__info-water d-flex flex-column m-3 align-items-center ">
+                    <div className="details__info-wate ">
                       <FaWater className="fa-icon" />
                       <div className="detials__font-color ">Well</div>
                       <strong className="details__info-label">Water</strong>

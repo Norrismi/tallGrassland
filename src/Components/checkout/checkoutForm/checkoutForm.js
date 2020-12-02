@@ -78,7 +78,10 @@ const CheckoutForm = ({ cart, removeListing, markPending }) => {
 
   return (
     <form onSubmit={handleSubmit} style={{ width: "400px" }}  >
+      <div className='checkoutForm__card-input'>
+
       <CardElement onChange={handleChange} />
+      </div>
 
       <button className='checkoutForm__btn' disabled={processing || disabled || succeeded}>
         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
