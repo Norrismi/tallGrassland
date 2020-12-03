@@ -1,13 +1,13 @@
-.checkout{
+.checkout {
     background-color: var(--theme-background-color);
-    height: 100vh;
+    height: 100%;
 }
 
 .checkoutPage {
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
     height: auto;
-    width: 800px;
+    width: auto;
     margin: 20px;
     background-color: white;
 }
@@ -20,6 +20,7 @@
 .checkoutPage__title {
     display: flex;
     justify-content: center;
+    margin: 50px 20px 30px 20px;
 }
 
 .checkoutPage__title-no-items {
@@ -34,7 +35,7 @@
 }
 
 
-.checkoutPage__container > div {
+.checkoutPage__container>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,45 +43,73 @@
 }
 
 
+
+
+
+@media (max-width: 1915px) {
+
+    .checkoutPage {
+        height: 600px;
+    }
+}
+
 @media (max-width: 1025px) {
 
+    .checkoutPage {
+        height: 600px;
+    }
 }
 
 
 @media (max-width: 768px) {
 
-
+    .checkoutPage {
+        height: 600px;
+    }
 }
 
 
 @media (max-width: 480px) {
+
+    .checkoutPage {
+        height: 670px;
+    }
+
+    .checkoutPage__title {
+        text-align: center;
+        margin: 50px 15px 30px 15px;
+        padding: 0px;
+
+    }
+
     .checkoutPage__title-no-items {
         text-align: center;
         margin: 0 30px;
         margin-top: 20%;
-    }
-    .checkoutPage {
-       
-        height: auto;
-        width: auto;
-        margin: 20px;
-       
     }
 }
 
 @media (max-width: 415px) {
 
+    .checkoutPage {
+        height: 670px;
+    }
+
+    .checkoutPage__title-container {
+        text-align: center;
+        margin: 0 7px;
+    }
+
+    .checkoutPage__title {
+        text-align: center;
+        margin: 50px 15px 30px 15px;
+    }
+
+
     .checkoutPage__title-no-items {
         text-align: center;
         margin: 0 30px;
         margin-top: 20%;
     }
 
-    .checkoutPage__title-container {
-        text-align: center;
-        margin: 0 20px;
-    }
-
-
- 
 }

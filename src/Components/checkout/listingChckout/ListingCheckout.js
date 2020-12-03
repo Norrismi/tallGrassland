@@ -26,7 +26,7 @@ const ListingCheckout = ({ cart, removeListing }) => {
                   </div>
 
         
-                  <div className="list_checkout__description text-muted m-2">
+                  <div className="list_checkout__description text-muted">
                     {listing.property.description}
                   </div>
 

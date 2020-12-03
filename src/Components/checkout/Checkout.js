@@ -15,7 +15,7 @@ const Checkout = ({ cart }) => {
         {cart && cart.length ? (
           <div className="checkoutPage__container">
             <h3 className="checkoutPage__title-container">
-              <div id="title" className="checkoutPage__title mt-5 m-4">
+              <div id="title" className="checkoutPage__title">
                 This is your selected property ready for checkout.
               </div>
             </h3>

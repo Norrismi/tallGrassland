@@ -1,7 +1,7 @@
 .checkoutForm__btn {
     color: white;
     background-color: var(--theme-standard-btn-background-color);
-    margin-top: 15px;
+    margin-top: 20px;
     border-radius: 5px;
     padding: 7px;
     border: none;
@@ -17,28 +17,29 @@
 .checkoutForm__note {
     display: flex;
     flex-direction: column;
-
-    padding: 10px;
+    margin-top: 20px;
     font-style: italic;
     font-size: 14px;
 
 }
 
-@media (max-width: 1025px) {}
 
 
-@media (max-width: 768px) {}
+
+@media (max-width: 768px) {
+  
+    .checkoutForm__note {
+        text-align: center;
+        margin: 20px 40px;
+     
+    }
+}
 
 
-@media (max-width: 480px) {}
-
-@media (max-width: 415px) {
+@media (max-width: 480px) {
 
     .checkoutForm__btn {
-
         margin-left: 30px;
-
-
     }
 
     .checkoutForm__card-input {
@@ -47,9 +48,25 @@
 
     .checkoutForm__note {
         text-align: center;
-        margin: 0 20px;
+        margin: 20px 40px;
      
+    }
+}
 
+@media (max-width: 415px) {
+
+    .checkoutForm__btn {
+        margin-left: 30px;
+    }
+
+    .checkoutForm__card-input {
+        margin: 0 30px;
+    }
+
+    .checkoutForm__note {
+        text-align: center;
+        margin: 20px 40px;
+     
     }
 
 
