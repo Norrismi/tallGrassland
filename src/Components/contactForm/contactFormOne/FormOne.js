@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./FormOne.css";
 import { userCommentOne } from "../../../store/actions/submissionActions";
 import { connect } from "react-redux";
-import {states} from '../../../utils'
-import {socialMedia} from '../../../utils'
+import { states } from '../../../utils'
+import { socialMedia } from '../../../utils'
 
 class FormOne extends Component {
   state = {
@@ -11,12 +11,19 @@ class FormOne extends Component {
     howFindUs: "",
     name: "",
     email: "",
+    disabled: true
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
 
     this.setState({ [name]: value });
+
+    if (event.target.value) {
+      this.setState({ disabled: false })
+    } else {
+      this.setState({ disabled: true })
+    }
   };
 
   handleSubmit = (event) => {
@@ -32,7 +39,7 @@ class FormOne extends Component {
   };
 
   render() {
-  
+
 
     return (
       <form className="contact__one p-4" onSubmit={this.handleSubmit}>
@@ -58,14 +65,14 @@ class FormOne extends Component {
           </div>
           <div className="form-group col-3">
             <select
-              className="form-control"
+              className="form-control form-control-find"
               id="howDidYouFindUs"
               name="howFindUs"
               value={this.state.howFindUs}
               onChange={this.handleChange}
             >
               <option style={{ display: "none" }}> How did you find us?</option>
-              {socialMedia && socialMedia.map((item) => <option key={item}>{item}</option> )}
+              {socialMedia && socialMedia.map((item) => <option key={item}>{item}</option>)}
             </select>
           </div>
           <div className="form-group col">
@@ -76,7 +83,7 @@ class FormOne extends Component {
               className="form-control"
               placeholder="Your Name"
               aria-describedby="nameInput"
-           
+
             />
           </div>
           <div className="form-group col">
@@ -88,7 +95,7 @@ class FormOne extends Component {
               className="form-control"
               aria-describedby="emailInput"
               placeholder="Enter email"
-            
+              required
             />
             {/* <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
@@ -96,7 +103,12 @@ class FormOne extends Component {
           </div>
         </div>
         <div className="contact__one-button-container">
-          <button type="submit" className="btn btn-success btn-sm">
+
+
+
+          <button type="submit"
+            className="btn btn-success btn-sm"
+            disabled={this.state.disabled} >
             Submit
           </button>
         </div>

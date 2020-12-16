@@ -12,12 +12,19 @@ class ContactFormTwo extends Component {
     name: "",
     email: "",
     comment: "",
+    disabled: true
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
 
     this.setState({ [name]: value });
+
+    if(event.target.value){
+      this.setState({ disabled: false})
+    }else{
+      this.setState({disabled: true})
+    }
   };
 
   handleSubmit = (event) => {
@@ -75,7 +82,6 @@ class ContactFormTwo extends Component {
             className="form-control"
             placeholder="Your Name"
             aria-describedby="nameInput"
-            required
           />
         </div>
         <div className="form-group">
@@ -106,7 +112,10 @@ class ContactFormTwo extends Component {
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button 
+        type="submit" 
+        className="btn btn-success btn-sm " 
+        disabled={this.state.disabled}>
           Submit
         </button>
       </form>

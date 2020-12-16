@@ -4,7 +4,6 @@
     border-radius: var(--theme-card-border-radius);
     background-color: var(--theme-card-background-color);
     margin-top: 25px;
-    /* max-height: 200px; */
 }
 
 .contact__one-title {
@@ -14,7 +13,7 @@
 
 .contact__one-container {
     display: flex;
-    /* align-items: center; */
+   
 }
 
 .contact__one-button-container {
@@ -23,10 +22,20 @@
     justify-content: flex-end;
 }
 
+
+.contact__one-button-container>button:disabled {
+    background-color: grey;
+    color: black;
+    border: none;
+    padding: 7px;  
+}
+
+
 .contact__one-button-container>button {
     background-color: var(--theme-standard-btn-background-color);
     border: none;
     padding: 7px;
+    
 }
 
 .contact__one-button-container>button:hover {
@@ -34,39 +43,28 @@
     color: var(--theme-hover-color)
 }
 
-@media (max-width: 992px) {
 
 
-    .contact__one {
-        margin: 40px;
-    }
 
-    .contact__one-container {
-        flex-direction: column;
-    }
 
-    .form-group>select {
-        width: 284px;
 
-    }
-}
 
-/* ipad pro */
-@media (max-width: 1025px) {
-    
+
+
+@media (max-width: 2000px) {
+
     .contact__one {
         height: 200px;
-    
     }
 
 }
 
-/* ipad */
-@media (max-width: 768px) {
+@media (max-width: 995px) {
 
 
     .contact__one {
-        height: 350px;
+        height: 375px;
+        width: 335px;
     }
 
     .contact__one-container {
@@ -74,26 +72,7 @@
     }
 
     .form-group>select {
-        width: 444px;
-
-    }
-}
-
-
-/* cell */
-@media (max-width: 480px) {
-
-
-    .contact__one {
-        height: 380px;
-    }
-
-    .contact__one-container {
-        flex-direction: column;
-    }
-
-    .form-group>select {
-        width: 284px;
+        width: 900px;
 
     }
 }

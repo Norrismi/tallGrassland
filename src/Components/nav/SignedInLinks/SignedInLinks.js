@@ -15,20 +15,19 @@ const SignedInLinks = (props) => {
 
   return (
 
-    <div className="signed_in_links d-flex flex-row ">
-      <li className=" p-3 text-white" to='/'> Hello,  {email && email}
-      </li>
+    <div className="signed_in_links  ">
 
 
-      <Link className="header__link p-2 mr-5" to={'/checkout'}>
+      <li className="text-white" to='/'> Hello,  {email && email}</li>
+      <Link className="header__link cart-container" to={'/checkout'}>
         <div className="header__checkout-number">{(cart?.length)}</div>
         <FaShoppingCart className="header__checkout-cart"/>
       </Link>
 
 
-      <Link className="header__link p-3" to='/sign_out' onClick={props.signOut}> Log Out</Link>
-      <Link to="/faq" className="header__link p-3">FAQ</Link>
-      <Link className="header__link p-3" to="/">Home</Link>
+      <Link to="/faq" className="header__link">FAQ</Link>
+      <Link className="header__link" to="/">Home</Link>
+      <Link className="header__link" to='/sign_out' onClick={props.signOut}> Log Out</Link>
     </div>
 
   );

@@ -28,7 +28,6 @@ class SignUp extends Component {
   };
 
   render() {
-    //let { formErrors } = this.state;
 
     const { auth, authError } = this.props;
 
@@ -84,7 +83,10 @@ class SignUp extends Component {
                 />
               </div>
 
+              <div className='auth__error-container'>
+
               {authError ?   <p className="auth__error mt-3">{authError}</p> : null}
+              </div>
 
               <br />
 

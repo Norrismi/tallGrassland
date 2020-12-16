@@ -100,25 +100,21 @@
 .details__info-title {
     font-size: 25px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .details__info-container {
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
-
+    padding-bottom: 30px;
 }
 
 .details__info-container>div {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
 }
 
 .fa-icon {
@@ -308,6 +304,7 @@
         height: 100px;
         width: 100px;
         margin: 10px;
+       
 
     }
 

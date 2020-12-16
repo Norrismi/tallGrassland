@@ -58,12 +58,13 @@ div>input {
 
 .auth__error-container {
     display: flex;
-    flex-direction: row;
-    width: 400px;
+    flex-direction: column;
+    width: 350px;
 }
 
 
-.auth__error {
-    justify-content: center;
+.auth__error {  
+  
+    text-align: center;
     color: red;
 }

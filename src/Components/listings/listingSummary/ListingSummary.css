@@ -78,9 +78,9 @@ div.card-body{
 
 .ListingSummary__title {
     display: flex;
+    text-align: center;
     margin: 20px 20px 0px 20px;
     font-size: 25px;
-    justify-content: center;
 }
 
 .price__container {
