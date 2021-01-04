@@ -9,6 +9,7 @@ import FormTwo from "../../contactForm/contactFormTwo/FormTwo";
 import Gallery from '../gallery/Gallery'
 import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
+import ListingNotes from './listingNotes'
 import {
   FaVectorSquare,
   FaRegMap,
@@ -76,7 +77,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <div className="details__strike-price text-muted">
                         <CurrencyFormat
                           renderText={(value) => <div>${value}</div>}
-                          value={property.strikePrice.toFixed(2)}
+                          value={property.strikePrice}
                           displayType={"text"}
                           thousandSeparator={true}
                         />
@@ -140,35 +141,38 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
                     <div className="details__info-access">
                       <FaRoad className="fa-icon" />
-                      <div className=" detials__font-color">Dirt Road</div>
+                      <div className=" detials__font-color">{property.access}</div>
                       <strong className="details__info-label">Access</strong>
                     </div>
 
                     <div className="details__info-power">
                       <FaBolt className="fa-icon" />
-                      <div className=" detials__font-color">Solar</div>
+                      <div className=" detials__font-color">{property.power}</div>
                       <strong className="details__info-label">Power</strong>
                     </div>
                     <div className="details__info-zoning">
                       <FaIndustry className="fa-icon" />
-                      <div className="detials__font-color ">Residential</div>
+                      <div className="detials__font-color ">{property.zoning}</div>
                       <strong className="details__info-label">Zoning</strong>
                     </div>
                     <div className="details__info-cord">
                       <FaMapMarkedAlt className="fa-icon" />
-                      <div className="detials__font-color ">24, 81</div>
+                      <div className="detials__font-color ">{property.coordinates}</div>
                       <strong className="details__info-label">
-                        Coordinates
+              
+                      Coordinates
                       </strong>
                     </div>
-                    <div className="details__info-wate ">
+                    <div className="details__water-container ">
                       <FaWater className="fa-icon" />
-                      <div className="detials__font-color ">Well</div>
+                      <div className="detials__water-info ">{property.water}</div>
                       <strong className="details__info-label">Water</strong>
                     </div>
+        
                   </div>
                 </li>
               </ul>
+          <ListingNotes/>
             </div>
           </div>
           <div className="details__right-side mr-4 mt-4 ">

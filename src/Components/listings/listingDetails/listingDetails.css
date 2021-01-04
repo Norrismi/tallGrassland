@@ -111,7 +111,7 @@
     padding-bottom: 30px;
 }
 
-.details__info-container>div {
+.details__info-container > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,6 +131,30 @@
 
 .details__info-label {
     font-size: 13px;
+}
+
+.details__info-water{
+  
+}
+
+.notes_container{
+ padding: 12px 20px;
+}
+
+.notes_container-title{
+    font-size: 25px;
+    font-weight: 400;
+    color:black;
+}
+
+#notes_important-title{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.notes_container>ul>li{
+   
+    font-weight: bold;
 }
 
 @media (max-width: 992px) {
