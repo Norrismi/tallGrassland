@@ -10,6 +10,7 @@ import Gallery from '../gallery/Gallery'
 import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
 import ListingNotes from './listingNotes'
+import ListingMap from './listingMap'
 import {
   FaVectorSquare,
   FaRegMap,
@@ -173,6 +174,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                 </li>
               </ul>
           <ListingNotes/>
+          <ListingMap {...property.coordinates}/>
             </div>
           </div>
           <div className="details__right-side mr-4 mt-4 ">
