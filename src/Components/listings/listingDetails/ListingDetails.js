@@ -11,6 +11,10 @@ import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
 import ListingNotes from './listingNotes'
 import ListingMap from './listingMap'
+
+
+
+import './listingDetails.css'
 import {
   FaVectorSquare,
   FaRegMap,
@@ -24,12 +28,7 @@ import {
 
 const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
-  console.log(propertyID)
-
-
   const [selectedImg, setSelectedImg] = useState(null)
-
-
 
 
   if (cart && cart.length) {
@@ -42,6 +41,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
 
   if (property) {
+
     return (
       <>
 
@@ -88,7 +88,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <div className="details__down-payment">
                         $199 Down Payment
                       </div>
-                 
+
                       <button
                         className="details__reserve-button"
                         onClick={() => addToCart(propertyID, property)}
@@ -158,10 +158,10 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                     </div>
                     <div className="details__info-cord">
                       <FaMapMarkedAlt className="fa-icon" />
-                      <div className="detials__font-color ">{property.coordinates}</div>
+                      <div className="detials__font-color ">{`${property.coords[0]}, ${property.coords[1]} `}</div>
                       <strong className="details__info-label">
-              
-                      Coordinates
+
+                        Coordinates
                       </strong>
                     </div>
                     <div className="details__water-container ">
@@ -169,12 +169,12 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <div className="detials__water-info ">{property.water}</div>
                       <strong className="details__info-label">Water</strong>
                     </div>
-        
+
                   </div>
                 </li>
               </ul>
-          <ListingNotes/>
-          <ListingMap {...property.coordinates}/>
+              <ListingMap {...property.coords}/>
+              <ListingNotes />
             </div>
           </div>
           <div className="details__right-side mr-4 mt-4 ">
