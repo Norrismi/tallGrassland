@@ -11,9 +11,6 @@ import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
 import ListingNotes from './listingNotes'
 import ListingMap from './listingMap'
-
-
-
 import './listingDetails.css'
 import {
   FaVectorSquare,
@@ -91,7 +88,8 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
                       <button
                         className="details__reserve-button"
-                        onClick={() => addToCart(propertyID, property)}
+                        // onClick={() => addToCart(propertyID, property)}
+                        onClick={() => window.open(property.reserveLink)}
                       >
                         Reserve Now
                       </button>
@@ -111,7 +109,7 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                 <li className="list-group-item ">
                   <div className="details__description">Description</div>
                   <p className="details__description-paragraph text-muted mt-3">
-                    {property.description}
+                    {property.largeDescription}
                   </p>
                 </li>
 
@@ -158,15 +156,15 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                     </div>
                     <div className="details__info-cord">
                       <FaMapMarkedAlt className="fa-icon" />
-                      <div className="detials__font-color ">{`${property.coords[0]}, ${property.coords[1]} `}</div>
+                      <div className="detials__font-color ">{`${property.coords[0]}, ${property.coords[1]}`}</div>
                       <strong className="details__info-label">
 
                         Coordinates
                       </strong>
                     </div>
-                    <div className="details__water-container ">
+                    <div className="details__info-water">
                       <FaWater className="fa-icon" />
-                      <div className="detials__water-info ">{property.water}</div>
+                      <div className="detials__font-color ">{property.water}</div>
                       <strong className="details__info-label">Water</strong>
                     </div>
 

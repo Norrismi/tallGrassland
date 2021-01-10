@@ -134,7 +134,7 @@
 }
 
 .details__info-water{
-  
+    color: var(--theme-font-color);
 }
 
 .notes_container{
@@ -157,8 +157,14 @@
     font-weight: bold;
 }
 
+.map_container{
+    padding: 1px;
+}
+
+
 .map_red-pin{
     max-width: 20%;
+  
 }
 
 @media (max-width: 992px) {

@@ -9,14 +9,15 @@ const ListingMap = (props) => {
         latitude: props[0],
         longitude: props[1],
         zoom: 17,
-        height: '100vh',
+        height: '500px',
         width: '100%',
 
     });
 
 
+
     return (
-        <div>
+        <div className='map_container'>
             <ReactMapGL {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 mapStyle='mapbox://styles/norrismi/ckjj9pi7n0ez01as1sk0z1hmo'
@@ -24,8 +25,8 @@ const ListingMap = (props) => {
                     setViewport(viewport)
                 }}
             >
-                <Marker latitude={props[0]} longitude={props[1]}>
-                    <div><img className='map_red-pin' src={red_pin} alt='red pin marker' /></div>
+                <Marker className='map_marker-container' latitude={props[0]} longitude={props[1]}>
+                    <img className='map_red-pin' src={red_pin} alt='marker of property' />
                 </Marker>
             </ReactMapGL>
         </div>
