@@ -53,10 +53,7 @@ const ListingSummary = ({ properties }) => {
 
                   <div className="price__container">
                     <span className="ListingSummary__price__strike">
-                      {/* ${(property.price+100 + Math.random()*100).toFixed(2)} */}
-
-                      {/* <FormatCurrency property={property}/> */}
-
+              
                       <CurrencyFormat
                         renderText={(value) => <div>${value}</div>}
                         value={property.strikePrice

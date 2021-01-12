@@ -9,9 +9,6 @@ import './gallery.css'
 
 const Gallery = ({ propertyID, setSelectedImg }) => {
 
-    // This component maps over images and returns specific property urls
-
-                                    //Example of propertyID: 2MNgJ7bJk1b0rg0oy8BJ
     const { docs } = useFirestore(propertyID)
     console.log(docs)
 

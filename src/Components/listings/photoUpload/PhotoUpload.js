@@ -4,16 +4,16 @@ import "./photoUplaod.css";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { Redirect } from "react-router-dom";
 
-const PhotoUpload = ({auth}) => {
 
-console.log(auth)
+const PhotoUpload = ({ auth }) => {
+
+    console.log(auth)
 
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
 
-    const {email} = auth
+
 
 
     const types = ["image/png", "image/jpeg"];
@@ -30,11 +30,6 @@ console.log(auth)
         }
     };
 
-    // if(email != "admin@gmail.com"){
-    //       return <Redirect to='/'/>
-    // }
-
-
 
     return (
         <form className="upload__container">
@@ -50,7 +45,6 @@ console.log(auth)
     );
 };
 
-// export default PhotoUpload;
 
 const mapStateToProps = (state) => {
 

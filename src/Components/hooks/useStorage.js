@@ -9,9 +9,8 @@ const useStorage = (file) => {
 
 
     useEffect(() => {
-        //refs
         const storageRef = projectStorage.ref(file.name)
-        const collectionRef = projectFirestore.collection('euYnO7W4An9htBnEvFHJ')
+        const collectionRef = projectFirestore.collection('i7yOgSf7bsLkUP5Lk6sx')
 
 
         storageRef.put(file).on('state_changed', (snap) => {
@@ -25,15 +24,9 @@ const useStorage = (file) => {
             const url = await storageRef.getDownloadURL()
 
 
-            //saving to firestore ....add in firebase docID
-             collectionRef.add({url})
+          
+             collectionRef.add({url, property: 'Grinstead'})
 
-            //collectionRef.doc().set({url}, {merge: true})
-
-            //collectionRef.doc('2MNgJ7bJk1b0rg0oy8BJ').set({ gallery: [url] }, { merge: true })
-
-
-            //using Fire Storage
             setUrl(url)
         })
     }, [file])
