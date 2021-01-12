@@ -3,7 +3,6 @@
 
 
 .env
-env.json
 # dependencies
 **node_modules
 
