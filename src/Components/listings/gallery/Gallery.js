@@ -10,7 +10,7 @@ import './gallery.css'
 const Gallery = ({ propertyID, setSelectedImg }) => {
 
     const { docs } = useFirestore(propertyID)
-    console.log(docs)
+  
 
     return (
 

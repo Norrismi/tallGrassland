@@ -13,10 +13,11 @@ import Success from './Components/checkout/checkoutMessage/success'
 import FAQ from './Components/faq/FAQ'
 import "font-awesome/css/font-awesome.min.css";
 import Footer from "./Components/nav/Footer/Footer";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+import NotFound from './Components/nav/NotFound/NotFound'
 
-const stripePromise = loadStripe("pk_test_JGPju7lamDwFKbqHzTgS7VJF004NgvW8xK");
+
+
+
 
 function App() {
 
@@ -33,9 +34,9 @@ function App() {
         <Route path={"/success"} component={Success} />
         <Route path={"/property/:id"} component={ListingDetails} />
         <Route exact path={"/"} component={dashboard} />
-        <Elements stripe={stripePromise}>
-          <Route path={"/checkout"} component={CheckOut} />
-        </Elements>
+        <Route path={"/checkout"} component={CheckOut} />
+        <Route path="*" component={NotFound} />
+
       </Switch>
       <Footer />
     </Router>

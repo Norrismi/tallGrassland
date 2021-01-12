@@ -1,0 +1,11 @@
+.notfound__container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--theme-background-color);
+}
+
+.notfound__title{
+    align-self: center;
+    color: var(--theme-font-color)
+}
