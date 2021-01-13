@@ -78,11 +78,11 @@ class SignIn extends Component {
                 </button>
               </div>
 
-                Test email and PW
+                {/* Test email and PW
                 <br />
                 Email: land@gmail.com
                 <br />
-                PW: land123
+                PW: land123 */}
 
 
               <div className="mt-3">

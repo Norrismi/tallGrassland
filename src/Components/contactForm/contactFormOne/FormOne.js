@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { states } from '../../../utils'
 import { socialMedia } from '../../../utils'
 
+
 class FormOne extends Component {
   state = {
     wantToOwn: "",
@@ -43,6 +44,7 @@ class FormOne extends Component {
 
     return (
       <form className="contact__one p-4" onSubmit={this.handleSubmit}>
+
         <h4 className="contact__one-title text-center mb-4">
           Let us help you find your perfect property!
         </h4>
@@ -112,6 +114,7 @@ class FormOne extends Component {
             Submit
           </button>
         </div>
+   
       </form>
     );
   }

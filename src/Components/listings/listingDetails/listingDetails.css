@@ -122,20 +122,26 @@
     height: 35px;
     margin-bottom: 10px;
     color: lightgray;
-
 }
 
 .detials__font-color {
     color: var(--theme-font-color);
 }
 
+.details__coords{
+   width: 95px;
+}
+
+.details__water{
+    width: 80px;
+    text-align: center;
+}
+
 .details__info-label {
     font-size: 13px;
 }
 
-.details__info-water{
-    color: var(--theme-font-color);
-}
+
 
 .notes_container{
  padding: 12px 20px;

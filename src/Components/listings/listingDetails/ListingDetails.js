@@ -143,30 +143,38 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <div className=" detials__font-color">{property.access}</div>
                       <strong className="details__info-label">Access</strong>
                     </div>
+                    
+                    <div className="details__info-cord">
+                      <FaMapMarkedAlt className="fa-icon" />
+                      <div className="detials__font-color details__coords ">{`${property.coords[0]}, ${property.coords[1]}`}</div>
+                      <strong className="details__info-label">
+
+                        Coordinates
+                      </strong>
+                    </div>
+
+                    <div className="details__info-water">
+                      <FaWater className="fa-icon" />
+                      <div className="detials__font-color details__water">{property.water}</div>
+                      <strong className="details__info-label">Water</strong>
+                    </div>
 
                     <div className="details__info-power">
                       <FaBolt className="fa-icon" />
                       <div className=" detials__font-color">{property.power}</div>
                       <strong className="details__info-label">Power</strong>
                     </div>
+
+
                     <div className="details__info-zoning">
                       <FaIndustry className="fa-icon" />
                       <div className="detials__font-color ">{property.zoning}</div>
                       <strong className="details__info-label">Zoning</strong>
                     </div>
-                    <div className="details__info-cord">
-                      <FaMapMarkedAlt className="fa-icon" />
-                      <div className="detials__font-color ">{`${property.coords[0]}, ${property.coords[1]}`}</div>
-                      <strong className="details__info-label">
 
-                        Coordinates
-                      </strong>
-                    </div>
-                    <div className="details__info-water">
-                      <FaWater className="fa-icon" />
-                      <div className="detials__font-color ">{property.water}</div>
-                      <strong className="details__info-label">Water</strong>
-                    </div>
+
+
+
 
                   </div>
                 </li>
