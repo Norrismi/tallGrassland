@@ -8,9 +8,9 @@ const ListingMap = (props) => {
 
     const [viewport, setViewport] = useState({
         latitude: props[0],
-        longitude: -89.9109,
-        // zoom: 17,
-        zoom: 5,
+        longitude: props[1],
+        zoom: 17,
+        // zoom: 5,
         height: '500px',
         width: '100%',
 
