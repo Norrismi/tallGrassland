@@ -21,7 +21,7 @@ const ListingMap = (props) => {
         <div className='map_container'>
             <ReactMapGL {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-                mapStyle='mapbox://styles/norrismi/ckjj9pi7n0ez01as1sk0z1hmo'
+                mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
                 onViewportChange={viewport => {
                     setViewport(viewport)
                 }}
