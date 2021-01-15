@@ -28,7 +28,7 @@ const ListingMap = (props) => {
                     setViewport(viewport)
                 }}
             >
-                <Marker className='map_marker-container' latitude={viewport.latitude} longitude={viewport.longitude}>
+                <Marker className='map_marker-container' latitude={props[0]} longitude={props[1]}>
                     <img className='map_red-pin' src={red_pin} alt='marker of property' />
                 </Marker>
             </ReactMapGL>
