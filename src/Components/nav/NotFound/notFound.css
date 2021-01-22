@@ -1,11 +1,29 @@
 .notfound__container{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: var(--theme-background-color);
 }
 
 .notfound__title{
     align-self: center;
-    color: var(--theme-font-color)
+    color: var(--theme-font-color);
+}
+
+.notfound__btn-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+a.btn.btn-primary.notfound__btn{
+    background-color: var(--theme-standard-btn-background-color);
+    border-style: none;
+
+ 
+}
+
+a.btn.btn-primary.notfound__btn:hover {
+    color: var(--theme-color);
 }

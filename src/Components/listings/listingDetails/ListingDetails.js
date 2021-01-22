@@ -32,9 +32,9 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
     return <Redirect to="/checkout" />;
   }
 
-  if (!auth.uid) {
-    return <Redirect to='/sign_in' />
-  }
+  // if (!auth.uid) {
+  //   return <Redirect to='/sign_in' />
+  // }
 
 
   if (property) {
