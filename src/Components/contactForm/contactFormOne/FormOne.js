@@ -50,7 +50,7 @@ class FormOne extends Component {
         </h4>
 
         <div className="contact__one-container form-row ">
-          <div className="form-group col-4">
+          <div className="form-group col-3.25">
             <select
               className=" form-control form-control-location"
               id="whereDoYouWantToOwnLand"
@@ -59,13 +59,13 @@ class FormOne extends Component {
               onChange={this.handleChange}
             >
               <option style={{ display: "none" }}>
-                Where do you want to own land?
+                Where do you want to own?
               </option>
               {states &&
                 states.map((item) => <option key={item}>{item}</option>)}
             </select>
           </div>
-          <div className="form-group col-3">
+          <div className="form-group col-3.25">
             <select
               className="form-control form-control-find"
               id="howDidYouFindUs"

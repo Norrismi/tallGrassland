@@ -2,6 +2,8 @@ import React from "react";
 import "./ListingSummary.css";
 import { Link } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
+import HowItWorks from '../../dashboard/how_it_works/HowItWorks'
+import About from '../../dashboard/about/About'
 
 // import FormatCurrency from '../formatCurrency'
 
@@ -95,6 +97,7 @@ const ListingSummary = ({ properties }) => {
                     >
                       View
                     </Link>
+
                    
                   </div>
                 </div>
@@ -102,6 +105,8 @@ const ListingSummary = ({ properties }) => {
             </div>
           );
         })}
+        <HowItWorks/>
+        <About/>
     </div>
   );
 };

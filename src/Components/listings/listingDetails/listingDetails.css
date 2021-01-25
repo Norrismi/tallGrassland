@@ -191,7 +191,7 @@
 }
 
 
-/* ipad pro */
+
 @media (max-width: 1025px) {
     .details__body {
         display: flex;
@@ -219,7 +219,7 @@
 
 }
 
-/* ipad */
+
 @media (max-width: 768px) {
 
     .details__body {
@@ -240,15 +240,9 @@
 }
 
 
-/* cell */
+
 @media (max-width: 414px) {
 
-    /* .card,
-    .details__card {
-        width: auto;
-
-
-    } */
 
     .details__cash-title {
         display: flex;

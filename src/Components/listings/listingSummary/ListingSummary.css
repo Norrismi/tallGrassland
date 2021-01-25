@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color:var(--theme-background-color);
-    padding: 40px;
 }
 
 .ListingSummary {
@@ -143,3 +142,35 @@ a.btn.btn-primary.ListingSummary__btn:hover {
     display: flex;
     justify-content: center;
 }
+
+
+@media (min-width: 320px) {
+
+    .ListingSummary {
+        margin: 20px 0 20px 0 ;
+    }
+    
+}
+
+@media (min-width: 768px) {
+
+    .ListingSummary {
+       
+        margin: 20px ;
+        width: 20rem;
+    
+    }
+    
+
+}
+
+/* @media (min-width: 1395px) {
+
+    .ListingSummary {
+        margin: 20px ;
+        width: 20rem;
+    
+    }
+    
+
+} */
