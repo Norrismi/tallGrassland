@@ -53,13 +53,13 @@ class FormOne extends Component {
           <div className="form-group col-3.25">
             <select
               className=" form-control form-control-location"
-              id="whereDoYouWantToOwnLand"
+              id="one-whereToOwn"
               name="wantToOwn"
               value={this.state.wantToOwn}
               onChange={this.handleChange}
             >
               <option style={{ display: "none" }}>
-                Where do you want to own?
+              Desired land location? 
               </option>
               {states &&
                 states.map((item) => <option key={item}>{item}</option>)}
@@ -68,7 +68,7 @@ class FormOne extends Component {
           <div className="form-group col-3.25">
             <select
               className="form-control form-control-find"
-              id="howDidYouFindUs"
+              id="one-howFindUs"
               name="howFindUs"
               value={this.state.howFindUs}
               onChange={this.handleChange}

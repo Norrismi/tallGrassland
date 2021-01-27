@@ -4,7 +4,7 @@ Real estate land selling website. Built to replace a website that I was paying y
 
 ## Technology used
 - React (React Router, React Hooks, ES 6)
-- Redux
+- Redux (Redux Thunk middleware)
 - Google Firebase (Authentication, Firestore, Storage)
 - Bootstrap
 - CSS (responsive design, BEM naming convention & CSS Variables)
@@ -21,7 +21,7 @@ Real estate land selling website. Built to replace a website that I was paying y
 
 ## Reflection
 
-Created Tall Grassland website after being tired of updating content in wordpress and also tired of paying someone else for a website that I could build on my own.<br />
+I created Tall Grassland website after being tired of updating content in wordpress and also tired of paying someone else for a website that I could build on my own.<br />
 
 Feeling the need to tackle React-Redux, this is the first project where I have implemented React-Redux. My knowledge has grown exponentially with this project, because every step needed further research inorder to overcome the task at hand. Something I felt was going to be straight forward like adding pictures, was not as easy as I thought, but I was able to incorporate react hooks and firebase storage. <br />
 

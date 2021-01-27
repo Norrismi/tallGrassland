@@ -44,8 +44,11 @@ class ContactFormTwo extends Component {
     
 
     return (
-      <form className="contact p-4" onSubmit={this.handleSubmit}>
-        <h3 className="contact__title text-center m-4">Stay Updated</h3>
+      <div className="contact__two-container ">
+
+     
+      <form className="contact__two p-4" onSubmit={this.handleSubmit}>
+        <h3 className="contact__two-title text-center m-4">Stay Updated</h3>
         <div className="form-group">
           <select
             className="form-control"
@@ -55,7 +58,8 @@ class ContactFormTwo extends Component {
             onChange={this.handleChange}
           >
             <option style={{ display: "none" }}>
-              Where do you want to own land?
+           
+              Desired land location? 
             </option>
             {states && states.map((item) => <option key={item}>{item}</option>)}
           </select>
@@ -119,6 +123,7 @@ class ContactFormTwo extends Component {
           Submit
         </button>
       </form>
+      </div>
     );
   }
 }

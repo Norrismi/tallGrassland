@@ -1,33 +1,131 @@
-.contact{
+.contact__two {
     border: var(--theme-border);
     border-radius: var(--theme-card-border-radius);
     background-color: var(--theme-card-background-color);
 }
 
-.contact__title{
+.contact__two-title {
     color: var(--theme-font-color)
 }
 
-.contact > button{
+.contact__two>button {
     background-color: var(--theme-standard-btn-background-color);
     border: none;
     padding: 7px;
 }
 
-.contact >button:disabled {
+.contact__two>button:disabled {
     background-color: grey;
     color: black;
     border: none;
-    padding: 7px;  
+    padding: 7px;
 }
 
-.contact > button:hover{
+.contact__two>button:hover {
     background-color: var(--theme-standard-btn-background-color);
     color: var(--theme-hover-color)
-   
 }
 
-/* ipad pro */
+@media (min-width: 280px) {
+
+    .contact__two-container {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .contact__two {
+        width: 270px;
+        margin-bottom: 50px;
+    }
+
+    #whereDoYouWantToOwnLand,
+    #howDidYouFindUs {
+        width: 220px;
+    }
+}
+
+
+@media (min-width: 320px) {
+
+    #whereDoYouWantToOwnLand,
+    #howDidYouFindUs {
+        width: 220px;
+    }
+}
+
+@media (min-width: 375px) {
+    .contact__two {
+        width: 325px;
+    }
+
+    #whereDoYouWantToOwnLand,
+    #howDidYouFindUs {
+        width: 275px;
+    }
+
+}
+
+@media (min-width: 414px) {
+    .contact__two {
+        width: 364px;
+    }
+
+    #whereDoYouWantToOwnLand,
+    #howDidYouFindUs {
+        width: 314px;
+    }
+
+}
+
+@media (min-width: 900px) {
+    .contact__two-container {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+
+
+
+
+}
+
+@media (min-width: 1024px) {
+    .contact__two-container {
+        width: 100vw;
+    }
+ 
+}
+@media (min-width: 1400px) {
+    .contact__two-container {
+        width: 27vw;
+    }
+ 
+}
+@media (min-width: 1910px) {
+    .contact__two-container {
+        width: 45vw;
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 @media (max-width: 1025px) {
 
     .contact{
@@ -37,7 +135,7 @@
     }
 }
 
-/* ipad */
+
 @media (max-width: 768px) {
     .contact{
         width: 400px;
@@ -47,8 +145,14 @@
 }
 
 
-/* cell plus */
+
 @media (max-width: 414px) {
+
+    #whereDoYouWantToOwnLand,
+    #howDidYouFindUs {
+        width: 280px;
+
+    }
 
     .contact{
         width: 332px;
@@ -57,7 +161,7 @@
 }
 
 
-/* cell */
+
 @media (max-width: 375px) {
 
     .contact{
@@ -65,4 +169,4 @@
         margin: 0 20px 50px 20px;
     }
 
-}
+} */

@@ -50,29 +50,24 @@
         width: 315px;
     }
 
-    #whereDoYouWantToOwnLand,
-    #howDidYouFindUs {
+    #one-whereToOwn,
+    #one-howFindUs {
         width: 260px;
 
     }
-
-
 }
 
-@media (min-width: 414px) {
 
-    /* .contact__one {
-        height: 395px;
-        width: 315px;
-    } */
 
-    #whereDoYouWantToOwnLand,
-    #howDidYouFindUs {
+@media (min-width: 411px) {
+
+    #one-whereToOwn,
+    #one-howFindUs {
+        /* width: 265px; */
+
         width: 265px;
 
     }
-
-
 }
 
 
@@ -83,6 +78,4 @@
         width: auto;
         margin-bottom: 40px;
     }
-
-
 }

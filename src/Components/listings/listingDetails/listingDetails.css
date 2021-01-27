@@ -9,6 +9,7 @@
     flex: 1;
     justify-content: center;
 
+
 }
 
 .card {
@@ -111,7 +112,7 @@
     padding-bottom: 30px;
 }
 
-.details__info-container > div {
+.details__info-container>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,11 +129,11 @@
     color: var(--theme-font-color);
 }
 
-.details__coords{
-   width: 95px;
+.details__coords {
+    width: 95px;
 }
 
-.details__water{
+.details__water {
     width: 80px;
     text-align: center;
 }
@@ -143,59 +144,61 @@
 
 
 
-.notes_container{
- padding: 12px 20px;
+.notes_container {
+    padding: 12px 20px;
 }
 
-.notes_container-title{
+.notes_container-title {
     font-size: 25px;
     font-weight: 400;
-    color:black;
+    color: black;
 }
 
-#notes_important-title{
+#notes_important-title {
     font-size: 18px;
     padding-bottom: 10px;
 }
 
-.notes_container>ul>li{
-   
+.notes_container>ul>li {
+
     font-weight: bold;
 }
 
-.map_container{
+.map_container {
     padding: 1px;
 }
 
 
-.map_red-pin{
+.map_red-pin {
     max-width: 20%;
-  
+
 }
 
-@media (max-width: 992px) {
 
 
-    .contact__one {
-        margin: 40px;
-    }
 
-    .contact__one-container {
-        flex-direction: column;
-    }
-
-    .form-group>select {
-        width: 284px;
-
+@media (max-width: 1950px) {
+    .details__left-side {
+        margin-left: 300px;
     }
 }
 
+@media (max-width: 1450px) {
+
+    .details__left-side {
+        margin-left: 50px;
+    }
+}
 
 
 @media (max-width: 1025px) {
     .details__body {
         display: flex;
         flex-direction: column;
+    }
+
+    .details__left-side {
+        margin-left: 0px;
     }
 
     .card,
@@ -219,8 +222,29 @@
 
 }
 
+@media (max-width: 992px) {
+
+
+    .contact__one {
+        margin: 40px;
+    }
+
+    .contact__one-container {
+        flex-direction: column;
+    }
+
+    .form-group>select {
+        width: 284px;
+
+    }
+}
+
 
 @media (max-width: 768px) {
+
+    .details__left-side {
+        margin-left: 0px;
+    }
 
     .details__body {
         display: flex;
@@ -243,6 +267,9 @@
 
 @media (max-width: 414px) {
 
+    .details__left-side {
+        margin-left: 0px;
+    }
 
     .details__cash-title {
         display: flex;
@@ -254,6 +281,8 @@
         flex-direction: column;
         margin-bottom: 10px;
     }
+
+
 
     .details__container-right {
         flex-direction: column;
@@ -338,7 +367,7 @@
         height: 100px;
         width: 100px;
         margin: 10px;
-       
+
 
     }
 

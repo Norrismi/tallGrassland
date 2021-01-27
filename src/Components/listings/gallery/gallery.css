@@ -2,14 +2,12 @@
     display: flex;
     justify-content: center;
     background-color: var(--theme-background-color);
-
 }
 
 
 .gallery__img-container {
     display: flex;
     padding: 25px;
-
 }
 
 .gallery__img {
