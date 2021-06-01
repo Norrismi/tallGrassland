@@ -5,10 +5,8 @@ import CurrencyFormat from "react-currency-format";
 import HowItWorks from '../../dashboard/how_it_works/HowItWorks'
 import About from '../../dashboard/about/About'
 
-// import FormatCurrency from '../formatCurrency'
-
 const ListingSummary = ({ properties }) => {
-  //console.log(properties);
+
 
   return (
     <div className="ListingSummary__container">
@@ -35,6 +33,12 @@ const ListingSummary = ({ properties }) => {
                   {property.pending && (
                     <div className="ListingSummary__pending " alt="pending">
                       Pending
+                    </div>
+                  )}
+
+                  {property.sold && (
+                    <div className="ListingSummary__sold " alt="sold">
+                      Sold
                     </div>
                   )}
 

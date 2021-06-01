@@ -44,6 +44,16 @@ a.ListingSummary_title-link:hover{
 .ListingSummary__pending {
     height: 40px;
     width: 75px;
+    background-color: var(--theme-pending-btn-background-color);
+    border-radius: 5px 2px 5px 5px;
+    padding: 8px;
+    grid-row: 1;
+}
+
+.ListingSummary__sold {
+    text-align: center;
+    height: 40px;
+    width: 75px;
     background-color: var(--theme-special-btn-background-color);
     border-radius: 5px 2px 5px 5px;
     padding: 8px;
@@ -163,14 +173,3 @@ a.btn.btn-primary.ListingSummary__btn:hover {
     
 
 }
-
-/* @media (min-width: 1395px) {
-
-    .ListingSummary {
-        margin: 20px ;
-        width: 20rem;
-    
-    }
-    
-
-} */

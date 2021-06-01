@@ -21,7 +21,7 @@
 
 }
 
-/* ipad pro */
+
 @media (max-width: 1025px) {
     .gallery {
         display: flex;
@@ -36,7 +36,7 @@
 
 }
 
-/* ipad */
+
 @media (max-width: 768px) {
     .gallery {
         display: flex;
@@ -52,7 +52,7 @@
 }
 
 
-/* cell */
+
 @media (max-width: 480px) {
 
 

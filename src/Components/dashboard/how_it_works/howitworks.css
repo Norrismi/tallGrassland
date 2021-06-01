@@ -1,9 +1,7 @@
 .howitworks__container {
     display: flex;
     flex-direction: column;
-    /* background-color: var(--theme-font-color); */
     background-color: whitesmoke;
-    /* background-color: var(--theme-standard-btn-background-color); */
     width: 100vw;
 
 }

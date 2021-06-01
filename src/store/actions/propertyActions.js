@@ -1,12 +1,12 @@
-//const history = useHistory()
+
 
 export const addToCart = (propertyID, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    //console.log("actions", propertyID);
+
 
     const firestore = getFirestore();
 
-    //const id_Ref = firestore.collection("cart");
+
 
     firestore
       .collection("cart")
@@ -23,27 +23,13 @@ export const addToCart = (propertyID, property) => {
   };
 };
 
-// firestore
-//   .collection("cart")
-//   .add({
-//     property,
-//     propertyID,
-//   })
-//   .then(() => {
-//     dispatch({ type: "ADD_TO_CART", payload: property, propertyID });
-//   })
-//   .catch((err) => {
-//     dispatch({ type: "ADD_TO_CART_ERROR", err });
-//   });
+
 
 export const removeCurrentListing = (id, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    //console.log("action hit!!!", id);
+ 
 
     const firestore = getFirestore();
-
-    //console.log(getState);
-    // const cart = getState().firebase.cart;
 
     firestore
       .collection("cart")
@@ -52,9 +38,7 @@ export const removeCurrentListing = (id, property) => {
       .then(() => {
         dispatch({ type: "REMOVE_FROM_CART", payload: id });
       })
-      // .then(() => {
-      //   history.push("/");
-      // })
+
       .catch((err) => {
         dispatch({ type: "REMOVE_FROM_CART_ERROR", err });
       });
@@ -63,7 +47,7 @@ export const removeCurrentListing = (id, property) => {
 
 export const pendingListing = (propertyID, property) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    //console.log("action hit!!!", id);
+ 
 
     const firestore = getFirestore();
 

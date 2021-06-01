@@ -1,5 +1,4 @@
 import React from "react";
-import "./Header.css";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";

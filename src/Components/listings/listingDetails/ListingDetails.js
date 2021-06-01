@@ -10,7 +10,6 @@ import Gallery from '../gallery/Gallery'
 import { Redirect } from "react-router-dom";
 import Modal from '../modal/Modal'
 import ListingNotes from './listingNotes'
-// import ListingMap from './listingMap'
 import './listingDetails.css'
 import {
   FaVectorSquare,
@@ -31,10 +30,6 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
   if (cart && cart.length) {
     return <Redirect to="/checkout" />;
   }
-
-  // if (!auth.uid) {
-  //   return <Redirect to='/sign_in' />
-  // }
 
 
   if (property) {
@@ -88,7 +83,6 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
 
                       <button
                         className="details__reserve-button"
-                        // onClick={() => addToCart(propertyID, property)}
                         onClick={() => window.open(property.reserveLink)}
                       >
                         Reserve Now
@@ -171,15 +165,10 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                       <div className="detials__font-color ">{property.zoning}</div>
                       <strong className="details__info-label">Zoning</strong>
                     </div>
-
-
-
-
-
                   </div>
                 </li>
               </ul>
-              {/* <ListingMap {...property.coords}/> */}
+          
               <ListingNotes />
             </div>
           </div>

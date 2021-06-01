@@ -3,7 +3,6 @@ const initState = {
 };
 
 const paymentReducer = (state = initState, action) => {
-  //console.log(action.err);
 
   switch (action.type) {
     case "PAYMENT_SUBMISSION_SUCCESS":

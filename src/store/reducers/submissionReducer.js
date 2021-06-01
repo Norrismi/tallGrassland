@@ -3,7 +3,6 @@ const initState = {
 };
 
 const submissionReducer = (state = initState, action) => {
-  //console.log(action.err)
 
   switch (action.type) {
     case "SUBMISSION_ONE_SUCCESS":

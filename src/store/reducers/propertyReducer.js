@@ -1,4 +1,3 @@
-//import { addItemToCart } from "../utility/cartUtils";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -10,7 +9,7 @@ const initState = {
 
 const propertyReducer = (state = initState, action, { cart }) => {
   switch (action.type) {
-    case "ADD_TO_CART": //ListingDetail
+    case "ADD_TO_CART":
       console.log("property cart added", action.payload);
       console.log(state);
 
@@ -33,7 +32,7 @@ const propertyReducer = (state = initState, action, { cart }) => {
         error,
       };
 
-    case "REMOVE_FROM_CART": //ListingCheckout
+    case "REMOVE_FROM_CART": 
       console.log("REMOVE_FROM_CART", action.payload);
 
       return {
@@ -65,7 +64,6 @@ const propertyReducer = (state = initState, action, { cart }) => {
   }
 };
 
-//export default propertyReducer;
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;

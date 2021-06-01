@@ -4,8 +4,7 @@ export const signUp = (newUser) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
-    // const firstName = newUser.firstName[0].toUpperCase();
-    // const lastName = newUser.lastName[0].toUpperCase();
+
 
     firebase
       .auth()
@@ -15,8 +14,6 @@ export const signUp = (newUser) => {
           .collection("users")
           .doc(res.user.uid)
           .set({
-            // firstName: newUser.firstName,
-            // lastName: newUser.lastName,
             email: newUser.email
           });
       })

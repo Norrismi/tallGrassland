@@ -5,13 +5,12 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { signOut } from "../../../store/actions/authActions";
-// import { FaShoppingCart } from "react-icons/fa";
 
 
 const SignedInLinks = (props) => {
 
   const { 
-    // cart 
+
     email 
   } = props
 
@@ -22,10 +21,6 @@ const SignedInLinks = (props) => {
 
 
       <li className="text-white" to='/'> Hello,  {email && email}</li>
-      {/* <Link className="header__link cart-container" to={'/checkout'}>
-        <div className="header__checkout-number">{(cart?.length)}</div>
-        <FaShoppingCart className="header__checkout-cart"/>
-      </Link> */}
 
 
       <Link to="/faq" className="header__link">FAQ</Link>
@@ -55,7 +50,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-//export default connect(mapStateToProps, mapDispatchToProps)(SignedInLinks);
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
