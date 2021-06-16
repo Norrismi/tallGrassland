@@ -81,12 +81,12 @@ const ListingDetails = ({ property, propertyID, addToCart, cart, auth }) => {
                         $199 Down Payment
                       </div>
 
-                      <button
+                      {/* <button
                         className="details__reserve-button"
                         onClick={() => window.open(property.reserveLink)}
                       >
                         Reserve Now
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </li>
