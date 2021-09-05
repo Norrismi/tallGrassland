@@ -47,7 +47,10 @@ a.ListingSummary_title-link:hover{
     background-color: var(--theme-pending-btn-background-color);
     border-radius: 5px 2px 5px 5px;
     padding: 8px;
-    grid-row: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  
 }
 
 .ListingSummary__sold {
@@ -58,7 +61,9 @@ a.ListingSummary_title-link:hover{
     border-radius: 5px 2px 5px 5px;
     padding: 8px;
     color: white;
-    grid-row: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 
@@ -70,6 +75,7 @@ a.ListingSummary_title-link:hover{
     border-radius: 4px 4px 0px 0px;
     width: 408px;
     height: 190px;
+  
 }
 
 
